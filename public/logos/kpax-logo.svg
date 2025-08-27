@@ -1,0 +1,42 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="kpax-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="kpax-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="80" rx="12" fill="url(#kpax-bg)"/>
+  
+  <!-- Geometric pattern -->
+  <path d="M0,0 L40,0 L20,20 Z" fill="rgba(255,255,255,0.1)"/>
+  <path d="M160,80 L200,80 L180,60 Z" fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- Main logo area -->
+  <rect x="15" y="15" width="170" height="50" rx="8" fill="rgba(255,255,255,0.95)"/>
+  
+  <!-- KPAX text with modern styling -->
+  <text x="35" y="45" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#1e40af">K</text>
+  <text x="55" y="45" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#3b82f6">P</text>
+  <text x="75" y="45" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#60a5fa">A</text>
+  <text x="95" y="45" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#93c5fd">X</text>
+  
+  <!-- Subtitle -->
+  <text x="125" y="35" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#1e40af">ENTERPRISE</text>
+  <text x="125" y="48" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#3b82f6">SOLUTIONS</text>
+  
+  <!-- Tech elements -->
+  <circle cx="160" cy="25" r="4" fill="#60a5fa"/>
+  <circle cx="170" cy="35" r="3" fill="#93c5fd"/>
+  <circle cx="155" cy="45" r="2" fill="#3b82f6"/>
+  
+  <!-- Connection lines -->
+  <line x1="160" y1="25" x2="170" y2="35" stroke="#60a5fa" stroke-width="1"/>
+  <line x1="170" y1="35" x2="155" y2="45" stroke="#93c5fd" stroke-width="1"/>
+</svg>

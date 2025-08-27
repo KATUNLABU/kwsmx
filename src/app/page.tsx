@@ -1,103 +1,233 @@
-import Image from "next/image";
+'use client';
+
+import React from 'react';
+import { Button, Card, ServiceCard, FadeIn, WavyBanner } from '@/components';
+import WavyBannerPhoto from '@/components/ui/WavyBannerPhoto';
+import WavyBannerPNG from '@/components/ui/WavyBannerPNG';
+import NavBar from '@/components/ui/NavBar';
+import FlipCards from '@/components/ui/FlipCards';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation Bar */}
+      <NavBar />
+      
+      {/* Wavy Banner Section */}
+      <WavyBanner
+        title="KSC Components"
+        subtitle="Laboratorio de Componentes"
+      >
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 w-full max-w-lg mx-auto">
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="bg-transparent border-white text-white hover:bg-white hover:text-[#1e3052] w-full sm:w-auto text-sm sm:text-base"
+            onClick={() => window.location.href = '/demo'}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Ver Demo Completa
+          </Button>
+          <Button 
+            variant="primary" 
+            size="lg"
+            className="bg-white text-[#1e3052] hover:bg-gray-100 w-full sm:w-auto text-sm sm:text-base"
+            onClick={() => document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Read our docs
-          </a>
+            Ver Componentes
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </WavyBanner>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16" id="components">
+        <div className="space-y-16">
+          
+          {/* Components Overview */}
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Biblioteca de Componentes KSC
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Componentes reutilizables diseñados para crear experiencias digitales excepcionales 
+                para Katun Solution Center. Cada componente está optimizado para conversión y engagement.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Button Components */}
+          <FadeIn>
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">Botones Interactivos</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Button variant="primary" size="lg">Botón Primario</Button>
+                <Button variant="secondary" size="lg">Botón Secundario</Button>
+                <Button variant="outline" size="lg">Botón Outline</Button>
+                <Button variant="ghost" size="lg">Botón Ghost</Button>
+              </div>
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <Button variant="primary" size="sm">Pequeño</Button>
+                <Button variant="primary" size="md">Mediano</Button>
+                <Button variant="primary" size="lg">Grande</Button>
+              </div>
+            </Card>
+          </FadeIn>
+
+          {/* Service Cards */}
+          <FadeIn>
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">Tarjetas de Servicios</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <ServiceCard
+                  icon="🚀"
+                  title="Desarrollo Web"
+                  description="Creamos sitios web modernos y optimizados"
+                  features={[
+                    "Diseño responsivo",
+                    "SEO optimizado",
+                    "Carga rápida",
+                    "Integración CMS"
+                  ]}
+                />
+                <ServiceCard
+                  icon="📱"
+                  title="Aplicaciones Móviles"
+                  description="Apps nativas e híbridas de alta calidad"
+                  features={[
+                    "iOS y Android",
+                    "UX intuitiva",
+                    "Integración API",
+                    "Push notifications"
+                  ]}
+                />
+                <ServiceCard
+                  icon="💡"
+                  title="Consultoría Digital"
+                  description="Estrategias digitales que generan resultados"
+                  features={[
+                    "Análisis de mercado",
+                    "Estrategia digital",
+                    "Optimización conversión",
+                    "ROI garantizado"
+                  ]}
+                />
+              </div>
+            </Card>
+          </FadeIn>
+
+          {/* Flip Cards Section */}
+          <FadeIn>
+            <FlipCards />
+          </FadeIn>
+
+          {/* Performance Metrics */}
+          <FadeIn>
+            <Card className="p-8 bg-gradient-to-r from-blue-50 to-purple-50 border-none">
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">Métricas de Rendimiento</h2>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
+                  <div className="text-gray-600">Performance Score</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+                  <div className="text-gray-600">Accessibility</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">95%</div>
+                  <div className="text-gray-600">Best Practices</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-600 mb-2">100%</div>
+                  <div className="text-gray-600">SEO Score</div>
+                </div>
+              </div>
+            </Card>
+          </FadeIn>
+
+          {/* Call to Action */}
+          <FadeIn>
+            <Card className="text-center bg-blue-50 border-blue-200">
+              <h2 className="text-3xl font-bold mb-4 text-blue-900">
+                ¿Listo para comenzar tu proyecto?
+              </h2>
+              <p className="text-lg text-blue-700 mb-6">
+                Contáctanos y descubre cómo podemos ayudarte a hacer crecer tu negocio.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  variant="primary" 
+                  size="lg"
+                  onClick={() => window.open('mailto:info@katun.com', '_blank')}
+                >
+                  Contactar por Email
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+                >
+                  WhatsApp
+                </Button>
+              </div>
+            </Card>
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* Segundo Banner Wavy - Con foto de fondo */}
+      <WavyBannerPhoto
+        title="Banner con Foto"
+        subtitle="Banner con Imagen de Fondo"
+        imageUrl="/foto1.JPG"
+      >
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 w-full max-w-lg mx-auto">
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="bg-transparent border-white text-white hover:bg-white hover:text-[#1e3052] w-full sm:w-auto text-sm sm:text-base"
+            onClick={() => window.location.href = '/demo'}
+          >
+            Explorar Más
+          </Button>
+          <Button 
+            variant="primary" 
+            size="lg"
+            className="bg-white text-[#1e3052] hover:bg-gray-100 w-full sm:w-auto text-sm sm:text-base"
+            onClick={() => document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Ver Galería
+          </Button>
+        </div>
+      </WavyBannerPhoto>
+
+      {/* Tercer Banner Wavy - Con imagen PNG y efectos CSS */}
+      <WavyBannerPNG
+        title="Banner PNG"
+        subtitle="Con Efectos CSS Avanzados"
+        imageUrl="/foto2.png"
+        imageEffect="purple-tint"
+        hoverEffect={true}
+      >
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 w-full max-w-lg mx-auto">
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="bg-transparent border-white text-white hover:bg-white hover:text-purple-600 w-full sm:w-auto text-sm sm:text-base"
+            onClick={() => window.location.href = '/gallery'}
+          >
+            Ver Efectos
+          </Button>
+          <Button 
+            variant="primary" 
+            size="lg"
+            className="bg-white text-purple-600 hover:bg-purple-50 w-full sm:w-auto text-sm sm:text-base"
+            onClick={() => alert('¡Efecto PNG activado!')}
+          >
+            Cambiar Filtro
+          </Button>
+        </div>
+      </WavyBannerPNG>
     </div>
   );
 }
