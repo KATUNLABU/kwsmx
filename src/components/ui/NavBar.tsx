@@ -14,6 +14,7 @@ interface NavBarProps {
     dropdown?: Array<{
       label: string;
       href: string;
+      image?: string;
     }>;
   }>;
 }
@@ -23,19 +24,22 @@ export const NavBar: React.FC<NavBarProps> = ({
   logoAlt = 'KSC Logo',
   className,
   menuItems = [
-    { label: 'Inicio', href: '#' },
-    { label: 'Sobre Nós', href: '#' },
+    { label: 'Inicio', href: '/' },
     { 
-      label: 'Soluções', 
-      href: '#',
+      label: 'Componentes', 
+      href: '/components',
       dropdown: [
-        { label: 'Solução 1', href: '#' },
-        { label: 'Solução 2', href: '#' },
-        { label: 'Solução 3', href: '#' }
+        { label: 'Headers', href: '/components/headers' },
+        { label: 'Botones', href: '/components/buttons' },
+        { label: 'Formularios', href: '/components/forms' },
+        { label: 'Grids y Cards', href: '/components/grids' },
+        { label: 'Elementos de Página', href: '/components/page-elements' },
+        { label: 'Componentes Clásicos', href: '/components/classic' },
+        { label: 'Bloques de Página', href: '/components/blocks' }
       ]
     },
-    { label: 'Setores', href: '#' },
-    { label: 'Contato', href: '#' }
+    { label: 'Demo', href: '/demo' },
+    { label: 'Acerca de', href: '/about' }
   ]
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +67,7 @@ export const NavBar: React.FC<NavBarProps> = ({
   return (
     <motion.nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out',
+        'fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ease-in-out',
         className
       )}
       style={{
@@ -105,7 +109,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                 const textLogo = document.createElement('div');
                 textLogo.textContent = 'KSC';
                 textLogo.className = `text-2xl lg:text-3xl font-bold ${
-                  isScrolled ? 'text-black' : 'text-white'
+                  isScrolled ? 'text-[#004990]' : 'text-white'
                 }`;
                 e.currentTarget.parentNode?.appendChild(textLogo);
               }}
@@ -127,7 +131,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                     className={cn(
                       'px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-300 relative block',
                       isScrolled 
-                        ? 'text-black hover:text-blue-600' 
+                        ? 'text-[#004990] hover:text-blue-600' 
                         : 'text-white hover:text-blue-200',
                       item.label === 'Inicio' && (isScrolled ? 'text-orange-600' : 'text-orange-400')
                     )}
@@ -167,7 +171,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                 <AnimatePresence>
                   {item.dropdown && activeDropdown === item.label && (
                     <motion.div
-                      className="absolute top-full left-0 mt-2 w-48 rounded-lg shadow-2xl z-50"
+                      className="absolute top-full left-0 mt-2 w-64 rounded-lg shadow-2xl z-50"
                       style={{
                         background: isScrolled 
                           ? 'rgba(255, 255, 255, 0.95)'
@@ -187,9 +191,9 @@ export const NavBar: React.FC<NavBarProps> = ({
                           <motion.a
                             href={dropdownItem.href}
                             className={cn(
-                              'block px-4 py-3 text-sm transition-all duration-200 first:rounded-t-lg last:rounded-b-lg relative',
+                              'flex items-center gap-3 px-4 py-3 text-sm transition-all duration-200 first:rounded-t-lg last:rounded-b-lg relative',
                               isScrolled 
-                                ? 'text-black hover:text-blue-600'
+                                ? 'text-[#004990] hover:text-blue-600'
                                 : 'text-white/90 hover:text-white'
                             )}
                             whileHover={{ 
@@ -197,21 +201,33 @@ export const NavBar: React.FC<NavBarProps> = ({
                               scale: 1.02
                             }}
                           >
-                            {dropdownItem.label}
+                            {/* Imagen del servicio si existe */}
+                            {dropdownItem.image && (
+                              <div className="w-16 h-10 bg-white rounded-lg overflow-hidden flex-shrink-0 p-1.5 shadow-sm border border-gray-200">
+                                <img 
+                                  src={dropdownItem.image} 
+                                  alt={dropdownItem.label}
+                                  className="w-full h-full object-contain"
+                                  onError={(e) => {
+                                    (e.target as HTMLImageElement).style.display = 'none';
+                                  }}
+                                />
+                              </div>
+                            )}
+                            <span className="flex-1">{dropdownItem.label}</span>
+                            {/* Flechita a la derecha */}
+                            <svg 
+                              className="w-4 h-4 flex-shrink-0" 
+                              fill="none" 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round" 
+                              strokeWidth="2" 
+                              viewBox="0 0 24 24" 
+                              stroke="currentColor"
+                            >
+                              <path d="M9 5l7 7-7 7"></path>
+                            </svg>
                           </motion.a>
-                          
-                          {/* Flecha lateral para dropdown */}
-                          <motion.div 
-                            className="menu-arrow absolute right-2 top-1/2 transform -translate-y-1/2"
-                            initial={{ opacity: 0, x: -5 }}
-                            whileHover={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <div className={cn(
-                              'w-0 h-0 border-t-4 border-b-4 border-l-4 border-transparent',
-                              isScrolled ? 'border-l-blue-600' : 'border-l-blue-200'
-                            )} />
-                          </motion.div>
                         </motion.div>
                       ))}
                     </motion.div>
@@ -228,7 +244,7 @@ export const NavBar: React.FC<NavBarProps> = ({
               className={cn(
                 'p-2 rounded-lg transition-all duration-300',
                 isScrolled 
-                  ? 'text-black hover:bg-gray-100'
+                  ? 'text-[#004990] hover:bg-gray-100'
                   : 'text-white hover:bg-white/10'
               )}
               whileHover={{ scale: 1.05 }}
@@ -291,7 +307,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                         className={cn(
                           'block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 relative',
                           isScrolled 
-                            ? 'text-black hover:text-blue-600'
+                            ? 'text-[#004990] hover:text-blue-600'
                             : 'text-white hover:text-blue-200',
                           item.label === 'Inicio' && (isScrolled ? 'text-orange-600' : 'text-orange-400')
                         )}
@@ -324,30 +340,42 @@ export const NavBar: React.FC<NavBarProps> = ({
                             <motion.a
                               href={dropdownItem.href}
                               className={cn(
-                                'block px-4 py-2 text-sm rounded-lg transition-all duration-200 relative',
+                                'flex items-center gap-3 px-4 py-2 text-sm rounded-lg transition-all duration-200 relative',
                                 isScrolled 
-                                  ? 'text-gray-600 hover:text-black'
+                                  ? 'text-gray-600 hover:text-[#004990]'
                                   : 'text-white/70 hover:text-white'
                               )}
                               onClick={() => setIsMobileMenuOpen(false)}
                               whileHover={{ x: 3 }}
                               transition={{ duration: 0.2 }}
                             >
-                              {dropdownItem.label}
+                              {/* Imagen del servicio si existe - Móvil */}
+                              {dropdownItem.image && (
+                                <div className="w-12 h-8 bg-white rounded-lg overflow-hidden flex-shrink-0 p-1 shadow-sm border border-gray-200">
+                                  <img 
+                                    src={dropdownItem.image} 
+                                    alt={dropdownItem.label}
+                                    className="w-full h-full object-contain"
+                                    onError={(e) => {
+                                      (e.target as HTMLImageElement).style.display = 'none';
+                                    }}
+                                  />
+                                </div>
+                              )}
+                              <span className="flex-1">{dropdownItem.label}</span>
+                              {/* Flechita a la derecha - Móvil */}
+                              <svg 
+                                className="w-3 h-3 flex-shrink-0" 
+                                fill="none" 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round" 
+                                strokeWidth="2" 
+                                viewBox="0 0 24 24" 
+                                stroke="currentColor"
+                              >
+                                <path d="M9 5l7 7-7 7"></path>
+                              </svg>
                             </motion.a>
-                            
-                            {/* Flecha pequeña para sub-items */}
-                            <motion.div 
-                              className="menu-arrow absolute right-2 top-1/2 transform -translate-y-1/2"
-                              initial={{ opacity: 0, x: -3 }}
-                              whileHover={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              <div className={cn(
-                                'w-0 h-0 border-t-2 border-b-2 border-l-2 border-transparent',
-                                isScrolled ? 'border-l-gray-400' : 'border-l-white/50'
-                              )} />
-                            </motion.div>
                           </motion.div>
                         ))}
                       </div>

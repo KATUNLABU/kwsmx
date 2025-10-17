@@ -1,0 +1,311 @@
+'use client';
+
+import type { Metadata } from 'next';
+import NavBar from '@/components/ui/NavBar';
+import Container from '@/components/ui/Container';
+import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
+import Footer from '@/components/ui/Footer';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Button from '@/components/ui/Button';
+
+export default function PaperCutPage() {
+  const menuItems = [
+    { label: 'Home', href: '/ksc' },
+    {
+      label: 'Soluções',
+      href: '/solucoes',
+      dropdown: [
+        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
+        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
+        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+      ],
+    },
+    { label: 'Quem Somos', href: '/quem-somos' },
+    { label: 'Fornecedores', href: '/fornecedores' },
+    { label: 'Contato', href: '/contato' },
+  ];
+
+  return (
+    <>
+      <NavBar menuItems={menuItems} logo="/KSC.svg" />
+
+      {/* Hero Banner */}
+      <HeroBannerWaves
+        title="PaperCut MF - Gestão de Impressão Inteligente"
+        subtitle="Solução líder mundial em gestão de impressão que otimiza custos, aumenta a segurança e promove sustentabilidade."
+        gradientFrom="#047857"
+        gradientTo="#10b981"
+        waveColor="rgba(255, 255, 255, 0.1)"
+        breadcrumbs={[
+          { label: 'Soluções', href: '/solucoes' },
+          { label: 'PaperCut MF', href: '/papercut' }
+        ]}
+      />
+
+      {/* Introduction Section */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Logo and Description */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative w-32 h-32 mb-8 bg-white rounded-2xl shadow-xl p-6 border-2 border-green-200">
+                <Image
+                  src="/images/services/gestao-impressao.png"
+                  alt="PaperCut MF"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+              
+              <h2 className="text-4xl font-bold text-[#004990] mb-6">
+                Controle Total do Seu Ambiente de Impressão
+              </h2>
+              
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                O PaperCut MF é a solução de gestão de impressão mais implementada globalmente, 
+                oferecendo controle completo sobre custos, segurança e sustentabilidade do seu 
+                ambiente de impressão corporativo.
+              </p>
+
+              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                Com mais de 100 milhões de usuários em 138 países, o PaperCut MF transforma a 
+                maneira como as empresas gerenciam seus recursos de impressão, trazendo economia, 
+                eficiência e responsabilidade ambiental.
+              </p>
+
+              <div className="flex gap-4">
+                <Button variant="primary" size="lg" className="bg-gradient-to-r from-green-600 to-green-700">
+                  <a href="/contato" className="text-inherit no-underline">Solicitar Demo</a>
+                </Button>
+                <Button variant="outline" size="lg">
+                  <a href="#recursos" className="text-inherit no-underline">Ver Recursos</a>
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Statistics Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-green-500 to-green-700 p-10 rounded-2xl shadow-2xl text-white"
+            >
+              <h3 className="text-3xl font-bold mb-8">Resultados Comprovados</h3>
+              
+              <div className="space-y-6">
+                <div className="border-b border-white/20 pb-6">
+                  <div className="text-5xl font-bold mb-2">30%</div>
+                  <p className="text-lg opacity-90">Redução nos custos de impressão</p>
+                </div>
+
+                <div className="border-b border-white/20 pb-6">
+                  <div className="text-5xl font-bold mb-2">100M+</div>
+                  <p className="text-lg opacity-90">Usuários em todo o mundo</p>
+                </div>
+
+                <div className="border-b border-white/20 pb-6">
+                  <div className="text-5xl font-bold mb-2">138</div>
+                  <p className="text-lg opacity-90">Países atendidos</p>
+                </div>
+
+                <div>
+                  <div className="text-5xl font-bold mb-2">6 meses</div>
+                  <p className="text-lg opacity-90">ROI médio comprovado</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Features Section */}
+      <section id="recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <Container>
+          <div className="text-center mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-[#004990] mb-6"
+            >
+              Recursos Principais
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+            >
+              Tudo o que você precisa para otimizar seu ambiente de impressão
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '💰',
+                title: 'Controle de Custos',
+                description: 'Monitore e controle todos os gastos com impressão em tempo real. Defina cotas, políticas e regras personalizadas por usuário ou departamento.'
+              },
+              {
+                icon: '🔒',
+                title: 'Impressão Segura',
+                description: 'Libere documentos somente com autenticação (cartão, PIN ou biometria). Evite impressões esquecidas e garanta a confidencialidade.'
+              },
+              {
+                icon: '📊',
+                title: 'Relatórios Detalhados',
+                description: 'Análises completas de uso, custos e tendências. Dashboards executivos com insights para tomada de decisão estratégica.'
+              },
+              {
+                icon: '🌱',
+                title: 'Sustentabilidade',
+                description: 'Reduza o desperdício de papel e toner. Acompanhe métricas ambientais e promova práticas sustentáveis na empresa.'
+              },
+              {
+                icon: '🔗',
+                title: 'Integração AD/LDAP',
+                description: 'Integração nativa com Active Directory e LDAP. Sincronização automática de usuários e grupos para gerenciamento simplificado.'
+              },
+              {
+                icon: '🖨️',
+                title: 'Multi-Marca',
+                description: 'Suporte a todas as principais marcas de impressoras e multifuncionais. Gestão unificada de ambientes heterogêneos.'
+              },
+              {
+                icon: '📱',
+                title: 'Impressão Mobile',
+                description: 'Imprima de qualquer lugar usando smartphones e tablets. Suporte a Google Cloud Print, AirPrint e aplicativo móvel próprio.'
+              },
+              {
+                icon: '🔍',
+                title: 'Auditoria Completa',
+                description: 'Rastreie todas as impressões com logs detalhados. Conformidade com políticas de segurança e requisitos regulatórios.'
+              },
+              {
+                icon: '⚡',
+                title: 'Find-Me Printing',
+                description: 'Imprima de qualquer impressora da rede. Liberação com cartão ou PIN em qualquer dispositivo disponível.'
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                <div className="text-5xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-br from-green-600 to-green-700 text-white">
+        <Container>
+          <div className="text-center mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold mb-6"
+            >
+              Por Que Escolher PaperCut MF?
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl opacity-90 max-w-3xl mx-auto"
+            >
+              Benefícios que fazem a diferença no seu negócio
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: 'Economia Significativa',
+                description: 'Redução média de 30% nos custos com impressão. ROI comprovado em 6 meses através de políticas inteligentes e eliminação de desperdícios.'
+              },
+              {
+                title: 'Segurança Reforçada',
+                description: 'Documentos confidenciais protegidos com autenticação obrigatória. Auditoria completa de todas as atividades de impressão.'
+              },
+              {
+                title: 'Sustentabilidade Corporativa',
+                description: 'Reduza o impacto ambiental com métricas de CO₂, árvores salvas e consumo consciente. Contribua para os objetivos ESG da empresa.'
+              },
+              {
+                title: 'Gestão Simplificada',
+                description: 'Interface intuitiva e centralizada. Administre todo o ambiente de impressão de qualquer lugar através do console web.'
+              },
+              {
+                title: 'Escalabilidade Total',
+                description: 'De 5 a 50.000+ usuários. A solução cresce com seu negócio sem perda de performance ou necessidade de reestruturação.'
+              },
+              {
+                title: 'Suporte Global',
+                description: 'Documentação completa em português, treinamentos especializados e suporte técnico da KSC disponível 24/7.'
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
+                <p className="text-lg opacity-90 leading-relaxed">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <Container>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-gray-50 to-green-50 p-12 rounded-2xl text-center border border-green-200"
+          >
+            <h2 className="text-4xl font-bold text-[#004990] mb-6">
+              Pronto para Otimizar Sua Gestão de Impressão?
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Solicite uma demonstração gratuita e descubra como o PaperCut MF pode 
+              transformar o ambiente de impressão da sua empresa.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Button variant="primary" size="lg" className="bg-gradient-to-r from-green-600 to-green-700">
+                <a href="/contato" className="text-inherit no-underline">Solicitar Demonstração</a>
+              </Button>
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      <Footer />
+    </>
+  );
+}

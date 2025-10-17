@@ -1,17 +1,31 @@
 'use client';
 
 import React from 'react';
-import { Button, Card, ServiceCard, FadeIn, WavyBanner } from '@/components';
+import { Button, Card, ServiceCard, FadeIn, WavyBanner, FloatingChat, AppLayout, useToast } from '@/components';
 import WavyBannerPhoto from '@/components/ui/WavyBannerPhoto';
 import WavyBannerPNG from '@/components/ui/WavyBannerPNG';
-import NavBar from '@/components/ui/NavBar';
 import FlipCards from '@/components/ui/FlipCards';
 
 export default function Home() {
+  const { showToast } = useToast();
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation Bar */}
-      <NavBar />
+    <AppLayout>
+      <div className="min-h-screen bg-gray-50">
+      
+      {/* Floating Chat */}
+      <FloatingChat 
+        onQuoteRequest={() => {
+          // Scroll to contact form or open modal
+          document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+        onChatOpen={() => {
+          console.log('Chat abierto');
+        }}
+        onChatClose={() => {
+          console.log('Chat cerrado');
+        }}
+      />
       
       {/* Wavy Banner Section */}
       <WavyBanner
@@ -45,7 +59,7 @@ export default function Home() {
           {/* Components Overview */}
           <FadeIn>
             <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl font-bold text-[#004990] mb-4">
                 Biblioteca de Componentes KSC
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -58,7 +72,7 @@ export default function Home() {
           {/* Button Components */}
           <FadeIn>
             <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">Botones Interactivos</h2>
+              <h2 className="text-2xl font-bold mb-6 text-[#004990]">Botones Interactivos</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Button variant="primary" size="lg">Botón Primario</Button>
                 <Button variant="secondary" size="lg">Botón Secundario</Button>
@@ -76,7 +90,7 @@ export default function Home() {
           {/* Service Cards */}
           <FadeIn>
             <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">Tarjetas de Servicios</h2>
+              <h2 className="text-2xl font-bold mb-6 text-[#004990]">Tarjetas de Servicios</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <ServiceCard
                   icon="🚀"
@@ -123,7 +137,7 @@ export default function Home() {
           {/* Performance Metrics */}
           <FadeIn>
             <Card className="p-8 bg-gradient-to-r from-blue-50 to-purple-50 border-none">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">Métricas de Rendimiento</h2>
+              <h2 className="text-2xl font-bold mb-6 text-[#004990]">Métricas de Rendimiento</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
@@ -222,12 +236,13 @@ export default function Home() {
             variant="primary" 
             size="lg"
             className="bg-white text-purple-600 hover:bg-purple-50 w-full sm:w-auto text-sm sm:text-base"
-            onClick={() => alert('¡Efecto PNG activado!')}
+            onClick={() => showToast('¡Efecto PNG activado!', 'success', 2000)}
           >
             Cambiar Filtro
           </Button>
         </div>
       </WavyBannerPNG>
     </div>
+    </AppLayout>
   );
 }

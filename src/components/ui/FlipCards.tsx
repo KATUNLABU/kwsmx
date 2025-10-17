@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { cn } from '@/utils/cn';
 
 interface CardData {
@@ -19,7 +20,7 @@ const cardsData: CardData[] = [
   {
     id: 'kpax',
     title: 'KPAX Solutions',
-    logo: '/logos/kpax-logo.svg',
+    logo: '/images/services/gestao-equipamentos.png',
     description: 'Plataforma de gestión empresarial integral con análisis avanzados y automatización de procesos.',
     features: [
       'Dashboard en tiempo real',
@@ -27,14 +28,14 @@ const cardsData: CardData[] = [
       'Análisis predictivo',
       'Integración multi-plataforma'
     ],
-    website: 'https://kpax.com',
+    website: '/kpax',
     category: 'Enterprise Software',
     color: 'from-blue-500 to-blue-700'
   },
   {
     id: 'papercut',
     title: 'PaperCut Print',
-    logo: '/logos/papercut-logo.svg',
+    logo: '/images/services/gestao-impressao.png',
     description: 'Solución líder en gestión de impresión que optimiza costos y mejora la seguridad documental.',
     features: [
       'Control de costos',
@@ -42,14 +43,14 @@ const cardsData: CardData[] = [
       'Seguimiento detallado',
       'Gestión ambiental'
     ],
-    website: 'https://papercut.com',
+    website: '/papercut',
     category: 'Print Management',
     color: 'from-green-500 to-green-700'
   },
   {
     id: 'megaged',
     title: 'MegaGED System',
-    logo: '/logos/megaged-logo.svg',
+    logo: '/images/services/gestao-documentos.png',
     description: 'Sistema de gestión electrónica de documentos que digitaliza y organiza toda tu información.',
     features: [
       'Digitalización automática',
@@ -57,14 +58,14 @@ const cardsData: CardData[] = [
       'Workflow documental',
       'Compliance normativo'
     ],
-    website: 'https://megaged.com',
+    website: '/megaged',
     category: 'Document Management',
     color: 'from-purple-500 to-purple-700'
   },
   {
     id: 'wiki-alphabet',
     title: 'Wiki Alphabet',
-    logo: '/logos/wiki-alphabet-logo.svg',
+    logo: '/images/services/plataforma-ensino.png',
     description: 'Base de conocimiento colaborativa que centraliza la información y facilita el aprendizaje organizacional.',
     features: [
       'Base de conocimiento',
@@ -72,7 +73,7 @@ const cardsData: CardData[] = [
       'Búsqueda semántica',
       'Versionado inteligente'
     ],
-    website: 'https://wiki-alphabet.com',
+    website: '/wiki-alphabet',
     category: 'Knowledge Management',
     color: 'from-orange-500 to-orange-700'
   }
@@ -84,6 +85,16 @@ interface FlipCardsProps {
 
 export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
   const [flippedCard, setFlippedCard] = useState<string | null>(null);
+  const [activeIconIndex, setActiveIconIndex] = useState(0);
+
+  // Ciclo de animación de íconos: cada 2 segundos cambia a la siguiente carta
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIconIndex((prev) => (prev + 1) % cardsData.length);
+    }, 2000); // Cambia cada 2 segundos
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleCardHover = (cardId: string) => {
     setFlippedCard(cardId);
@@ -103,7 +114,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#004990] mb-4">
             Nuestras <span className="text-blue-600">Soluciones</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -152,23 +163,15 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       </svg>
                     </div>
 
-                    {/* Logo Container */}
-                    <div className="w-32 h-16 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 shadow-lg relative z-10 overflow-hidden">
-                      <img 
-                        src={card.logo} 
-                        alt={`${card.title} Logo`}
-                        className="w-28 h-12 object-contain"
-                        onError={(e) => {
-                          // Fallback if image fails to load
-                          e.currentTarget.style.display = 'none';
-                          const fallback = e.currentTarget.parentNode?.querySelector('.fallback-logo') as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="fallback-logo hidden w-12 h-12 bg-white rounded-lg items-center justify-center">
-                        <span className="text-gray-700 font-bold text-lg">
-                          {card.title.split(' ').map(word => word[0]).join('')}
-                        </span>
+                    {/* Logo Container - Fondo blanco unificado */}
+                    <div className="w-36 h-24 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-2xl relative z-10 overflow-hidden p-3 border-2 border-white/30">
+                      <div className="relative w-32 h-20">
+                        <Image 
+                          src={card.logo} 
+                          alt={`${card.title} Logo`}
+                          fill
+                          className="object-contain"
+                        />
                       </div>
                     </div>
 
@@ -182,86 +185,75 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       {card.category}
                     </span>
 
-                    {/* Hover Indicator */}
+                    {/* Ícono giratorio - Animación en ciclo */}
                     <motion.div 
-                      className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/80"
+                      className="absolute top-3 right-3 text-white/70"
                       animate={{
-                        y: [0, -5, 0]
+                        rotate: activeIconIndex === index ? 360 : 0
                       }}
                       transition={{
-                        duration: 2,
-                        repeat: Infinity,
+                        duration: 0.6,
                         ease: "easeInOut"
                       }}
                     >
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 14L12 9L17 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                       </svg>
                     </motion.div>
                   </div>
                 </div>
 
-                {/* Back Face */}
+                {/* Back Face - Ajustado para mostrar botón completo */}
                 <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-xl shadow-xl overflow-hidden">
-                  <div className="w-full h-full bg-white p-6 flex flex-col">
-                    {/* Header */}
-                    <div className="flex items-center mb-4">
-                      <div className="w-16 h-8 bg-gray-50 rounded-lg flex items-center justify-center mr-3 overflow-hidden">
-                        <img 
-                          src={card.logo} 
-                          alt={`${card.title} Logo`}
-                          className="w-14 h-6 object-contain"
-                          onError={(e) => {
-                            // Fallback if image fails to load
-                            e.currentTarget.style.display = 'none';
-                            const fallback = e.currentTarget.parentNode?.querySelector('.fallback-logo-back') as HTMLElement;
-                            if (fallback) fallback.style.display = 'flex';
-                          }}
-                        />
-                        <div className="fallback-logo-back hidden w-full h-full items-center justify-center">
-                          <span className="text-gray-700 font-bold text-xs">
-                            {card.title.split(' ').map(word => word[0]).join('')}
-                          </span>
+                  <div className="w-full h-full bg-white p-4 flex flex-col">
+                    {/* Header con logo más grande */}
+                    <div className="flex items-center mb-2">
+                      <div className="w-20 h-14 bg-white rounded-xl flex items-center justify-center mr-2 overflow-hidden p-1.5 border-2 border-gray-200 shadow-sm">
+                        <div className="relative w-16 h-10">
+                          <Image 
+                            src={card.logo} 
+                            alt={`${card.title} Logo`}
+                            fill
+                            className="object-contain"
+                          />
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 text-sm">{card.title}</h4>
-                        <p className="text-xs text-gray-500">{card.category}</p>
+                        <h4 className="font-bold text-[#004990] text-sm leading-tight">{card.title}</h4>
+                        <p className="text-[10px] text-gray-500">{card.category}</p>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-sm mb-4 flex-1">
+                    <p className="text-gray-600 text-[11px] mb-2 leading-snug line-clamp-2">
                       {card.description}
                     </p>
 
                     {/* Features */}
-                    <div className="mb-4">
-                      <h5 className="font-semibold text-gray-900 text-sm mb-2">Características:</h5>
-                      <ul className="space-y-1">
+                    <div className="mb-2 flex-1 overflow-hidden">
+                      <h5 className="font-semibold text-[#004990] text-[11px] mb-1">Características:</h5>
+                      <ul className="space-y-0.5">
                         {card.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-xs text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2" />
-                            {feature}
+                          <li key={idx} className="flex items-start text-[10px] text-gray-600 leading-tight">
+                            <div className="w-1 h-1 bg-blue-500 rounded-full mr-1.5 flex-shrink-0 mt-1" />
+                            <span className="line-clamp-1">{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* CTA Button */}
+                    {/* CTA Button - Más visible y siempre visible */}
                     <motion.a
                       href={card.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className={cn(
-                        'w-full py-2 px-4 rounded-lg text-white text-sm font-medium text-center bg-gradient-to-r transition-all duration-300',
+                        'w-full py-2.5 px-4 rounded-lg text-white text-xs font-bold text-center bg-gradient-to-r transition-all duration-300 shadow-lg mt-auto',
                         card.color,
-                        'hover:shadow-lg hover:scale-105'
+                        'hover:shadow-xl hover:scale-[1.02]'
                       )}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Explorar Solución
+                      Explorar Solución →
                     </motion.a>
                   </div>
                 </div>

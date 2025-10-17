@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+import { ToastProvider } from '@/components';
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
@@ -9,8 +10,8 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "KSC Components Laboratory",
-  description: "Laboratorio de componentes KSC con banners animados y navegación avanzada",
+  title: "KSC - KATUN Solution Center",
+  description: "Soluções Integradas em Gestão de Impressão e Transformação Digital",
 };
 
 export default function RootLayout({
@@ -24,7 +25,9 @@ export default function RootLayout({
         className={`${sourceSans.variable} font-sans antialiased`}
         style={{ fontFamily: 'var(--font-source-sans), "Source Sans Pro", Arial, sans-serif' }}
       >
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </body>
     </html>
   );

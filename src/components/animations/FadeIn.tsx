@@ -28,11 +28,11 @@ const FadeIn: React.FC<FadeInProps> = ({
     const element = elementRef.current;
 
     // Set initial state
-    const initialState: { [key: string]: any } = {
+    const initialState: Record<string, number> = {
       opacity: 0
     };
 
-    const finalState: { [key: string]: any } = {
+    const finalState: Record<string, number | string> = {
       opacity: 1,
       duration,
       delay,
