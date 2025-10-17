@@ -12,6 +12,7 @@ docs/
 ├── setup/                                         # ⚙️ Configuraciones
 │   ├── banner-usage-guide.md                     # Banner de hero sections
 │   ├── contact-form-configuration.md             # Formulario de contacto
+│   ├── dependencies-requirements.md              # 📦 Dependencias y requisitos
 │   ├── recaptcha-setup.md                        # reCAPTCHA v3 (anti-spam)
 │   ├── sendgrid-guia-completa.md                 # SendGrid detallado
 │   └── sendgrid-setup.md                         # SendGrid (emails)
@@ -55,7 +56,7 @@ docs/
     ├── 2025-10-rutas-fix.md                      # Fix de rutas
     └── 2025-10-ux-improvements.md                # Mejoras de UX
 
-📊 Total: 42 archivos de documentación
+📊 Total: 43 archivos de documentación
 ```
 
 ---
