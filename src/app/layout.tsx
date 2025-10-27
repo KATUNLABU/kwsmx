@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from '@/components';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ToastProvider>
           {children}
         </ToastProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
