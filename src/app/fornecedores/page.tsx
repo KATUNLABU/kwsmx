@@ -273,7 +273,7 @@ export default function FornecedoresPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-br from-green-600 to-blue-600 text-white">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -284,7 +284,7 @@ export default function FornecedoresPage() {
             </p>
             <a
               href="/contato"
-              className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
+              className="inline-block px-10 py-4 bg-white text-green-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
             >
               Entre em Contato
             </a>

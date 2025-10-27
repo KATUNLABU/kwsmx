@@ -19,62 +19,62 @@ interface CardData {
 const cardsData: CardData[] = [
   {
     id: 'kpax',
-    title: 'KPAX Solutions',
+    title: 'KPAX Fleet',
     logo: '/images/services/gestao-equipamentos.png',
-    description: 'Plataforma de gestión empresarial integral con análisis avanzados y automatización de procesos.',
+    description: 'Plataforma inteligente de gestão de equipamentos de impressão com monitoramento em tempo real e manutenção preditiva.',
     features: [
-      'Dashboard en tiempo real',
-      'Automatización de workflows',
-      'Análisis predictivo',
-      'Integración multi-plataforma'
+      'Monitoramento 24/7 da frota',
+      'Alertas inteligentes automáticos',
+      'Análise preditiva de falhas',
+      'Gestão completa de suprimentos'
     ],
     website: '/kpax',
-    category: 'Enterprise Software',
+    category: 'Gestão de Equipamentos',
     color: 'from-blue-500 to-blue-700'
   },
   {
     id: 'papercut',
-    title: 'PaperCut Print',
+    title: 'PaperCut MF',
     logo: '/images/services/gestao-impressao.png',
-    description: 'Solución líder en gestión de impresión que optimiza costos y mejora la seguridad documental.',
+    description: 'Solução líder mundial em gestão de impressão que reduz custos em até 30% e garante impressão segura e sustentável.',
     features: [
-      'Control de costos',
-      'Impresión segura',
-      'Seguimiento detallado',
-      'Gestión ambiental'
+      'Redução de custos até 30%',
+      'Impressão segura com autenticação',
+      'Relatórios detalhados em tempo real',
+      'Sustentabilidade e conformidade'
     ],
     website: '/papercut',
-    category: 'Print Management',
+    category: 'Gestão de Impressão',
     color: 'from-green-500 to-green-700'
   },
   {
     id: 'megaged',
-    title: 'MegaGED System',
+    title: 'MegaGED',
     logo: '/images/services/gestao-documentos.png',
-    description: 'Sistema de gestión electrónica de documentos que digitaliza y organiza toda tu información.',
+    description: 'Sistema de gestão eletrônica de documentos com digitalização inteligente, workflow automatizado e conformidade LGPD.',
     features: [
-      'Digitalización automática',
-      'Búsqueda inteligente',
-      'Workflow documental',
-      'Compliance normativo'
+      'Digitalização automática com OCR',
+      'Busca inteligente instantânea',
+      'Workflow documental automatizado',
+      'Conformidade total com LGPD'
     ],
     website: '/megaged',
-    category: 'Document Management',
+    category: 'Gestão Eletrônica de Documentos',
     color: 'from-purple-500 to-purple-700'
   },
   {
     id: 'wiki-alphabet',
     title: 'Wiki Alphabet',
     logo: '/images/services/plataforma-ensino.png',
-    description: 'Base de conocimiento colaborativa que centraliza la información y facilita el aprendizaje organizacional.',
+    description: 'Plataforma de ensino digital e base de conhecimento colaborativa que centraliza informações e potencializa o aprendizado.',
     features: [
-      'Base de conocimiento',
-      'Colaboración en tiempo real',
-      'Búsqueda semántica',
-      'Versionado inteligente'
+      'Base de conhecimento centralizada',
+      'Colaboração em tempo real',
+      'Busca semântica avançada',
+      'LMS integrado para treinamentos'
     ],
     website: '/wiki-alphabet',
-    category: 'Knowledge Management',
+    category: 'Plataforma de Ensino Digital',
     color: 'from-orange-500 to-orange-700'
   }
 ];
@@ -115,11 +115,11 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-[#004990] mb-4">
-            Nuestras <span className="text-blue-600">Soluciones</span>
+            Nossas <span className="text-blue-600">Soluções</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubre nuestra gama completa de herramientas empresariales diseñadas 
-            para optimizar y modernizar tu organización.
+            Conheça nossa gama completa de soluções empresariais desenvolvidas 
+            para otimizar e modernizar sua organização com tecnologia de ponta.
           </p>
         </motion.div>
 
@@ -231,7 +231,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
 
                     {/* Features */}
                     <div className="mb-2 flex-1 overflow-hidden">
-                      <h5 className="font-semibold text-[#004990] text-[11px] mb-1">Características:</h5>
+                      <h5 className="font-semibold text-[#004990] text-[11px] mb-1">Recursos Principais:</h5>
                       <ul className="space-y-0.5">
                         {card.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-[10px] text-gray-600 leading-tight">
@@ -253,7 +253,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Explorar Solución →
+                      Explorar Solução →
                     </motion.a>
                   </div>
                 </div>

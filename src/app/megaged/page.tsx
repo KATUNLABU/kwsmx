@@ -35,7 +35,7 @@ export default function MegaGEDPage() {
         subtitle="Digitalização inteligente, armazenamento seguro e busca instantânea para transformar a gestão documental da sua empresa."
         gradientFrom="#7e22ce"
         gradientTo="#a855f7"
-        waveColor="rgba(255, 255, 255, 0.1)"
+        waveColor="rgba(255, 255, 255, 0.25)"
         breadcrumbs={[
           { label: 'Soluções', href: '/solucoes' },
           { label: 'MegaGED', href: '/megaged' }
@@ -159,6 +159,49 @@ export default function MegaGEDPage() {
               </motion.div>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#004990] mb-4">
+                Transforme sua Gestão Documental
+              </h2>
+              <p className="text-xl text-gray-600">
+                Veja como o MegaGED revoluciona o gerenciamento de documentos
+              </p>
+            </div>
+
+            <div className="relative group">
+              {/* Video Container with Shadow and Border */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-purple-200 bg-gradient-to-br from-purple-50 to-white p-2">
+                <div className="relative rounded-xl overflow-hidden bg-black" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/IReyeC6yCrI"
+                    title="GED - Gerenciamento Eletrônico de Dados e Documentos | KSC"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-200 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-300 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
+            </div>
+          </motion.div>
         </Container>
       </section>
 

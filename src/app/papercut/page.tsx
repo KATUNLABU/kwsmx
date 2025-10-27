@@ -37,7 +37,7 @@ export default function PaperCutPage() {
         subtitle="Solução líder mundial em gestão de impressão que otimiza custos, aumenta a segurança e promove sustentabilidade."
         gradientFrom="#047857"
         gradientTo="#10b981"
-        waveColor="rgba(255, 255, 255, 0.1)"
+        waveColor="rgba(255, 255, 255, 0.25)"
         breadcrumbs={[
           { label: 'Soluções', href: '/solucoes' },
           { label: 'PaperCut MF', href: '/papercut' }
@@ -211,6 +211,49 @@ export default function PaperCutPage() {
               </motion.div>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#004990] mb-4">
+                Conheça o PaperCut MF em Ação
+              </h2>
+              <p className="text-xl text-gray-600">
+                Veja como nossa solução transforma a gestão de impressão
+              </p>
+            </div>
+
+            <div className="relative group">
+              {/* Video Container with Shadow and Border */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-green-200 bg-gradient-to-br from-green-50 to-white p-2">
+                <div className="relative rounded-xl overflow-hidden bg-black" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/k5Ok7T5QXLc"
+                    title="All about print management at PaperCut"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-green-200 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-green-300 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
+            </div>
+          </motion.div>
         </Container>
       </section>
 

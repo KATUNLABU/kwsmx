@@ -17,6 +17,7 @@ export { default as FlipCards } from './ui/FlipCards';
 export { default as NavBar } from './ui/NavBar';
 export { default as Footer } from './ui/Footer';
 export { default as Toast, ToastProvider, useToast } from './ui/Toast';
+export { default as Notification } from './ui/Notification';
 
 // Text & Content Components
 export { default as Typography } from './ui/Typography';

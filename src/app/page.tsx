@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Button, Card, ServiceCard, FadeIn, WavyBanner, FloatingChat, AppLayout, useToast } from '@/components';
 import WavyBannerPhoto from '@/components/ui/WavyBannerPhoto';
 import WavyBannerPNG from '@/components/ui/WavyBannerPNG';
@@ -18,12 +19,6 @@ export default function Home() {
         onQuoteRequest={() => {
           // Scroll to contact form or open modal
           document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
-        }}
-        onChatOpen={() => {
-          console.log('Chat abierto');
-        }}
-        onChatClose={() => {
-          console.log('Chat cerrado');
         }}
       />
       
@@ -87,13 +82,34 @@ export default function Home() {
             </Card>
           </FadeIn>
 
+          {/* Flip Cards Section - LO QUE VENDEMOS */}
+          <FadeIn>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-[#004990] mb-3">
+                Nuestras Soluciones
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Descubre las herramientas que transformarán tu negocio
+              </p>
+            </div>
+            <FlipCards />
+          </FadeIn>
+
           {/* Service Cards */}
           <FadeIn>
             <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-[#004990]">Tarjetas de Servicios</h2>
+              <h2 className="text-2xl font-bold mb-6 text-[#004990]">Nuestros Servicios</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <ServiceCard
-                  icon="🚀"
+                  icon={
+                    <Image 
+                      src="/icons/services/web-development.svg" 
+                      alt="Desarrollo Web" 
+                      width={32} 
+                      height={32}
+                      className="text-blue-600"
+                    />
+                  }
                   title="Desarrollo Web"
                   description="Creamos sitios web modernos y optimizados"
                   features={[
@@ -104,7 +120,15 @@ export default function Home() {
                   ]}
                 />
                 <ServiceCard
-                  icon="📱"
+                  icon={
+                    <Image 
+                      src="/icons/services/mobile-apps.svg" 
+                      alt="Aplicaciones Móviles" 
+                      width={32} 
+                      height={32}
+                      className="text-blue-600"
+                    />
+                  }
                   title="Aplicaciones Móviles"
                   description="Apps nativas e híbridas de alta calidad"
                   features={[
@@ -115,7 +139,15 @@ export default function Home() {
                   ]}
                 />
                 <ServiceCard
-                  icon="💡"
+                  icon={
+                    <Image 
+                      src="/icons/services/consulting.svg" 
+                      alt="Consultoría Digital" 
+                      width={32} 
+                      height={32}
+                      className="text-blue-600"
+                    />
+                  }
                   title="Consultoría Digital"
                   description="Estrategias digitales que generan resultados"
                   features={[
@@ -127,11 +159,6 @@ export default function Home() {
                 />
               </div>
             </Card>
-          </FadeIn>
-
-          {/* Flip Cards Section */}
-          <FadeIn>
-            <FlipCards />
           </FadeIn>
 
           {/* Performance Metrics */}

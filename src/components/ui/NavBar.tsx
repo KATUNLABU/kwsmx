@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/utils/cn';
+import Link from 'next/link';
 
 interface NavBarProps {
   logo?: string;
@@ -76,7 +77,7 @@ export const NavBar: React.FC<NavBarProps> = ({
           : 'rgba(30, 48, 82, 0.9)',     // Fondo azul oscuro inicial
         backdropFilter: 'blur(20px)',
         borderBottom: isScrolled 
-          ? '1px solid rgba(0, 0, 0, 0.1)' 
+          ? '1px solid rgba(30, 48, 82, 0.9)' 
           : '1px solid rgba(255, 255, 255, 0.2)'
       }}
       initial={{ y: -100 }}
@@ -87,34 +88,37 @@ export const NavBar: React.FC<NavBarProps> = ({
         <div className="flex justify-between items-center h-16 lg:h-20">
           
           {/* Logo */}
-          <motion.div 
-            className="flex-shrink-0 flex items-center"
-            whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src={logo}
-              alt={logoAlt}
-              className={cn(
-                'transition-all duration-300',
-                isScrolled ? 'h-8 lg:h-10' : 'h-10 lg:h-12',
-                // Cambiar color del SVG según el estado del scroll
-                isScrolled 
-                  ? 'brightness-0 saturate-100'  // Negro cuando el fondo es blanco
-                  : 'brightness-0 invert'        // Blanco cuando el fondo es azul
-              )}
-              onError={(e) => {
-                // Fallback a texto si la imagen no carga
-                e.currentTarget.style.display = 'none';
-                const textLogo = document.createElement('div');
-                textLogo.textContent = 'KSC';
-                textLogo.className = `text-2xl lg:text-3xl font-bold ${
-                  isScrolled ? 'text-[#004990]' : 'text-white'
-                }`;
-                e.currentTarget.parentNode?.appendChild(textLogo);
-              }}
-            />
-          </motion.div>
+          <Link href="/" className="flex-shrink-0 flex items-center">
+            <motion.div 
+              className="cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <img
+                src={logo}
+                alt={logoAlt}
+                className={cn(
+                  'transition-all duration-300',
+                  isScrolled ? 'h-8 lg:h-10' : 'h-10 lg:h-12'
+                )}
+                style={{
+                  filter: isScrolled 
+                    ? 'brightness(0) saturate(100%) invert(15%) sepia(42%) saturate(1180%) hue-rotate(177deg) brightness(94%) contrast(97%)'  // Azul oscuro #1e3052
+                    : 'brightness(0) invert(1)'  // Blanco cuando el fondo es azul oscuro
+                }}
+                onError={(e) => {
+                  // Fallback a texto si la imagen no carga
+                  e.currentTarget.style.display = 'none';
+                  const textLogo = document.createElement('div');
+                  textLogo.textContent = 'KSC';
+                  textLogo.className = `text-2xl lg:text-3xl font-bold ${
+                    isScrolled ? 'text-[#004990]' : 'text-white'
+                  }`;
+                  e.currentTarget.parentNode?.appendChild(textLogo);
+                }}
+              />
+            </motion.div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">

@@ -39,10 +39,10 @@ export default function KSCHomePage() {
       <HeroBannerWaves
         title="Transformando a Gestão Empresarial com Tecnologia e Inovação"
         subtitle="Soluções integradas em gestão de impressão, equipamentos e documentos para impulsionar seu negócio."
-        minHeight="90vh"
+        minHeight="60vh"
         gradientFrom="#1e3052"
         gradientTo="#00529B"
-        waveColor="rgba(255, 255, 255, 0.1)"
+        waveColor="rgba(255, 255, 255, 0.25)"
       >
         <div className="flex gap-4 justify-center flex-wrap">
           <Button variant="secondary" size="lg">
@@ -71,7 +71,9 @@ export default function KSCHomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn delay={0.1}>
               <Card className="p-8 hover:shadow-xl transition-all bg-white h-full">
-                <div className="text-5xl mb-6">�</div>
+                <div className="mb-6">
+                  <img src="/icons/notifications/Integração de ProdutosServiços.svg" alt="Integração" className="w-16 h-16 mx-auto" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
+                </div>
                 <h3 className="text-2xl font-bold text-[#004990] mb-4">Integração de Produtos/Serviços</h3>
                 <p className="text-gray-600 leading-relaxed">
                   De nada adianta ter um excelente produto. O mais importante é resolver problemas, 
@@ -82,7 +84,9 @@ export default function KSCHomePage() {
 
             <FadeIn delay={0.2}>
               <Card className="p-8 hover:shadow-xl transition-all bg-white h-full">
-                <div className="text-5xl mb-6">🎓</div>
+                <div className="mb-6">
+                  <img src="/icons/notifications/Serviços, Soluções e Treinamentos.svg" alt="Treinamentos" className="w-16 h-16 mx-auto" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
+                </div>
                 <h3 className="text-2xl font-bold text-[#004990] mb-4">Serviços, Soluções e Treinamentos</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Com mais de <strong>70 certificações ativas</strong>, nosso time tem a expertise necessária 
@@ -93,7 +97,9 @@ export default function KSCHomePage() {
 
             <FadeIn delay={0.3}>
               <Card className="p-8 hover:shadow-xl transition-all bg-white h-full">
-                <div className="text-5xl mb-6">💼</div>
+                <div className="mb-6">
+                  <img src="/icons/notifications/Soluções de Digital & Agile WorkPlace.svg" alt="Digital WorkPlace" className="w-16 h-16 mx-auto" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
+                </div>
                 <h3 className="text-2xl font-bold text-[#004990] mb-4">Soluções de Digital & Agile WorkPlace</h3>
                 <p className="text-gray-600 leading-relaxed">
                   O conceito de um local de trabalho ágil e digital consiste em permitir diversas otimizações 
@@ -102,6 +108,24 @@ export default function KSCHomePage() {
               </Card>
             </FadeIn>
           </div>
+        </Container>
+      </section>
+
+      {/* Nossas Soluções - FlipCards */}
+      <section id="solucoes" className="py-20 bg-white">
+        <Container>
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#004990] mb-4">
+                Nossas Soluções em Gestão Documental e Impressão
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Tecnologias líderes de mercado para transformação digital empresarial
+              </p>
+            </div>
+          </FadeIn>
+
+          <FlipCards />
         </Container>
       </section>
 
@@ -146,7 +170,7 @@ export default function KSCHomePage() {
                   </div>
                   <div className="text-center p-6 bg-blue-50 rounded-lg hover:shadow-lg transition-shadow">
                     <div className="text-4xl font-bold text-[#00529B] mb-2">
-                      <Counter end={100} duration={2} suffix="+" label="Certificações" />
+                      <Counter end={100} duration={2} suffix="+" label="Certifi&shy;cações" />
                     </div>
                   </div>
                   <div className="text-center p-6 bg-blue-50 rounded-lg hover:shadow-lg transition-shadow">
@@ -187,8 +211,8 @@ export default function KSCHomePage() {
           <div className="grid md:grid-cols-5 gap-6">
             <FadeIn delay={0.1}>
               <Card className="text-center p-6 hover:shadow-xl transition-shadow h-full">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                  �
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img src="/icons/notifications/FLEET.svg" alt="Fleet" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">FLEET</h3>
                 <p className="text-gray-600 text-sm">
@@ -199,8 +223,8 @@ export default function KSCHomePage() {
 
             <FadeIn delay={0.2}>
               <Card className="text-center p-6 hover:shadow-xl transition-shadow h-full">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                  🎛️
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img src="/icons/notifications/CONTROL.svg" alt="Control" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">CONTROL</h3>
                 <p className="text-gray-600 text-sm">
@@ -211,8 +235,8 @@ export default function KSCHomePage() {
 
             <FadeIn delay={0.3}>
               <Card className="text-center p-6 hover:shadow-xl transition-shadow h-full">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                  �
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img src="/icons/notifications/KNOWLEDGE.svg" alt="Knowledge" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">KNOWLEDGE</h3>
                 <p className="text-gray-600 text-sm">
@@ -223,8 +247,8 @@ export default function KSCHomePage() {
 
             <FadeIn delay={0.4}>
               <Card className="text-center p-6 hover:shadow-xl transition-shadow h-full">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                  �
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img src="/icons/notifications/HARDWARE.svg" alt="Hardware" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">HARDWARE</h3>
                 <p className="text-gray-600 text-sm">
@@ -235,8 +259,8 @@ export default function KSCHomePage() {
 
             <FadeIn delay={0.5}>
               <Card className="text-center p-6 hover:shadow-xl transition-shadow h-full">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                  �
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <img src="/icons/notifications/DIGITAL.svg" alt="Digital" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">DIGITAL</h3>
                 <p className="text-gray-600 text-sm">
@@ -323,91 +347,6 @@ export default function KSCHomePage() {
         </Container>
       </section>
 
-      {/* Nossas Soluções - FlipCards */}
-      <section id="solucoes" className="py-20 bg-gray-50">
-        <Container>
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                Nossas Soluções em Gestão Documental e Impressão
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Tecnologias líderes de mercado para transformação digital empresarial
-              </p>
-            </div>
-          </FadeIn>
-
-          <FlipCards
-            cards={[
-              {
-                id: 1,
-                frontImage: '/images/services/gestao-impressao.png',
-                frontTitle: 'Gestão de Impressão',
-                frontSubtitle: 'PaperCut MF',
-                backTitle: 'Gestão de Impressão',
-                backDescription: 'Líder mundial em gestão de impressão. Reduza custos em até 30% e implemente impressão segura.',
-                backFeatures: [
-                  'Economia de até 30%',
-                  'Impressão segura',
-                  'Relatórios completos'
-                ],
-                buttonText: 'Saiba Mais',
-                buttonLink: '/ksc/solucoes/papercut',
-                accentColor: '#22C55E'
-              },
-              {
-                id: 2,
-                frontImage: '/images/services/gestao-equipamentos.png',
-                frontTitle: 'Gestão de Equipamentos',
-                frontSubtitle: 'KPAX Fleet',
-                backTitle: 'Gestão de Equipamentos',
-                backDescription: 'Monitore impressoras em tempo real com alertas inteligentes.',
-                backFeatures: [
-                  'Monitoramento 24/7',
-                  'Alertas automáticos',
-                  'Gestão de suprimentos'
-                ],
-                buttonText: 'Saiba Mais',
-                buttonLink: '/ksc/solucoes/kpax',
-                accentColor: '#0066CC'
-              },
-              {
-                id: 3,
-                frontImage: '/images/services/gestao-documentos.png',
-                frontTitle: 'Gestão Eletrônica de Documentos',
-                frontSubtitle: 'MegaGED',
-                backTitle: 'Gestão Eletrônica de Documentos',
-                backDescription: 'GED completo com workflow e conformidade LGPD.',
-                backFeatures: [
-                  'Captura inteligente',
-                  'Workflow automatizado',
-                  'Conformidade LGPD'
-                ],
-                buttonText: 'Saiba Mais',
-                buttonLink: '/ksc/solucoes/megaged',
-                accentColor: '#6B46C1'
-              },
-              {
-                id: 4,
-                frontImage: '/images/services/plataforma-ensino.png',
-                frontTitle: 'Plataforma de Ensino Digital',
-                frontSubtitle: 'Wiki Alphabet',
-                backTitle: 'Plataforma de Ensino Digital',
-                backDescription: 'Centralize conhecimento e facilite colaboração.',
-                backFeatures: [
-                  'Base centralizada',
-                  'Colaboração em tempo real',
-                  'Busca inteligente'
-                ],
-                buttonText: 'Saiba Mais',
-                buttonLink: '/ksc/solucoes/wiki-alphabet',
-                accentColor: '#EA580C'
-              }
-            ]}
-          />
-        </Container>
-      </section>
-
       {/* Sección de Confianza con Imagen */}
       <section className="py-20 bg-white">
         <Container>
@@ -415,7 +354,7 @@ export default function KSCHomePage() {
             <FadeIn>
               <div>
                 <div className="inline-block px-4 py-2 bg-blue-100 text-[#00529B] rounded-full text-sm font-semibold mb-4">
-                  ✨ CONFIANÇA COMPROVADA
+                   CONFIANÇA COMPROVADA
                 </div>
                 <h2 className="text-4xl font-bold text-[#004990] mb-6">
                   Empresas líderes confiam na KSC
@@ -426,8 +365,8 @@ export default function KSCHomePage() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">
-                      ✓
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                      <img src="/icons/notifications/check.svg" alt="Check" className="w-6 h-6" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                     </div>
                     <div>
                       <h4 className="font-bold text-[#004990] mb-1">Implementação Garantida</h4>
@@ -435,8 +374,8 @@ export default function KSCHomePage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">
-                      ✓
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                      <img src="/icons/notifications/check.svg" alt="Check" className="w-6 h-6" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                     </div>
                     <div>
                       <h4 className="font-bold text-[#004990] mb-1">Suporte Especializado</h4>
@@ -444,8 +383,8 @@ export default function KSCHomePage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">
-                      ✓
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                      <img src="/icons/notifications/check.svg" alt="Check" className="w-6 h-6" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                     </div>
                     <div>
                       <h4 className="font-bold text-[#004990] mb-1">ROI Comprovado</h4>
@@ -460,8 +399,8 @@ export default function KSCHomePage() {
               <div className="relative">
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/foto 2.png" 
-                    alt="Clientes satisfeitos KSC"
+                    src="/images/Empresas líderes confiam na KSC.JPG" 
+                    alt="Empresas líderes confiam na KSC"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -482,7 +421,7 @@ export default function KSCHomePage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-[#00529B] text-white">
+      <section className="py-20 bg-gradient-to-br from-green-600 to-blue-600 text-white">
         <Container>
           <FadeIn>
             <div className="text-center max-w-4xl mx-auto">
@@ -493,10 +432,10 @@ export default function KSCHomePage() {
                 Agende uma consultoria gratuita com nossos especialistas e descubra como podemos ajudar você a reduzir custos, aumentar a segurança e otimizar processos.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
-                <Button variant="secondary" size="lg">
+                <Button variant="secondary" size="lg" className="bg-white text-green-600 hover:bg-gray-100">
                   Falar com Especialista
                 </Button>
-                <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-[#00529B]">
+                <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-green-600">
                   Baixar Materiais
                 </Button>
               </div>
