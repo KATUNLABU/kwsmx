@@ -55,12 +55,14 @@ export default function PaperCutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative w-32 h-32 mb-8 bg-white rounded-2xl shadow-xl p-6 border-2 border-green-200">
+              {/* Logo: remove framed box and make larger */}
+              <div className="relative w-48 h-48 mb-8">
                 <Image
                   src="/images/services/gestao-impressao.png"
                   alt="PaperCut MF"
                   fill
-                  className="object-contain p-2"
+                  className="object-contain"
+                  style={{ objectPosition: 'center' }}
                 />
               </div>
               
