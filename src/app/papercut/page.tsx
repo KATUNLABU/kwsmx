@@ -8,6 +8,8 @@ import Footer from '@/components/ui/Footer';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import FeatureShowcase from '@/components/ui/FeatureShowcase';
+import PrintDashboardIllustration from '@/components/illustrations/PrintDashboard';
 
 export default function PaperCutPage() {
   const menuItems = [
@@ -55,8 +57,8 @@ export default function PaperCutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {/* Logo: remove framed box and make larger */}
-              <div className="relative w-48 h-48 mb-8">
+              {/* Logo: centered and larger (responsive) */}
+              <div className="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-8">
                 <Image
                   src="/images/services/gestao-impressao.png"
                   alt="PaperCut MF"
@@ -216,6 +218,21 @@ export default function PaperCutPage() {
         </Container>
       </section>
 
+      {/* Dashboard Showcase */}
+      <FeatureShowcase
+        title="Dashboard Intuitivo e Completo"
+        description="Acompanhe métricas em tempo real com dashboards personalizáveis. Visualize custos, volume de impressões, economia gerada e muito mais em uma interface moderna e fácil de usar. Tome decisões estratégicas baseadas em dados precisos e atualizados."
+        imagePosition="right"
+        gradient="from-green-50 to-white"
+        icon={
+          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        }
+      >
+        <PrintDashboardIllustration />
+      </FeatureShowcase>
+
       {/* Video Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
@@ -256,6 +273,49 @@ export default function PaperCutPage() {
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-green-300 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
             </div>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Image Section with Real Photo */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-3xl font-bold text-[#004990] mb-6">
+                Transforme Seu Ambiente Corporativo
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Empresas líderes confiam no PaperCut MF para otimizar seus processos de impressão. 
+                Com nossa solução, você terá controle total sobre custos, segurança e sustentabilidade.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Junte-se a milhares de organizações ao redor do mundo que já reduziram seus custos 
+                em até 30% e aumentaram significativamente a eficiência operacional.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <Image
+                src="/foto1.JPG"
+                alt="Ambiente corporativo moderno"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent"></div>
+            </motion.div>
+          </div>
         </Container>
       </section>
 

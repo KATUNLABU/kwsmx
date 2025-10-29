@@ -8,6 +8,8 @@ import Footer from '@/components/ui/Footer';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import FeatureShowcase from '@/components/ui/FeatureShowcase';
+import FleetMonitoringIllustration from '@/components/illustrations/FleetMonitoring';
 
 export default function KPAXPage() {
   const menuItems = [
@@ -55,12 +57,13 @@ export default function KPAXPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative w-32 h-32 mb-8 bg-white rounded-2xl shadow-xl p-6 border-2 border-blue-200">
+              {/* Logo: centered and larger (responsive) */}
+              <div className="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-8">
                 <Image
                   src="/images/services/gestao-equipamentos.png"
                   alt="KPAX Fleet"
                   fill
-                  className="object-contain p-2"
+                  className="object-contain"
                 />
               </div>
               
@@ -213,6 +216,21 @@ export default function KPAXPage() {
         </Container>
       </section>
 
+      {/* Fleet Monitoring Showcase */}
+      <FeatureShowcase
+        title="Monitoramento em Tempo Real"
+        description="Visualize o status completo da sua frota em um único painel. Acompanhe níveis de toner, status de equipamentos, alertas automáticos e muito mais. Receba notificações proativas antes que problemas afetem a produtividade da sua equipe."
+        imagePosition="left"
+        gradient="from-blue-50 to-white"
+        icon={
+          <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+          </svg>
+        }
+      >
+        <FleetMonitoringIllustration />
+      </FeatureShowcase>
+
       {/* Video Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
@@ -253,6 +271,50 @@ export default function KPAXPage() {
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-300 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
             </div>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Image Section with Real Photo */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl lg:order-1"
+            >
+              <Image
+                src="/foto2.png"
+                alt="Gestão de equipamentos em ação"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:order-0"
+            >
+              <h3 className="text-3xl font-bold text-[#004990] mb-6">
+                Eficiência Operacional Comprovada
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                O KPAX Fleet oferece visibilidade total da sua frota de equipamentos com 
+                monitoramento em tempo real e alertas inteligentes que previnem paradas não planejadas.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Reduza tempo de inatividade em até 40% e otimize a gestão de suprimentos com 
+                pedidos automáticos baseados em dados reais de consumo.
+              </p>
+            </motion.div>
+          </div>
         </Container>
       </section>
 

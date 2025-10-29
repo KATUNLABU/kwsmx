@@ -7,6 +7,8 @@ import Footer from '@/components/ui/Footer';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import FeatureShowcase from '@/components/ui/FeatureShowcase';
+import LearningPlatformIllustration from '@/components/illustrations/LearningPlatform';
 
 export default function WikiAlphabetPage() {
   const menuItems = [
@@ -51,12 +53,13 @@ export default function WikiAlphabetPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative w-32 h-32 mb-8 bg-white rounded-2xl shadow-xl p-6 border-2 border-orange-200">
+              {/* Logo: centered and larger (responsive) */}
+              <div className="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-8">
                 <Image
                   src="/images/services/plataforma-ensino.png"
                   alt="Wiki Alphabet"
                   fill
-                  className="object-contain p-2"
+                  className="object-contain"
                 />
               </div>
               
@@ -162,6 +165,21 @@ export default function WikiAlphabetPage() {
         </Container>
       </section>
 
+      {/* Learning Platform Showcase */}
+      <FeatureShowcase
+        title="Aprendizado Engajador e Colaborativo"
+        description="Ofereça experiências de aprendizado modernas com cursos interativos, gamificação e acompanhamento em tempo real. Veja o progresso de cada aluno, conquistas desbloqueadas e atividades recentes em um dashboard intuitivo e motivador."
+        imagePosition="left"
+        gradient="from-orange-50 to-white"
+        icon={
+          <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        }
+      >
+        <LearningPlatformIllustration />
+      </FeatureShowcase>
+
       {/* Video Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
@@ -202,6 +220,50 @@ export default function WikiAlphabetPage() {
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-orange-300 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
             </div>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Image Section with Real Photo */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl lg:order-1"
+            >
+              <Image
+                src="/foto1.JPG"
+                alt="Plataforma de ensino digital"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:order-0"
+            >
+              <h3 className="text-3xl font-bold text-[#004990] mb-6">
+                Educação Que Transforma
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                O Wiki Alphabet une base de conhecimento colaborativa e sistema LMS em uma 
+                plataforma moderna e intuitiva. Crie cursos, treinamentos e documentação técnica em minutos.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Reduza o tempo de onboarding em 50% e promova uma cultura de aprendizado contínuo 
+                com gamificação, certificados digitais e acompanhamento detalhado de progresso.
+              </p>
+            </motion.div>
+          </div>
         </Container>
       </section>
 

@@ -18,6 +18,13 @@ export { default as NavBar } from './ui/NavBar';
 export { default as Footer } from './ui/Footer';
 export { default as Toast, ToastProvider, useToast } from './ui/Toast';
 export { default as Notification } from './ui/Notification';
+export { default as FeatureShowcase } from './ui/FeatureShowcase';
+
+// Illustrations
+export { default as PrintDashboardIllustration } from './illustrations/PrintDashboard';
+export { default as FleetMonitoringIllustration } from './illustrations/FleetMonitoring';
+export { default as DocumentManagementIllustration } from './illustrations/DocumentManagement';
+export { default as LearningPlatformIllustration } from './illustrations/LearningPlatform';
 
 // Text & Content Components
 export { default as Typography } from './ui/Typography';

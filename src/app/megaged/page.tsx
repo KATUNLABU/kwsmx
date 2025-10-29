@@ -7,6 +7,8 @@ import Footer from '@/components/ui/Footer';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import FeatureShowcase from '@/components/ui/FeatureShowcase';
+import DocumentManagementIllustration from '@/components/illustrations/DocumentManagement';
 
 export default function MegaGEDPage() {
   const menuItems = [
@@ -51,12 +53,13 @@ export default function MegaGEDPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative w-32 h-32 mb-8 bg-white rounded-2xl shadow-xl p-6 border-2 border-purple-200">
+              {/* Logo: centered and larger (responsive) */}
+              <div className="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-8">
                 <Image
                   src="/images/services/gestao-documentos.png"
                   alt="MegaGED"
                   fill
-                  className="object-contain p-2"
+                  className="object-contain"
                 />
               </div>
               
@@ -162,6 +165,21 @@ export default function MegaGEDPage() {
         </Container>
       </section>
 
+      {/* Document Management Showcase */}
+      <FeatureShowcase
+        title="Busca Inteligente e Organização Eficiente"
+        description="Encontre qualquer documento em segundos com nossa busca avançada por OCR. Organize arquivos por tags, categorias e metadados personalizados. Acompanhe métricas de digitalização e liberação de espaço físico em dashboards intuitivos."
+        imagePosition="right"
+        gradient="from-purple-50 to-white"
+        icon={
+          <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        }
+      >
+        <DocumentManagementIllustration />
+      </FeatureShowcase>
+
       {/* Video Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
@@ -202,6 +220,49 @@ export default function MegaGEDPage() {
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-300 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity" />
             </div>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Image Section with Real Photo */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-3xl font-bold text-[#004990] mb-6">
+                Digitalização Sem Limites
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Com o MegaGED, elimine o papel físico e libere espaço valioso no seu escritório. 
+                Nossa solução oferece digitalização inteligente com OCR avançado para busca instantânea.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Garanta conformidade total com LGPD e requisitos fiscais, mantendo todos os documentos 
+                organizados, seguros e acessíveis de qualquer lugar.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <Image
+                src="/foto 2.png"
+                alt="Gestão documental moderna"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent"></div>
+            </motion.div>
+          </div>
         </Container>
       </section>
 
