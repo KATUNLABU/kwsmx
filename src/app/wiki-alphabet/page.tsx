@@ -1,5 +1,7 @@
 'use client';
 
+import Script from 'next/script';
+import { useRef } from 'react';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -9,6 +11,36 @@ import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import FeatureShowcase from '@/components/ui/FeatureShowcase';
 import LearningPlatformIllustration from '@/components/illustrations/LearningPlatform';
+import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
+
+// Feature Card Component
+function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' }) {
+  const iconRef = useRef<AnimatedIconRef>(null);
+
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 cursor-pointer"
+      onMouseEnter={() => iconRef.current?.playForward()}
+      onMouseLeave={() => iconRef.current?.playBackward()}
+    >
+      <div className="flex justify-center mb-4">
+        <AnimatedIcon 
+          ref={iconRef}
+          iconName={feature.title} 
+          solution={solution} 
+          className="w-20 h-20"
+        />
+      </div>
+      <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
+      <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+    </motion.div>
+  );
+}
 
 export default function WikiAlphabetPage() {
   const menuItems = [
@@ -31,6 +63,13 @@ export default function WikiAlphabetPage() {
   return (
     <>
       <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
 
       <HeroBannerWaves
         title="Wiki Alphabet - Plataforma de Ensino Digital"
@@ -138,28 +177,17 @@ export default function WikiAlphabetPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: '📚', title: 'Base de Conhecimento', description: 'Wiki colaborativa com editor visual intuitivo. Organize informações por categorias, tags e permissões personalizadas.' },
-              { icon: '🎓', title: 'Criação de Cursos', description: 'Crie trilhas de aprendizado completas com vídeos, PDFs, quizzes e exercícios práticos. Templates prontos para uso.' },
-              { icon: '👥', title: 'Colaboração Real-Time', description: 'Edição simultânea de documentos. Comentários, menções e notificações para trabalho em equipe eficiente.' },
-              { icon: '🔍', title: 'Busca Semântica', description: 'Encontre informações relevantes mesmo sem saber os termos exatos. IA contextual para resultados precisos.' },
-              { icon: '📝', title: 'Versionamento Completo', description: 'Histórico de todas as alterações. Compare versões, restaure conteúdo anterior e audite mudanças facilmente.' },
-              { icon: '🎮', title: 'Gamificação', description: 'Sistema de pontos, badges e rankings. Aumente engajamento com desafios e recompensas personalizadas.' },
-              { icon: '📜', title: 'Certificados Digitais', description: 'Emita certificados automáticos ao concluir cursos. Validade jurídica com assinatura digital e QR Code.' },
-              { icon: '📊', title: 'Analytics Avançado', description: 'Acompanhe progresso individual e por equipe. Identifique lacunas de conhecimento e otimize treinamentos.' },
-              { icon: '🔗', title: 'Integrações LMS', description: 'SCORM, xAPI (Tin Can) e LTI compatível. Integre com Teams, Slack e ferramentas corporativas.' }
+              { title: 'Base de Conhecimento', description: 'Wiki colaborativa com editor visual intuitivo. Organize informações por categorias, tags e permissões personalizadas.' },
+              { title: 'Criação de Cursos', description: 'Crie trilhas de aprendizado completas com vídeos, PDFs, quizzes e exercícios práticos. Templates prontos para uso.' },
+              { title: 'Colaboração Real-Time', description: 'Edição simultânea de documentos. Comentários, menções e notificações para trabalho em equipe eficiente.' },
+              { title: 'Busca Semântica', description: 'Encontre informações relevantes mesmo sem saber os termos exatos. IA contextual para resultados precisos.' },
+              { title: 'Versionamento Completo', description: 'Histórico de todas as alterações. Compare versões, restaure conteúdo anterior e audite mudanças facilmente.' },
+              { title: 'Gamificação', description: 'Sistema de pontos, badges e rankings. Aumente engajamento com desafios e recompensas personalizadas.' },
+              { title: 'Certificados Digitais', description: 'Emita certificados automáticos ao concluir cursos. Validade jurídica com assinatura digital e QR Code.' },
+              { title: 'Analytics Avançado', description: 'Acompanhe progresso individual e por equipe. Identifique lacunas de conhecimento e otimize treinamentos.' },
+              { title: 'Integrações LMS', description: 'SCORM, xAPI (Tin Can) e LTI compatível. Integre com Teams, Slack e ferramentas corporativas.' }
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
-              </motion.div>
+              <FeatureCard key={index} feature={feature} index={index} solution="wikialphabet" />
             ))}
           </div>
         </Container>

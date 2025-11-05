@@ -1,5 +1,7 @@
 'use client';
 
+import Script from 'next/script';
+import { useRef } from 'react';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -9,6 +11,36 @@ import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import FeatureShowcase from '@/components/ui/FeatureShowcase';
 import DocumentManagementIllustration from '@/components/illustrations/DocumentManagement';
+import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
+
+// Feature Card Component
+function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' }) {
+  const iconRef = useRef<AnimatedIconRef>(null);
+
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 cursor-pointer"
+      onMouseEnter={() => iconRef.current?.playForward()}
+      onMouseLeave={() => iconRef.current?.playBackward()}
+    >
+      <div className="flex justify-center mb-4">
+        <AnimatedIcon 
+          ref={iconRef}
+          iconName={feature.title} 
+          solution={solution} 
+          className="w-20 h-20"
+        />
+      </div>
+      <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
+      <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+    </motion.div>
+  );
+}
 
 export default function MegaGEDPage() {
   const menuItems = [
@@ -31,6 +63,13 @@ export default function MegaGEDPage() {
   return (
     <>
       <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
 
       <HeroBannerWaves
         title="MegaGED - Gestão Eletrônica de Documentos"
@@ -138,28 +177,17 @@ export default function MegaGEDPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: '📄', title: 'Digitalização Inteligente', description: 'Captura automática de documentos com detecção de tipo, rotação e melhoria de imagem. OCR avançado para texto pesquisável.' },
-              { icon: '🔍', title: 'Busca Avançada', description: 'Encontre qualquer documento em segundos. Busca por texto, metadados, tags ou conteúdo indexado por OCR.' },
-              { icon: '🔄', title: 'Workflow Configurável', description: 'Automatize fluxos de aprovação e processos documentais. Notificações e prazos para cada etapa do workflow.' },
-              { icon: '🔒', title: 'Armazenamento Seguro', description: 'Criptografia de ponta a ponta. Backup automático e redundância para garantir integridade dos dados.' },
-              { icon: '🏷️', title: 'Tags Inteligentes', description: 'Classificação automática com IA. Organize documentos por projeto, cliente, departamento ou categoria personalizada.' },
-              { icon: '⚖️', title: 'Conformidade Legal', description: 'Atende LGPD, ISO 27001 e requisitos fiscais. Logs de auditoria completos e assinatura digital certificada.' },
-              { icon: '📊', title: 'Relatórios Gerenciais', description: 'Dashboards com métricas de uso, storage e produtividade. Insights para otimização de processos.' },
-              { icon: '🔗', title: 'Integrações', description: 'Conecte com ERP, CRM e outros sistemas corporativos via API REST. Sincronização bidirecional de dados.' },
-              { icon: '📱', title: 'Acesso Mobile', description: 'Apps nativos para iOS e Android. Capture, visualize e aprove documentos de qualquer lugar.' }
+              { title: 'Digitalização Inteligente', description: 'Captura automática de documentos com detecção de tipo, rotação e melhoria de imagem. OCR avançado para texto pesquisável.' },
+              { title: 'Busca Avançada', description: 'Encontre qualquer documento em segundos. Busca por texto, metadados, tags ou conteúdo indexado por OCR.' },
+              { title: 'Workflow Configurável', description: 'Automatize fluxos de aprovação e processos documentais. Notificações e prazos para cada etapa do workflow.' },
+              { title: 'Armazenamento Seguro', description: 'Criptografia de ponta a ponta. Backup automático e redundância para garantir integridade dos dados.' },
+              { title: 'Tags Inteligentes', description: 'Classificação automática com IA. Organize documentos por projeto, cliente, departamento ou categoria personalizada.' },
+              { title: 'Conformidade Legal', description: 'Atende LGPD, ISO 27001 e requisitos fiscais. Logs de auditoria completos e assinatura digital certificada.' },
+              { title: 'Relatórios Gerenciais', description: 'Dashboards com métricas de uso, storage e produtividade. Insights para otimização de processos.' },
+              { title: 'Integrações', description: 'Conecte com ERP, CRM e outros sistemas corporativos via API REST. Sincronização bidirecional de dados.' },
+              { title: 'Acesso Mobile', description: 'Apps nativos para iOS e Android. Capture, visualize e aprove documentos de qualquer lugar.' }
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
-              </motion.div>
+              <FeatureCard key={index} feature={feature} index={index} solution="megaged" />
             ))}
           </div>
         </Container>

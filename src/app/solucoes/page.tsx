@@ -1,5 +1,6 @@
 'use client';
 
+import Script from 'next/script';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -122,6 +123,13 @@ export default function SolucoesPage() {
 
   return (
     <>
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
+      
       <NavBar menuItems={menuItems} logo="/KSC.svg" />
 
       {/* Hero Banner */}

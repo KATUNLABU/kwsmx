@@ -19,6 +19,7 @@ export { default as Footer } from './ui/Footer';
 export { default as Toast, ToastProvider, useToast } from './ui/Toast';
 export { default as Notification } from './ui/Notification';
 export { default as FeatureShowcase } from './ui/FeatureShowcase';
+export { default as AnimatedIcon } from './ui/AnimatedIcon';
 
 // Illustrations
 export { default as PrintDashboardIllustration } from './illustrations/PrintDashboard';

@@ -1,6 +1,8 @@
 'use client';
 
 import type { Metadata } from 'next';
+import Script from 'next/script';
+import { useRef } from 'react';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -10,6 +12,36 @@ import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import FeatureShowcase from '@/components/ui/FeatureShowcase';
 import FleetMonitoringIllustration from '@/components/illustrations/FleetMonitoring';
+import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
+
+// Feature Card Component
+function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' }) {
+  const iconRef = useRef<AnimatedIconRef>(null);
+
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 cursor-pointer"
+      onMouseEnter={() => iconRef.current?.playForward()}
+      onMouseLeave={() => iconRef.current?.playBackward()}
+    >
+      <div className="flex justify-center mb-4">
+        <AnimatedIcon 
+          ref={iconRef}
+          iconName={feature.title} 
+          solution={solution} 
+          className="w-20 h-20"
+        />
+      </div>
+      <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
+      <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+    </motion.div>
+  );
+}
 
 export default function KPAXPage() {
   const menuItems = [
@@ -32,6 +64,13 @@ export default function KPAXPage() {
   return (
     <>
       <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
 
       {/* Hero Banner */}
       <HeroBannerWaves
@@ -154,63 +193,43 @@ export default function KPAXPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '📡',
                 title: 'Monitoramento Remoto',
                 description: 'Acompanhe em tempo real o status de todos os equipamentos. Níveis de toner, contador de páginas, erros e alertas centralizados.'
               },
               {
-                icon: '🔧',
                 title: 'Manutenção Preditiva',
                 description: 'Algoritmos inteligentes preveem falhas antes que aconteçam. Agende manutenções preventivas e evite paradas não planejadas.'
               },
               {
-                icon: '📊',
                 title: 'Dashboard Executivo',
                 description: 'KPIs e métricas estratégicas em dashboards customizáveis. Visão completa da performance da frota em tempo real.'
               },
               {
-                icon: '📦',
                 title: 'Gestão de Suprimentos',
                 description: 'Controle automático de estoque de toner e peças. Pedidos automáticos quando níveis atingem limite mínimo configurado.'
               },
               {
-                icon: '⚠️',
                 title: 'Alertas Inteligentes',
                 description: 'Notificações proativas por email, SMS ou WhatsApp. Configure regras personalizadas para cada tipo de evento.'
               },
               {
-                icon: '📝',
                 title: 'Gestão de SLA',
                 description: 'Acompanhe e garanta o cumprimento de SLAs contratuais. Relatórios automáticos de desempenho e disponibilidade.'
               },
               {
-                icon: '📈',
                 title: 'Análise de Tendências',
                 description: 'Identifique padrões de uso e falhas recorrentes. Insights para otimização da frota e planejamento de investimentos.'
               },
               {
-                icon: '🔐',
                 title: 'Segurança Avançada',
                 description: 'Acesso controlado por perfis e permissões. Logs de auditoria completos para todas as operações realizadas.'
               },
               {
-                icon: '🌐',
                 title: 'Multi-Locação',
                 description: 'Gerencie equipamentos em múltiplas filiais ou clientes. Visão consolidada e segmentada conforme necessidade.'
               }
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
-              </motion.div>
+              <FeatureCard key={index} feature={feature} index={index} solution="kpax" />
             ))}
           </div>
         </Container>

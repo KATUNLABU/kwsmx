@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 import { Button, Card, ServiceCard, FadeIn, WavyBanner, FloatingChat, AppLayout, useToast } from '@/components';
 import WavyBannerPhoto from '@/components/ui/WavyBannerPhoto';
 import WavyBannerPNG from '@/components/ui/WavyBannerPNG';
@@ -11,8 +12,16 @@ export default function Home() {
   const { showToast } = useToast();
 
   return (
-    <AppLayout>
+    <>
+      <AppLayout>
       <div className="min-h-screen bg-gray-50">
+      
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
       
       {/* Floating Chat */}
       <FloatingChat 
@@ -271,5 +280,6 @@ export default function Home() {
       </WavyBannerPNG>
     </div>
     </AppLayout>
+    </>
   );
 }

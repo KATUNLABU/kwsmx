@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Script from 'next/script';
 import NavBar from '@/components/ui/NavBar';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
 import Container from '@/components/ui/Container';
@@ -14,7 +15,15 @@ import Footer from '@/components/ui/Footer';
 
 export default function KSCHomePage() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <>
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
+      
+      <div className="min-h-screen bg-white overflow-x-hidden">
       {/* NavBar */}
       <NavBar 
         menuItems={[
@@ -450,5 +459,6 @@ export default function KSCHomePage() {
       {/* Footer */}
       <Footer />
     </div>
+    </>
   );
 }

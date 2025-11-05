@@ -1,6 +1,8 @@
 'use client';
 
 import type { Metadata } from 'next';
+import Script from 'next/script';
+import { useRef } from 'react';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -10,6 +12,36 @@ import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import FeatureShowcase from '@/components/ui/FeatureShowcase';
 import PrintDashboardIllustration from '@/components/illustrations/PrintDashboard';
+import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
+
+// Feature Card Component
+function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' }) {
+  const iconRef = useRef<AnimatedIconRef>(null);
+
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 cursor-pointer"
+      onMouseEnter={() => iconRef.current?.playForward()}
+      onMouseLeave={() => iconRef.current?.playBackward()}
+    >
+      <div className="flex justify-center mb-4">
+        <AnimatedIcon 
+          ref={iconRef}
+          iconName={feature.title} 
+          solution={solution} 
+          className="w-20 h-20"
+        />
+      </div>
+      <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
+      <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+    </motion.div>
+  );
+}
 
 export default function PaperCutPage() {
   const menuItems = [
@@ -32,6 +64,13 @@ export default function PaperCutPage() {
   return (
     <>
       <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      
+      {/* HubSpot Tracking Code */}
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/242609850.js"
+        strategy="afterInteractive"
+      />
 
       {/* Hero Banner */}
       <HeroBannerWaves
@@ -156,63 +195,43 @@ export default function PaperCutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '💰',
                 title: 'Controle de Custos',
                 description: 'Monitore e controle todos os gastos com impressão em tempo real. Defina cotas, políticas e regras personalizadas por usuário ou departamento.'
               },
               {
-                icon: '🔒',
                 title: 'Impressão Segura',
                 description: 'Libere documentos somente com autenticação (cartão, PIN ou biometria). Evite impressões esquecidas e garanta a confidencialidade.'
               },
               {
-                icon: '📊',
                 title: 'Relatórios Detalhados',
                 description: 'Análises completas de uso, custos e tendências. Dashboards executivos com insights para tomada de decisão estratégica.'
               },
               {
-                icon: '🌱',
                 title: 'Sustentabilidade',
                 description: 'Reduza o desperdício de papel e toner. Acompanhe métricas ambientais e promova práticas sustentáveis na empresa.'
               },
               {
-                icon: '🔗',
-                title: 'Integração AD/LDAP',
+                title: 'Integração AD LDAP',
                 description: 'Integração nativa com Active Directory e LDAP. Sincronização automática de usuários e grupos para gerenciamento simplificado.'
               },
               {
-                icon: '🖨️',
                 title: 'Multi-Marca',
                 description: 'Suporte a todas as principais marcas de impressoras e multifuncionais. Gestão unificada de ambientes heterogêneos.'
               },
               {
-                icon: '📱',
                 title: 'Impressão Mobile',
                 description: 'Imprima de qualquer lugar usando smartphones e tablets. Suporte a Google Cloud Print, AirPrint e aplicativo móvel próprio.'
               },
               {
-                icon: '🔍',
                 title: 'Auditoria Completa',
                 description: 'Rastreie todas as impressões com logs detalhados. Conformidade com políticas de segurança e requisitos regulatórios.'
               },
               {
-                icon: '⚡',
                 title: 'Find-Me Printing',
                 description: 'Imprima de qualquer impressora da rede. Liberação com cartão ou PIN em qualquer dispositivo disponível.'
               }
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[#004990] mb-3">{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
-              </motion.div>
+              <FeatureCard key={index} feature={feature} index={index} solution="papercut" />
             ))}
           </div>
         </Container>
