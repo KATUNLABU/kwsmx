@@ -1,12 +1,52 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Script from 'next/script';
 import { Button, Card, ServiceCard, FadeIn, WavyBanner, FloatingChat, AppLayout, useToast } from '@/components';
 import WavyBannerPhoto from '@/components/ui/WavyBannerPhoto';
 import WavyBannerPNG from '@/components/ui/WavyBannerPNG';
 import FlipCards from '@/components/ui/FlipCards';
+import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
+
+// Service Card Component with animated icon
+function ServiceCardAnimated({ iconName, title, description, features }: {
+  iconName: string;
+  title: string;
+  description: string;
+  features: string[];
+}) {
+  const iconRef = useRef<AnimatedIconRef>(null);
+
+  return (
+    <div
+      className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 cursor-pointer"
+      onMouseEnter={() => iconRef.current?.playForward()}
+      onMouseLeave={() => iconRef.current?.playBackward()}
+    >
+      <div className="flex justify-center mb-4">
+        <AnimatedIcon 
+          ref={iconRef}
+          iconName={iconName} 
+          solution="home" 
+          className="w-16 h-16"
+        />
+      </div>
+      <h3 className="text-xl font-bold text-[#004990] mb-3 text-center">{title}</h3>
+      <p className="text-gray-700 mb-4 text-center">{description}</p>
+      <ul className="space-y-2">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center text-gray-600">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function Home() {
   const { showToast } = useToast();
@@ -109,16 +149,8 @@ export default function Home() {
             <Card className="p-8">
               <h2 className="text-2xl font-bold mb-6 text-[#004990]">Nuestros Servicios</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <ServiceCard
-                  icon={
-                    <Image 
-                      src="/icons/services/web-development.svg" 
-                      alt="Desarrollo Web" 
-                      width={32} 
-                      height={32}
-                      className="text-blue-600"
-                    />
-                  }
+                <ServiceCardAnimated
+                  iconName="Desarrollo Web"
                   title="Desarrollo Web"
                   description="Creamos sitios web modernos y optimizados"
                   features={[
@@ -128,16 +160,8 @@ export default function Home() {
                     "Integración CMS"
                   ]}
                 />
-                <ServiceCard
-                  icon={
-                    <Image 
-                      src="/icons/services/mobile-apps.svg" 
-                      alt="Aplicaciones Móviles" 
-                      width={32} 
-                      height={32}
-                      className="text-blue-600"
-                    />
-                  }
+                <ServiceCardAnimated
+                  iconName="Aplicaciones Móviles"
                   title="Aplicaciones Móviles"
                   description="Apps nativas e híbridas de alta calidad"
                   features={[
@@ -147,16 +171,8 @@ export default function Home() {
                     "Push notifications"
                   ]}
                 />
-                <ServiceCard
-                  icon={
-                    <Image 
-                      src="/icons/services/consulting.svg" 
-                      alt="Consultoría Digital" 
-                      width={32} 
-                      height={32}
-                      className="text-blue-600"
-                    />
-                  }
+                <ServiceCardAnimated
+                  iconName="Consultoría Digital"
                   title="Consultoría Digital"
                   description="Estrategias digitales que generan resultados"
                   features={[

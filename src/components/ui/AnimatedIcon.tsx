@@ -5,7 +5,7 @@ import lottie, { AnimationItem } from 'lottie-web';
 
 interface AnimatedIconProps {
   iconName: string;
-  solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet';
+  solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' | 'home';
   className?: string;
 }
 
@@ -26,7 +26,8 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
     kpax: 'Iconos KPAX',
     papercut: 'iconos papercut',
     megaged: 'iconos megaged',
-    wikialphabet: 'iconos wikialphabet'
+    wikialphabet: 'iconos wikialphabet',
+    home: 'iconos home'
   };
 
   // Expose methods to parent component
