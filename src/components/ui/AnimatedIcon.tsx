@@ -90,6 +90,10 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
           // Listen for load complete
           animationRef.current.addEventListener('DOMLoaded', () => {
             setIsLoaded(true);
+            // Go to first frame to make icon visible immediately
+            if (animationRef.current) {
+              animationRef.current.goToAndStop(0, true);
+            }
           });
 
           // Listen for errors
