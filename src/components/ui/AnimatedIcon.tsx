@@ -90,13 +90,9 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
           // Listen for load complete
           animationRef.current.addEventListener('DOMLoaded', () => {
             setIsLoaded(true);
-            // Go to the last frame to ensure icon is fully visible
-            // Last frame usually has the complete icon drawn
+            // Go to first frame to make icon visible immediately
             if (animationRef.current) {
-              const totalFrames = animationRef.current.totalFrames;
-              // Go to last frame (or second to last to be safe)
-              const targetFrame = Math.max(0, totalFrames - 2);
-              animationRef.current.goToAndStop(targetFrame, true);
+              animationRef.current.goToAndStop(0, true);
             }
           });
 
