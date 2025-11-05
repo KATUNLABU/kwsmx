@@ -65,21 +65,42 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
 
         const animationData = await response.json();
 
+        // Validate animation data
+        if (!animationData || !animationData.layers || animationData.layers.length === 0) {
+          console.warn(`Invalid animation data for: ${iconPath}`);
+          setHasError(true);
+          return;
+        }
+
         // Clean up previous animation if exists
         if (animationRef.current) {
           animationRef.current.destroy();
         }
 
-        // Create new animation
-        animationRef.current = lottie.loadAnimation({
-          container: containerRef.current!,
-          renderer: 'svg',
-          loop: false,
-          autoplay: false,
-          animationData: animationData,
-        });
+        // Create new animation with error handling
+        try {
+          animationRef.current = lottie.loadAnimation({
+            container: containerRef.current!,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            animationData: animationData,
+          });
 
-        setIsLoaded(true);
+          // Listen for load complete
+          animationRef.current.addEventListener('DOMLoaded', () => {
+            setIsLoaded(true);
+          });
+
+          // Listen for errors
+          animationRef.current.addEventListener('data_failed', () => {
+            console.warn(`Failed to load animation data: ${iconPath}`);
+            setHasError(true);
+          });
+        } catch (lottieError) {
+          console.error('Lottie load error:', lottieError);
+          setHasError(true);
+        }
       } catch (error) {
         console.error('Error loading animation:', error);
         setHasError(true);
