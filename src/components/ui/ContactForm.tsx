@@ -85,7 +85,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
     setIsSubmitting(true);
     
     try {
-      // Obtener token de reCAPTCHA v3
+      // Obtener token de reCAPTCHA v3 (opcional, para seguridad adicional)
       let recaptchaToken = '';
       const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
       
@@ -93,32 +93,79 @@ const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
         try {
           recaptchaToken = await window.grecaptcha.execute(siteKey, { action: 'contact_form' });
         } catch (recaptchaError) {
-          console.error('reCAPTCHA error:', recaptchaError);
-          showNotification('error', 'Erro na verificação de segurança. Por favor, tente novamente.');
-          setIsSubmitting(false);
-          return;
+          console.warn('reCAPTCHA warning:', recaptchaError);
+          // Continuar sin reCAPTCHA si hay error
         }
       }
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken
-        }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        showNotification('success', data.message || 'Mensagem enviada com sucesso!');
+      // Enviar a HubSpot Forms API
+      const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || '242609850';
+      const formGuid = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID;
+      
+      if (!formGuid || formGuid === 'YOUR_FORM_GUID_HERE') {
+        showNotification('error', 'Formulario de HubSpot no configurado. Verifica HUBSPOT-SETUP.md');
+        setIsSubmitting(false);
+        return;
+      }
+      
+      const hubspotData = {
+        fields: [
+          { 
+            name: 'firstname', 
+            value: formData.name.split(' ')[0] 
+          },
+          { 
+            name: 'lastname', 
+            value: formData.name.split(' ').slice(1).join(' ') || formData.name.split(' ')[0] 
+          },
+          { 
+            name: 'email', 
+            value: formData.email 
+          },
+          { 
+            name: 'phone', 
+            value: formData.phone || '' 
+          },
+          { 
+            name: 'service', 
+            value: formData.service 
+          },
+          { 
+            name: 'message', 
+            value: formData.message 
+          }
+        ],
+        context: {
+          pageUri: typeof window !== 'undefined' ? window.location.href : '',
+          pageName: typeof document !== 'undefined' ? document.title : ''
+        }
+      };
+
+      // Enviar a HubSpot
+      const hubspotResponse = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(hubspotData),
+        }
+      );
+
+      if (hubspotResponse.ok) {
+        console.log('✅ Enviado a HubSpot exitosamente');
+        showNotification('success', 'Mensagem enviada com sucesso! Entraremos em contato em breve.');
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
         if (onSubmit) await onSubmit(formData);
       } else {
-        showNotification('error', data.error || 'Erro ao enviar mensagem');
+        const errorData = await hubspotResponse.json();
+        console.error('❌ Error de HubSpot:', errorData);
+        showNotification('error', 'Erro ao enviar mensagem. Tente usar o WhatsApp.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      showNotification('error', 'Erro ao enviar mensagem. Tente novamente.');
+      showNotification('error', 'Erro ao enviar mensagem. Por favor, use o WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }
