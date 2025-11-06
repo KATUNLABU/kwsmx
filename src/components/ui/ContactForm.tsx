@@ -175,7 +175,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const whatsappNumber = '5511981739425';
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5511970476396';
   
   const whatsappMessage = encodeURIComponent(
     `Olá! Vim através do site da KSC.\n\n` +
