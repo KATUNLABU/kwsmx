@@ -92,7 +92,19 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
             setIsLoaded(true);
             // Go to first frame to make icon visible immediately
             if (animationRef.current) {
-              animationRef.current.goToAndStop(0, true);
+              // Special case: some icons have problematic first frames, use last frame instead
+              const iconsWithEmptyFirstFrame = [
+                'Multi-Locação',
+                'Soluções de Digital & Agile WorkPlace'
+              ];
+              
+              if (iconsWithEmptyFirstFrame.includes(iconName)) {
+                // Use last frame (totalFrames - 1)
+                const totalFrames = animationRef.current.totalFrames;
+                animationRef.current.goToAndStop(totalFrames - 1, true);
+              } else {
+                animationRef.current.goToAndStop(0, true);
+              }
             }
           });
 

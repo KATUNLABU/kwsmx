@@ -263,7 +263,7 @@ export default function WikiAlphabetPage() {
               className="relative rounded-2xl overflow-hidden shadow-2xl lg:order-1"
             >
               <Image
-                src="/foto1.JPG"
+                src="/images/imagenes solcuiones/Educação Que Transforma.jpeg"
                 alt="Plataforma de ensino digital"
                 width={800}
                 height={600}

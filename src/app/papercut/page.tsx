@@ -326,7 +326,7 @@ export default function PaperCutPage() {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/foto1.JPG"
+                src="/images/imagenes solcuiones/Transforme Seu Ambiente Corporativo.jpeg"
                 alt="Ambiente corporativo moderno"
                 width={800}
                 height={600}

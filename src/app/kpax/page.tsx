@@ -305,7 +305,7 @@ export default function KPAXPage() {
               className="relative rounded-2xl overflow-hidden shadow-2xl lg:order-1"
             >
               <Image
-                src="/foto2.png"
+                src="/images/imagenes solcuiones/Eficiência Operacional Comprovada.jpeg"
                 alt="Gestão de equipamentos em ação"
                 width={800}
                 height={600}

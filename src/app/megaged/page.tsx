@@ -282,7 +282,7 @@ export default function MegaGEDPage() {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/foto 2.png"
+                src="/images/imagenes solcuiones/Digitalização Sem Limites.jpeg"
                 alt="Gestão documental moderna"
                 width={800}
                 height={600}

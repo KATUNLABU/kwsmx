@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Script from 'next/script';
 import NavBar from '@/components/ui/NavBar';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -12,8 +12,106 @@ import FadeIn from '@/components/animations/FadeIn';
 import FlipCards from '@/components/ui/FlipCards';
 import Card from '@/components/ui/Card';
 import Footer from '@/components/ui/Footer';
+import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
+
+// Value Proposition Card with animated icon
+function ValuePropCard({ iconName, title, description, iconRef }: {
+  iconName: string;
+  title: string;
+  description: string;
+  iconRef: React.RefObject<AnimatedIconRef | null>;
+}) {
+  return (
+    <div 
+      className="p-8 hover:shadow-xl transition-all bg-white h-full cursor-pointer rounded-xl border border-gray-100"
+      onMouseEnter={() => {
+        if (iconRef && iconRef.current) {
+          iconRef.current.playForward();
+        }
+      }}
+      onMouseLeave={() => {
+        if (iconRef && iconRef.current) {
+          iconRef.current.playBackward();
+        }
+      }}
+    >
+      <div className="mb-6 flex justify-center">
+        <AnimatedIcon 
+          ref={iconRef}
+          iconName={iconName} 
+          solution="home" 
+          className="w-16 h-16"
+        />
+      </div>
+      <h3 className="text-2xl font-bold text-[#004990] mb-4">{title}</h3>
+      <p className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: description }} />
+    </div>
+  );
+}
 
 export default function KSCHomePage() {
+  // Refs para los 3 íconos
+  const icon1Ref = useRef<AnimatedIconRef>(null);
+  const icon2Ref = useRef<AnimatedIconRef>(null);
+  const icon3Ref = useRef<AnimatedIconRef>(null);
+
+  // Animación secuencial automática
+  React.useEffect(() => {
+    const animateSequentially = async (startFromThird = false) => {
+      // Esperar solo 100ms antes de comenzar (muy rápido)
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+      if (startFromThird) {
+        // Primera carga: solo animar el ícono 3
+        if (icon3Ref.current) {
+          icon3Ref.current.playForward();
+          await new Promise(resolve => setTimeout(resolve, 1500));
+          icon3Ref.current.playBackward();
+          await new Promise(resolve => setTimeout(resolve, 1500));
+        }
+      } else {
+        // Ciclo normal: animar los 3 en orden
+        // Animar ícono 1 - animación completa
+        if (icon1Ref.current) {
+          icon1Ref.current.playForward();
+          await new Promise(resolve => setTimeout(resolve, 1500)); // Tiempo para animación completa
+          icon1Ref.current.playBackward();
+          await new Promise(resolve => setTimeout(resolve, 1500)); // Tiempo para volver
+        }
+        
+        // Esperar solo 200ms antes del siguiente (menos tiempo)
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        // Animar ícono 2 - animación completa
+        if (icon2Ref.current) {
+          icon2Ref.current.playForward();
+          await new Promise(resolve => setTimeout(resolve, 1500));
+          icon2Ref.current.playBackward();
+          await new Promise(resolve => setTimeout(resolve, 1500));
+        }
+        
+        // Esperar solo 200ms antes del siguiente (menos tiempo)
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        // Animar ícono 3 - animación completa
+        if (icon3Ref.current) {
+          icon3Ref.current.playForward();
+          await new Promise(resolve => setTimeout(resolve, 1500));
+          icon3Ref.current.playBackward();
+          await new Promise(resolve => setTimeout(resolve, 1500));
+        }
+      }
+    };
+
+    // Ejecutar la animación inicial (solo el ícono 3)
+    animateSequentially(true);
+
+    // Repetir cada 8 segundos con la secuencia completa (reducido para menos espera)
+    const interval = setInterval(() => animateSequentially(false), 8000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* HubSpot Tracking Code */}
@@ -79,49 +177,40 @@ export default function KSCHomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn delay={0.1}>
-              <Card className="p-8 hover:shadow-xl transition-all bg-white h-full">
-                <div className="mb-6">
-                  <img src="/icons/notifications/Integração de ProdutosServiços.svg" alt="Integração" className="w-16 h-16 mx-auto" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
-                </div>
-                <h3 className="text-2xl font-bold text-[#004990] mb-4">Integração de Produtos/Serviços</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  De nada adianta ter um excelente produto. O mais importante é resolver problemas, 
-                  entregar soluções integradas e agregadas ao mercado. A KSC nasce com esse objetivo!
-                </p>
-              </Card>
+              <ValuePropCard
+                iconRef={icon1Ref}
+                iconName="Integração de Produtos Serviços"
+                title="Integração de Produtos/Serviços"
+                description="De nada adianta ter um excelente produto. O mais importante é resolver problemas, 
+                  entregar soluções integradas e agregadas ao mercado. A KSC nasce com esse objetivo!"
+              />
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <Card className="p-8 hover:shadow-xl transition-all bg-white h-full">
-                <div className="mb-6">
-                  <img src="/icons/notifications/Serviços, Soluções e Treinamentos.svg" alt="Treinamentos" className="w-16 h-16 mx-auto" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
-                </div>
-                <h3 className="text-2xl font-bold text-[#004990] mb-4">Serviços, Soluções e Treinamentos</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Com mais de <strong>70 certificações ativas</strong>, nosso time tem a expertise necessária 
-                  para solucionar problemas e capacitar a sua equipe para a nova realidade tecnológica da empresa.
-                </p>
-              </Card>
+              <ValuePropCard
+                iconRef={icon2Ref}
+                iconName="Serviços, Soluções e Treinamentos"
+                title="Serviços, Soluções e Treinamentos"
+                description="Com mais de <strong>70 certificações ativas</strong>, nosso time tem a expertise necessária 
+                  para solucionar problemas e capacitar a sua equipe para a nova realidade tecnológica da empresa."
+              />
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <Card className="p-8 hover:shadow-xl transition-all bg-white h-full">
-                <div className="mb-6">
-                  <img src="/icons/notifications/Soluções de Digital & Agile WorkPlace.svg" alt="Digital WorkPlace" className="w-16 h-16 mx-auto" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
-                </div>
-                <h3 className="text-2xl font-bold text-[#004990] mb-4">Soluções de Digital & Agile WorkPlace</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  O conceito de um local de trabalho ágil e digital consiste em permitir diversas otimizações 
-                  físicas e tecnológicas ao seu negócio, garantindo flexibilidade e eficiência.
-                </p>
-              </Card>
+              <ValuePropCard
+                iconRef={icon3Ref}
+                iconName="Soluções de Digital & Agile WorkPlace"
+                title="Soluções de Digital & Agile WorkPlace"
+                description="O conceito de um local de trabalho ágil e digital consiste em permitir diversas otimizações 
+                  físicas e tecnológicas ao seu negócio, garantindo flexibilidade e eficiência."
+              />
             </FadeIn>
           </div>
         </Container>
       </section>
 
       {/* Nossas Soluções - FlipCards */}
-      <section id="solucoes" className="py-20 bg-white">
+      <section id="solucoes" className="pt-20 pb-6 bg-white">
         <Container>
           <FadeIn>
             <div className="text-center mb-12">
@@ -139,7 +228,7 @@ export default function KSCHomePage() {
       </section>
 
       {/* Sobre Nós com Métricas */}
-      <section id="sobre-nos" className="py-20 bg-white">
+      <section id="sobre-nos" className="pt-6 pb-20 bg-white">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Imagen lado izquierdo */}
