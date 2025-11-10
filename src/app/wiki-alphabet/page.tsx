@@ -323,10 +323,10 @@ export default function WikiAlphabetPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="bg-white/20 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/30 transition-all duration-300"
               >
                 <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
-                <p className="text-lg opacity-90 leading-relaxed">{benefit.description}</p>
+                <p className="text-lg opacity-80 leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
