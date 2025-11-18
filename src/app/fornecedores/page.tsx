@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import Image from 'next/image';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
 import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 interface Partner {
   name: string;
   description: string;
-  logo?: string;
+  logo: string;
   color: string;
   instagram: string;
   website: string;
@@ -43,6 +44,7 @@ export default function FornecedoresPage() {
     {
       name: 'KATUN CORP',
       description: 'Fornecedor mundial de peças e suprimentos de impressão desde 1979.',
+      logo: '/logos/fornecedores/katun-corp.png',
       color: 'from-blue-500 to-blue-700',
       instagram: 'https://www.instagram.com/katunbrasil',
       website: 'https://katun.com/pt/latam',
@@ -51,6 +53,7 @@ export default function FornecedoresPage() {
     {
       name: 'MEGAGED',
       description: 'Gestão Eletrônica de Dados e Equipamentos.',
+      logo: '/logos/fornecedores/megaged.png',
       color: 'from-purple-500 to-purple-700',
       instagram: 'https://www.instagram.com/megagedbrasil',
       website: 'https://otimogestor.com.br/',
@@ -59,6 +62,7 @@ export default function FornecedoresPage() {
     {
       name: 'Wiki Alphabet',
       description: 'Plataforma completa para o setor Educacional.',
+      logo: '/logos/fornecedores/wiki-alphabet.png',
       color: 'from-orange-500 to-orange-700',
       instagram: 'https://www.instagram.com/wikialphabet/',
       website: 'https://wikialphabet.com/',
@@ -67,7 +71,8 @@ export default function FornecedoresPage() {
     {
       name: 'ACDI',
       description: 'Multi-soluções para o universo de MPS 4.0.',
-      color: 'from-red-500 to-red-700',
+      logo: '/logos/fornecedores/acdi.png',
+      color: 'from-green-500 to-green-700',
       instagram: 'https://www.instagram.com/acd_inc/',
       website: 'https://www.acd-inc.com.br/',
       linkedin: 'https://www.linkedin.com/company/acdi---access-control-devices-inc-/',
@@ -75,7 +80,8 @@ export default function FornecedoresPage() {
     {
       name: 'DMZ',
       description: 'Leitores Biométricos e RFID para Liberação de Impressão!',
-      color: 'from-green-500 to-green-700',
+      logo: '/logos/fornecedores/dmz.png',
+      color: 'from-gray-500 to-gray-700',
       instagram: 'https://www.instagram.com/dmzconnection/',
       website: 'https://dmzconnection.com/',
       linkedin: 'https://www.linkedin.com/company/dmzconnection/',
@@ -83,7 +89,8 @@ export default function FornecedoresPage() {
     {
       name: 'YouSync',
       description: 'Integrações e Tecnologia.',
-      color: 'from-cyan-500 to-cyan-700',
+      logo: '/logos/fornecedores/yousync.png',
+      color: 'from-red-500 to-red-700',
       instagram: 'https://www.instagram.com/yousyncbr/',
       website: 'https://www.yousync.com.br/',
       linkedin: 'https://www.linkedin.com/company/yousync/',
@@ -91,7 +98,8 @@ export default function FornecedoresPage() {
     {
       name: 'Tectoy Transire',
       description: 'Totens de Autoatendimento, Hardwares e Equipamentos diversos para PDV.',
-      color: 'from-indigo-500 to-indigo-700',
+      logo: '/logos/fornecedores/tectoy-transire.png',
+      color: 'from-yellow-500 to-yellow-700',
       instagram: 'https://www.instagram.com/tectoy_automacao/',
       website: 'https://tectoyautomacao.com.br/',
       linkedin: 'https://www.linkedin.com/company/tectoy-automacao/',
@@ -99,7 +107,8 @@ export default function FornecedoresPage() {
     {
       name: 'Benq',
       description: 'Projetores, Monitores LCD e Displays interativos para diversos usos.',
-      color: 'from-yellow-500 to-yellow-700',
+      logo: '/logos/fornecedores/benq.png',
+      color: 'from-indigo-500 to-indigo-700',
       instagram: 'https://www.instagram.com/benqbrasil/',
       website: 'https://www.benq.com/pt-br/index.html',
       linkedin: 'https://www.linkedin.com/company/benqbrasil/',
@@ -147,9 +156,20 @@ export default function FornecedoresPage() {
                 key={index}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-100"
               >
-                {/* Card Header with Gradient */}
+                {/* Card Header with Gradient and Logo */}
                 <div className={`bg-gradient-to-r ${partner.color} p-6 text-white`}>
-                  <h3 className="text-2xl font-bold mb-2">{partner.name}</h3>
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-2xl font-bold flex-1">{partner.name}</h3>
+                    <div className="bg-white rounded-lg p-2 flex items-center justify-center min-w-[100px] h-[60px]">
+                      <Image
+                        src={partner.logo}
+                        alt={`Logo ${partner.name}`}
+                        width={100}
+                        height={50}
+                        className="object-contain max-h-[50px] w-auto"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Card Body */}
