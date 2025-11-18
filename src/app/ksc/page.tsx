@@ -497,7 +497,7 @@ export default function KSCHomePage() {
               <div className="relative">
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/images/Empresas líderes confiam na KSC.JPG" 
+                    src="/images/Empresas lideres confiam na KSC.JPG" 
                     alt="Empresas líderes confiam na KSC"
                     className="w-full h-full object-cover"
                   />
