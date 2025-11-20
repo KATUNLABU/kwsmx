@@ -54,7 +54,7 @@ export default function ContatoPage() {
       />
 
       {/* Main Contact Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <section id="formulario" className="py-20 bg-gradient-to-b from-white to-gray-50">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - Contact Information */}

@@ -152,12 +152,16 @@ export default function KSCHomePage() {
         waveColor="rgba(255, 255, 255, 0.25)"
       >
         <div className="flex gap-4 justify-center flex-wrap">
-          <Button variant="secondary" size="lg">
-            <a href="/solucoes" className="text-inherit no-underline">Ver Soluções</a>
-          </Button>
-          <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-[#00529B]">
-            <a href="/contato" className="text-inherit no-underline">Fale Conosco</a>
-          </Button>
+          <a href="#solucoes">
+            <Button variant="secondary" size="lg">
+              Ver Soluções
+            </Button>
+          </a>
+          <a href="/contato">
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-[#00529B]">
+              Fale Conosco
+            </Button>
+          </a>
         </div>
       </HeroBannerWaves>
 
@@ -283,9 +287,11 @@ export default function KSCHomePage() {
                   </div>
                 </div>
 
-                <Button variant="primary" size="lg">
-                  Conheça nossa história
-                </Button>
+                <a href="/quem-somos">
+                  <Button variant="primary" size="lg">
+                    Conheça nossa história
+                  </Button>
+                </a>
               </div>
             </FadeIn>
           </div>
@@ -530,12 +536,16 @@ export default function KSCHomePage() {
                 Agende uma consultoria gratuita com nossos especialistas e descubra como podemos ajudar você a reduzir custos, aumentar a segurança e otimizar processos.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
-                <Button variant="secondary" size="lg" className="bg-white text-green-600 hover:bg-gray-100">
-                  Falar com Especialista
-                </Button>
-                <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-green-600">
-                  Baixar Materiais
-                </Button>
+                <a href="/contato#formulario">
+                  <Button variant="secondary" size="lg" className="bg-white text-green-600 hover:bg-gray-100">
+                    Falar com Especialista
+                  </Button>
+                </a>
+                <a href="/contato">
+                  <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-green-600">
+                    Entre em Contato
+                  </Button>
+                </a>
               </div>
               <p className="text-sm text-blue-200 mt-6">
                 ⚡ Resposta em até 2 horas úteis | 📞 (11) 3456-7890 | ✉️ contato@ksc.com.br
