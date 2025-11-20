@@ -536,7 +536,7 @@ export default function KSCHomePage() {
                 Agende uma consultoria gratuita com nossos especialistas e descubra como podemos ajudar você a reduzir custos, aumentar a segurança e otimizar processos.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
-                <a href="/contato#formulario">
+                <a href="/contato">
                   <Button variant="secondary" size="lg" className="bg-white text-green-600 hover:bg-gray-100">
                     Falar com Especialista
                   </Button>
