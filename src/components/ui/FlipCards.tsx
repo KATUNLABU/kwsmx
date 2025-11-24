@@ -272,13 +272,15 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           <p className="text-gray-600 mb-6">
             ¿Necesitas más información sobre nuestras soluciones?
           </p>
-          <motion.button
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contactar Especialista
-          </motion.button>
+          <a href="/contato">
+            <motion.button
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contactar Especialista
+            </motion.button>
+          </a>
         </motion.div>
       </div>
     </div>
