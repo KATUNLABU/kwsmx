@@ -548,7 +548,7 @@ export default function KSCHomePage() {
                 </a>
               </div>
               <p className="text-sm text-blue-200 mt-6">
-                ⚡ Resposta em até 2 horas úteis | 📞 (11) 3456-7890 | ✉️ contato@ksc.com.br
+                📞 (11) 3456-7890 | ✉️ contato@ksc.com.br
               </p>
             </div>
           </FadeIn>
