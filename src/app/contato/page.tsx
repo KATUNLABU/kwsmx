@@ -40,7 +40,7 @@ export default function ContatoPage() {
       {/* HubSpot Forms Embed Script */}
       <Script
         id="hs-forms-embed"
-        src="https://js-na2.hsforms.net/forms/embed/242609850.js"
+        src="https://js-na2.hsforms.net/forms/embed/developer/242609850.js"
         strategy="afterInteractive"
         defer
       />
@@ -227,7 +227,7 @@ export default function ContatoPage() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span>Formulário</span>
+                    <span>E-mail</span>
                   </div>
                 </button>
               </div>
@@ -265,7 +265,7 @@ export default function ContatoPage() {
               
                     {/* HubSpot Embedded Form with reCAPTCHA */}
                     <div 
-                      className="hs-form-frame" 
+                      className="hs-form-html" 
                       data-region="na2" 
                       data-form-id="4ff6e317-4f6a-4db2-800a-a12dfba1bc44" 
                       data-portal-id="242609850"
