@@ -42,8 +42,8 @@ const Footer = ({ className = '' }: FooterProps) => {
                 />
               </div>
               <Typography variant="p" className="text-gray-300 mb-6 text-sm leading-relaxed">
-                Transformamos la gestión empresarial através de soluciones tecnológicas innovadoras y 
-                servicios especializados en impresión, documentos y equipos.
+                Transformamos a gestão empresarial através de soluções tecnológicas inovadoras e 
+                serviços especializados em impressão, documentos e equipamentos.
               </Typography>
               
               {/* Redes Sociales */}
@@ -93,7 +93,7 @@ const Footer = ({ className = '' }: FooterProps) => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <Typography variant="h4" className="text-white mb-4 font-bold text-lg">
-              Nuestras Soluciones
+              Nossas Soluções
             </Typography>
             <ul className="space-y-3">
               <li>
