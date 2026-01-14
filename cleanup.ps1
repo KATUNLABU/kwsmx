@@ -51,8 +51,8 @@ Write-Host ""
 Write-Host "🎯 Limpieza completada!" -ForegroundColor Green
 Write-Host ""
 Write-Host "📋 Próximos pasos:" -ForegroundColor Cyan
-Write-Host "  1. Ejecutar: npm run build" -ForegroundColor White
-Write-Host "  2. Verificar: npm run dev" -ForegroundColor White
+Write-Host "  1. Ejecutar: bun run build" -ForegroundColor White
+Write-Host "  2. Verificar: bun run dev" -ForegroundColor White
 Write-Host "  3. Probar: http://localhost:3000/ksc" -ForegroundColor White
 Write-Host ""
 Write-Host "📦 Para subir a Git:" -ForegroundColor Cyan

@@ -1,18 +1,18 @@
 # Dockerfile para KSC Website
-# Next.js 15 con Turbopack - Producción
+# Next.js 15 con Turbopack - Producción (Bun Edition)
 
 # Etapa 1: Dependencias
-FROM node:20-alpine AS deps
+FROM oven/bun:1 AS deps
 WORKDIR /app
 
 # Copiar archivos de dependencias
-COPY package*.json ./
+COPY package.json bun.lock ./
 
 # Instalar dependencias
-RUN npm ci --only=production
+RUN bun install --frozen-lockfile --production
 
 # Etapa 2: Builder
-FROM node:20-alpine AS builder
+FROM oven/bun:1 AS builder
 WORKDIR /app
 
 # Copiar dependencias instaladas
@@ -26,10 +26,10 @@ ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 
 # Generar build de producción
-RUN npm run build
+RUN bun run build
 
 # Etapa 3: Runner (Producción)
-FROM node:20-alpine AS runner
+FROM oven/bun:1 AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
@@ -41,13 +41,14 @@ RUN adduser --system --uid 1001 nextjs
 
 # Copiar archivos necesarios
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Cambiar permisos
-RUN chown -R nextjs:nodejs /app
+# Cambiar permisos (no siempre necesario con Bun, pero mantenemos por si acaso)
+# RUN chown -R nextjs:nodejs /app
+# Bun corre como root por defecto en el contenedor, ajuste si se necesita usuario especifico
+# Para keep it simple, usaremos el usuario por defecto o el que definimos
 
-# Usar usuario no-root
 USER nextjs
 
 # Exponer puerto
@@ -57,4 +58,4 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
 # Comando de inicio
-CMD ["node", "server.js"]
+CMD ["bun", "server.js"]

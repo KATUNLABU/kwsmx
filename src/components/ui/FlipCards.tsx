@@ -123,7 +123,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
+        {/* Cards Grid - 4 columnas en desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cardsData.map((card, index) => (
             <motion.div
