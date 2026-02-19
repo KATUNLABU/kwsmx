@@ -76,6 +76,21 @@ const cardsData: CardData[] = [
     website: '/wiki-alphabet',
     category: 'Plataforma de Ensino Digital',
     color: 'from-orange-500 to-orange-700'
+  },
+  {
+    id: 'myq',
+    title: 'MyQ X',
+    logo: '/images/services/gestao-impressao.png',
+    description: 'Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes.',
+    features: [
+      'Interface personalizada por usuário',
+      'Workflows de digitalização OCR',
+      'Impressão segura e móvel',
+      'Relatórios de custos detalhados'
+    ],
+    website: '/myq',
+    category: 'Gestão de Impressão',
+    color: 'from-blue-400 to-blue-600'
   }
 ];
 
@@ -123,12 +138,12 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           </p>
         </motion.div>
 
-        {/* Cards Grid - 4 columnas en desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Cards Grid - Adaptável para 5 cards */}
+        <div className="flex flex-wrap justify-center gap-8">
           {cardsData.map((card, index) => (
             <motion.div
               key={card.id}
-              className="relative h-80 perspective-1000"
+              className="relative h-80 w-full sm:w-[320px] perspective-1000"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -137,6 +152,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
             >
               <motion.div
                 className="relative w-full h-full preserve-3d cursor-pointer"
+                style={{ transformStyle: 'preserve-3d' }}
                 animate={{
                   rotateY: flippedCard === card.id ? 180 : 0
                 }}
@@ -146,7 +162,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                 }}
               >
                 {/* Front Face */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-xl overflow-hidden">
+                <div className="absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-xl overflow-hidden" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
                   <div className={cn(
                     'w-full h-full bg-gradient-to-br p-6 flex flex-col items-center justify-center text-white relative',
                     card.color
@@ -164,24 +180,25 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                     </div>
 
                     {/* Logo Container - Fondo blanco unificado */}
-                    <div className="w-36 h-24 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-2xl relative z-10 overflow-hidden p-3 border-2 border-white/30">
+                    <div className="w-36 h-24 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-2xl relative overflow-hidden p-3 border-2 border-white/30" style={{ backfaceVisibility: 'hidden' }}>
                       <div className="relative w-32 h-20">
                         <Image 
                           src={card.logo} 
                           alt={`${card.title} Logo`}
                           fill
                           className="object-contain"
+                          style={{ backfaceVisibility: 'hidden' }}
                         />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-center mb-2 relative z-10">
+                    <h3 className="text-xl font-bold text-center mb-2 relative" style={{ backfaceVisibility: 'hidden' }}>
                       {card.title}
                     </h3>
 
                     {/* Category */}
-                    <span className="text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm relative z-10">
+                    <span className="text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm relative" style={{ backfaceVisibility: 'hidden' }}>
                       {card.category}
                     </span>
 
@@ -204,7 +221,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                 </div>
 
                 {/* Back Face - Ajustado para mostrar botón completo */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-xl shadow-xl overflow-hidden">
+                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-xl shadow-xl overflow-hidden" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
                   <div className="w-full h-full bg-white p-4 flex flex-col">
                     {/* Header con logo más grande */}
                     <div className="flex items-center mb-2">
@@ -215,6 +232,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                             alt={`${card.title} Logo`}
                             fill
                             className="object-contain"
+                            style={{ backfaceVisibility: 'hidden' }}
                           />
                         </div>
                       </div>
