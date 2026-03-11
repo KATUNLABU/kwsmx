@@ -34,8 +34,8 @@ const Footer = ({ className = '' }: FooterProps) => {
             >
               <div className="flex items-center mb-6">
                 <Image
-                  src="/KSC.svg"
-                  alt="KSC Logo"
+                  src="/kws.svg"
+                  alt="KWS Logo"
                   width={120}
                   height={40}
                   className="brightness-0 invert"

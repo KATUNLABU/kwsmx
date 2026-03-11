@@ -1,8 +1,9 @@
-'use client';
-
+// src/components/ui/FlipCards.tsx
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+// Astro can use next/image but it is better to use standard img or Astro assets
+// For client components in React, use standard img with optimization classes or pass props
+// Simplified for migration:
 import { cn } from '@/utils/cn';
 
 interface CardData {
@@ -77,35 +78,21 @@ const cardsData: CardData[] = [
     category: 'Plataforma de Ensino Digital',
     color: 'from-orange-500 to-orange-700'
   },
+  // Added MyQ X
   {
-    id: 'solucao-red',
-    title: 'MyQ',
-    logo: '/images/services/myq-logo.png',
+    id: 'myq',
+    title: 'MyQ X',
+    logo: '/images/services/gestao-impressao.png',
     description: 'Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes.',
     features: [
-      'Interface personalizada por usuário',
-      'Workflows de digitalização OCR',
-      'Impressão segura e móvel',
-      'Relatórios de custos detalhados'
+        'Interface personalizada por usuário',
+        'Workflows de digitalização OCR',
+        'Impressão segura e móvel',
+        'Relatórios de custos detalhados'
     ],
-    website: '/solucao-red',
+    website: '/myq',
     category: 'Gestão de Impressão',
-    color: 'from-red-500 to-red-700'
-  },
-  {
-    id: 'solucao-gray',
-    title: 'KDFM',
-    logo: '/images/services/kdfm-logo.png',
-    description: 'Gestão eficiente e monitoramento de dispositivos de impressão para otimizar recursos e reduzir custos.',
-    features: [
-      'Monitoramento proativo',
-      'Gestão de suprimentos automatizada',
-      'Análise detalhada de uso',
-      'Otimização de frota'
-    ],
-    website: '/solucao-gray',
-    category: 'Monitoramento de Dispositivos',
-    color: 'from-gray-500 to-gray-700'
+    color: 'from-blue-400 to-blue-600'
   }
 ];
 
@@ -113,15 +100,14 @@ interface FlipCardsProps {
   className?: string;
 }
 
-export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
+const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
   const [flippedCard, setFlippedCard] = useState<string | null>(null);
   const [activeIconIndex, setActiveIconIndex] = useState(0);
 
-  // Ciclo de animación de íconos: cada 2 segundos cambia a la siguiente carta
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIconIndex((prev) => (prev + 1) % cardsData.length);
-    }, 2000); // Cambia cada 2 segundos
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -137,7 +123,6 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
   return (
     <div className={cn('py-16 px-4', className)}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -153,7 +138,6 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           </p>
         </motion.div>
 
-        {/* Cards Grid - Adaptável para 5 cards */}
         <div className="flex flex-wrap justify-center gap-8">
           {cardsData.map((card, index) => (
             <motion.div
@@ -177,7 +161,8 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                 }}
               >
                 {/* Front Face */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-xl overflow-hidden" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
+                <div className="absolute inset-0 w-full h-full backface-hidden rounded-xl shadow-xl overflow-hidden" 
+                     style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
                   <div className={cn(
                     'w-full h-full bg-gradient-to-br p-6 flex flex-col items-center justify-center text-white relative',
                     card.color
@@ -194,30 +179,28 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       </svg>
                     </div>
 
-                    {/* Logo Container - Fondo blanco unificado */}
-                    <div className="w-36 h-24 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-2xl relative overflow-hidden p-3 border-2 border-white/30" style={{ backfaceVisibility: 'hidden' }}>
+                    {/* Logo Container */}
+                    <div className="w-36 h-24 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-2xl relative overflow-hidden p-3 border-2 border-white/30" 
+                         style={{ backfaceVisibility: 'hidden' }}>
                       <div className="relative w-32 h-20">
-                        <Image 
+                        {/* Standard img for Astro React compatibility without Next/Image config */}
+                        <img 
                           src={card.logo} 
                           alt={`${card.title} Logo`}
-                          fill
-                          className="object-contain"
+                          className="object-contain w-full h-full"
                           style={{ backfaceVisibility: 'hidden' }}
                         />
                       </div>
                     </div>
 
-                    {/* Title */}
                     <h3 className="text-xl font-bold text-center mb-2 relative" style={{ backfaceVisibility: 'hidden' }}>
                       {card.title}
                     </h3>
 
-                    {/* Category */}
                     <span className="text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm relative" style={{ backfaceVisibility: 'hidden' }}>
                       {card.category}
                     </span>
 
-                    {/* Ícono giratorio - Animación en ciclo */}
                     <motion.div 
                       className="absolute top-3 right-3 text-white/70"
                       animate={{
@@ -235,18 +218,17 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                   </div>
                 </div>
 
-                {/* Back Face - Ajustado para mostrar botón completo */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-xl shadow-xl overflow-hidden" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
+                {/* Back Face */}
+                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-xl shadow-xl overflow-hidden" 
+                     style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
                   <div className="w-full h-full bg-white p-4 flex flex-col">
-                    {/* Header con logo más grande */}
                     <div className="flex items-center mb-2">
                       <div className="w-20 h-14 bg-white rounded-xl flex items-center justify-center mr-2 overflow-hidden p-1.5 border-2 border-gray-200 shadow-sm">
                         <div className="relative w-16 h-10">
-                          <Image 
+                          <img 
                             src={card.logo} 
                             alt={`${card.title} Logo`}
-                            fill
-                            className="object-contain"
+                            className="object-contain w-full h-full"
                             style={{ backfaceVisibility: 'hidden' }}
                           />
                         </div>
@@ -257,12 +239,10 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       </div>
                     </div>
 
-                    {/* Description */}
                     <p className="text-gray-600 text-[11px] mb-2 leading-snug line-clamp-2">
                       {card.description}
                     </p>
 
-                    {/* Features */}
                     <div className="mb-2 flex-1 overflow-hidden">
                       <h5 className="font-semibold text-[#004990] text-[11px] mb-1">Recursos Principais:</h5>
                       <ul className="space-y-0.5">
@@ -275,7 +255,6 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       </ul>
                     </div>
 
-                    {/* CTA Button - Más visible y siempre visible */}
                     <motion.a
                       href={card.website}
                       className={cn(
@@ -295,7 +274,6 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           ))}
         </div>
 
-        {/* Additional Info */}
         <motion.div 
           className="text-center mt-12"
           initial={{ opacity: 0, y: 20 }}

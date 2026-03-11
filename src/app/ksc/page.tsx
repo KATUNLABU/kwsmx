@@ -134,6 +134,8 @@ export default function KSCHomePage() {
               { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
               { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
               { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+              { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
+              { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
             ]
           },
           { label: 'Quem Somos', href: '/quem-somos' },
@@ -240,7 +242,7 @@ export default function KSCHomePage() {
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/foto1.JPG" 
-                  alt="KSC - Katun Solution Center"
+                  alt="KWS | Katun Workplace Solutions"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00529B]/80 to-transparent" />
@@ -257,10 +259,10 @@ export default function KSCHomePage() {
                   Temos a Solução que Você Precisa
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  <strong>KSC-Katun Solution Center</strong> é a divisão de serviços da Katun Brasil, 
+                  <strong>KWS | Katun Workplace Solutions</strong> é a divisão de serviços da Katun Brasil, 
                   cujo atende toda a necessidade do mercado de MPS tradicional e as suas novas vertentes. 
                   A associação com parceiros experientes e consolidados no âmbito tecnológico e digital, 
-                  faz da KSC, uma empresa preparada para lidar com as demandas do futuro.
+                  faz da KWS, uma empresa preparada para lidar com as demandas do futuro.
                 </p>
                 
                 {/* Métricas em grid 2x2 */}
@@ -304,7 +306,7 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                Entenda os Vetores que Fazem a KSC Impulsionar Todo e Qualquer Projeto Transformador
+                Entenda os Vetores que Fazem a KWS Impulsionar Todo e Qualquer Projeto Transformador
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Nossa expertise se baseia em 5 vetores estratégicos
@@ -382,7 +384,7 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                A KSC Entrega Soluções
+                A KWS Entrega Soluções
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Processo completo de transformação digital
@@ -415,7 +417,7 @@ export default function KSCHomePage() {
                   Infra & Softwares
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Notebooks, servidores, suprimentos, peças, dispositivos etc. A KSC dispõe da expertise necessária para transformar toda a estrutura sua empresa.
+                  Notebooks, servidores, suprimentos, peças, dispositivos etc. A KWS dispõe da expertise necessária para transformar toda a estrutura sua empresa.
                 </p>
               </Card>
             </FadeIn>
@@ -429,7 +431,7 @@ export default function KSCHomePage() {
                   Cloud
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Com as soluções em nuvem da KSC, otimizamos a sua empresa virtualmente, permitindo acessibilidade com segurança a qualquer hora, lugar ou dispositivo.
+                  Com as soluções em nuvem da KWS, otimizamos a sua empresa virtualmente, permitindo acessibilidade com segurança a qualquer hora, lugar ou dispositivo.
                 </p>
               </Card>
             </FadeIn>
@@ -443,7 +445,7 @@ export default function KSCHomePage() {
                   Serviços
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Gatilhos e fluxos inteligentes, soluções open-source, segurança de ambiente, OCR e scanning. Independente do desafio, a KSC tem a solução!
+                  Gatilhos e fluxos inteligentes, soluções open-source, segurança de ambiente, OCR e scanning. Independente do desafio, a KWS tem a solução!
                 </p>
               </Card>
             </FadeIn>
@@ -461,7 +463,7 @@ export default function KSCHomePage() {
                    CONFIANÇA COMPROVADA
                 </div>
                 <h2 className="text-4xl font-bold text-[#004990] mb-6">
-                  Empresas líderes confiam na KSC
+                  Empresas líderes confiam na KWS
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
                   Mais de 13.500 empresas em 138 países já transformaram sua gestão documental com nossas soluções. 

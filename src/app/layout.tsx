@@ -11,7 +11,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "KSC - KATUN Solution Center",
+  title: "KWS - Katun Workplace Solutions",
   description: "Soluções Integradas em Gestão de Impressão e Transformação Digital",
 };
 

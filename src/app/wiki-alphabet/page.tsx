@@ -53,6 +53,8 @@ export default function WikiAlphabetPage() {
         { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
         { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
+        { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
       ],
     },
     { label: 'Quem Somos', href: '/quem-somos' },
@@ -62,7 +64,7 @@ export default function WikiAlphabetPage() {
 
   return (
     <>
-      <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      <NavBar menuItems={menuItems} logo="/kws.svg" />
       
       {/* HubSpot Tracking Code */}
       <Script

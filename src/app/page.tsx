@@ -104,11 +104,11 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold text-[#004990] mb-4">
-                Biblioteca de Componentes KSC
+                Biblioteca de Componentes KWS
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Componentes reutilizables diseñados para crear experiencias digitales excepcionales 
-                para Katun Solution Center. Cada componente está optimizado para conversión y engagement.
+                para Katun Workplace Solutions. Cada componente está optimizado para conversión y engagement.
               </p>
             </div>
           </FadeIn>

@@ -2,8 +2,8 @@
 export const KSCConfig = {
   // Información de la empresa
   company: {
-    name: 'Katun Solution Center',
-    shortName: 'KSC',
+    name: 'Katun Workplace Solutions',
+    shortName: 'KWS',
     email: 'info@katun.com',
     phone: '+1 (555) 123-4567',
     whatsapp: '1234567890',

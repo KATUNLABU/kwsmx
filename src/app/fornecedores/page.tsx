@@ -7,9 +7,9 @@ import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
 import Footer from '@/components/ui/Footer';
 
 export const metadata: Metadata = {
-  title: 'Fornecedores - KSC | KATUN Solution Center',
-  description: 'Conheça os parceiros estratégicos que formam o ecossistema da KSC, incluindo Katun, Megaged, ACDI, Benq e mais.',
-  keywords: ['Parceiros KSC', 'Kyocera FleetServices', 'Papercut KSC', 'KPAX gestão de parque'],
+  title: 'Fornecedores - KWS | Katun Workplace Solutions',
+  description: 'Conheça os parceiros estratégicos que formam o ecossistema da KWS, incluindo Katun, Megaged, ACDI, Benq e mais.',
+  keywords: ['Parceiros KWS', 'Kyocera FleetServices', 'Papercut KWS', 'KPAX gestão de parque'],
 };
 
 interface Partner {
@@ -33,6 +33,8 @@ export default function FornecedoresPage() {
         { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
         { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
+        { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
       ],
     },
     { label: 'Quem Somos', href: '/quem-somos' },
@@ -124,7 +126,7 @@ export default function FornecedoresPage() {
         strategy="afterInteractive"
       />
       
-      <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      <NavBar menuItems={menuItems} logo="/kws.svg" />
 
       {/* Hero Banner */}
       <HeroBannerWaves

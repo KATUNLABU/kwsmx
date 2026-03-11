@@ -1,6 +1,6 @@
-# 🚀 KSC Website - Katun Solution Center
+# 🚀 KWS Website - Katun Workplace Solutions
 
-Sitio web corporativo completo para **Katun Solution Center (KSC)** con 9 páginas funcionales, diseño responsive y animaciones profesionales.
+Sitio web corporativo completo para **Katun Workplace Solutions (KWS)** con 9 páginas funcionales, diseño responsive y animaciones profesionales.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.0-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)

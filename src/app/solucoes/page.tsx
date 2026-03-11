@@ -19,6 +19,8 @@ export default function SolucoesPage() {
         { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
         { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
+        { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
       ],
     },
     { label: 'Quem Somos', href: '/quem-somos' },
@@ -118,6 +120,52 @@ export default function SolucoesPage() {
         'Cultura de aprendizado contínuo'
       ],
       href: '/wiki-alphabet'
+    },
+    {
+      id: 'solucao-red',
+      title: 'MyQ',
+      subtitle: 'Gestão de Impressão',
+      description: 'Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes.',
+      logo: '/images/services/myq-logo.png',
+      color: 'from-red-500 to-red-700',
+      features: [
+        'Interface personalizada por usuário',
+        'Workflows de digitalização OCR',
+        'Impressão segura e móvel',
+        'Relatórios de custos detalhados',
+        'Painel de controle intuitivo',
+        'Integração com nuvem'
+      ],
+      benefits: [
+        'Aumento da produtividade',
+        'Segurança da informação',
+        'Redução de desperdícios',
+        'Mobilidade corporativa'
+      ],
+      href: '/solucao-red'
+    },
+    {
+      id: 'solucao-gray',
+      title: 'KDFM',
+      subtitle: 'Monitoramento de Dispositivos',
+      description: 'Gestão eficiente e monitoramento de dispositivos de impressão para otimizar recursos e reduzir custos.',
+      logo: '/images/services/kdfm-logo.png',
+      color: 'from-gray-500 to-gray-700',
+      features: [
+        'Monitoramento proativo',
+        'Gestão de suprimentos automatizada',
+        'Análise detalhada de uso',
+        'Otimização de frota',
+        'Alertas em tempo real',
+        'Relatórios gerenciais'
+      ],
+      benefits: [
+        'Controle total da frota',
+        'Previsibilidade de custos',
+        'Manutenção antecipada',
+        'Maximização do uptime'
+      ],
+      href: '/solucao-gray'
     }
   ];
 
@@ -130,7 +178,7 @@ export default function SolucoesPage() {
         strategy="afterInteractive"
       />
       
-      <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      <NavBar menuItems={menuItems} logo="/kws.svg" />
 
       {/* Hero Banner */}
       <HeroBannerWaves

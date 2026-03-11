@@ -21,8 +21,8 @@ interface NavBarProps {
 }
 
 export const NavBar: React.FC<NavBarProps> = ({
-  logo = '/KSC.svg',
-  logoAlt = 'KSC Logo',
+  logo = '/kws.svg',
+  logoAlt = 'KWS Logo',
   className,
   menuItems = [
     { label: 'Inicio', href: '/' },

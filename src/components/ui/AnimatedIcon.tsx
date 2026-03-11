@@ -7,6 +7,7 @@ interface AnimatedIconProps {
   iconName: string;
   solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' | 'home';
   className?: string;
+  colorTheme?: 'blue' | 'red' | 'gray' | 'green' | 'orange';
 }
 
 export interface AnimatedIconRef {
@@ -15,7 +16,7 @@ export interface AnimatedIconRef {
 }
 
 const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
-  ({ iconName, solution, className = 'w-20 h-20' }, ref) => {
+  ({ iconName, solution, className = 'w-20 h-20', colorTheme = 'blue' }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -138,10 +139,19 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
 
     const svgElement = containerRef.current.querySelector('svg');
     if (svgElement) {
-      // Apply filter to change all colors to #004990 blue
-      svgElement.style.filter = 'brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(2247%) hue-rotate(193deg) brightness(94%) contrast(101%)';
+      // filters
+      const filters = {
+        blue: 'brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(2247%) hue-rotate(193deg) brightness(94%) contrast(101%)', // #004990
+        red: 'brightness(0) saturate(100%) invert(19%) sepia(88%) saturate(5436%) hue-rotate(354deg) brightness(93%) contrast(93%)', // #DC2626
+        gray: 'brightness(0) saturate(100%) invert(32%) sepia(9%) saturate(884%) hue-rotate(182deg) brightness(94%) contrast(87%)', // #4B5563
+        green: 'brightness(0) saturate(100%) invert(49%) sepia(96%) saturate(357%) hue-rotate(81deg) brightness(94%) contrast(93%)', // #16A34A (approx)
+        orange: 'brightness(0) saturate(100%) invert(48%) sepia(96%) saturate(1637%) hue-rotate(345deg) brightness(98%) contrast(96%)', // #EA580C (approx)
+      };
+
+      // Apply filter based on theme
+      svgElement.style.filter = filters[colorTheme] || filters.blue;
     }
-  }, [isLoaded]);
+  }, [isLoaded, colorTheme]);
 
   // Fallback icon if animation fails to load
   if (hasError) {

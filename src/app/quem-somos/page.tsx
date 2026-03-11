@@ -7,9 +7,9 @@ import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Quem Somos - KSC | KATUN Solution Center',
-  description: 'Conheça a história da KSC - Katun Solution Center. Nascemos da experiência global da Katun para liderar a revolução tecnológica no mercado de impressão.',
-  keywords: ['Kyocera FleetServices especialistas', 'Outsourcing de impressão confiável', 'Gestão de impressão profissional', 'História KSC'],
+  title: 'Quem Somos - KWS | Katun Workplace Solutions',
+  description: 'Conheça a história da KWS - Katun Workplace Solutions. Nascemos da experiência global da Katun para liderar a revolução tecnológica no mercado de impressão.',
+  keywords: ['Kyocera FleetServices especialistas', 'Outsourcing de impressão confiável', 'Gestão de impressão profissional', 'História KWS'],
 };
 
 export default function QuemSomosPage() {
@@ -23,6 +23,8 @@ export default function QuemSomosPage() {
         { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
         { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
+        { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
       ],
     },
     { label: 'Quem Somos', href: '/quem-somos' },
@@ -39,7 +41,7 @@ export default function QuemSomosPage() {
         strategy="afterInteractive"
       />
       
-      <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      <NavBar menuItems={menuItems} logo="/kws.svg" />
 
       {/* Hero Banner */}
       <HeroBannerWaves
@@ -62,8 +64,8 @@ export default function QuemSomosPage() {
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
               A Katun, ao longo de mais de <span className="font-bold text-green-600">44 anos</span>, construiu 
-              globalmente uma respeitável posição na fabricação e venda de suprimentos. Com os avanços da tecnologia, 
-              a <span className="font-bold text-[#004990]">KSC - Katun Solution Center</span>, nasce como marca em 2021, 
+              globalmente uma respeitável posição na fabricação e venda de suprimentos. Com a evolução contínua, 
+              nos renovamos em 2026 como <span className="font-bold text-[#004990]">Katun Workplace Solutions (KWS)</span>, 
               oferecendo para toda a base de clientes da Katun as mais diversas tecnologias as-a-service{' '}
               <span className="font-semibold text-green-600">(SAAS | PAAS | IAAS)</span>.
             </p>
@@ -103,6 +105,16 @@ export default function QuemSomosPage() {
                 </div>
               </div>
               <div></div>
+
+              {/* 2026 - Brand Renewal */}
+              <div></div>
+              <div className="md:pl-12">
+                <div className="inline-block bg-white p-6 rounded-xl shadow-lg border-2 border-red-500">
+                  <div className="text-5xl font-bold text-red-600 mb-2">2026</div>
+                  <h3 className="text-xl font-bold text-[#004990] mb-2">Renovação da Marca</h3>
+                  <p className="text-gray-600">Evolução para Katun Workplace Solutions (KWS)</p>
+                </div>
+              </div>
             </div>
           </div>
         </Container>

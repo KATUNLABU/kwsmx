@@ -18,6 +18,8 @@ export default function ManutencaoPage() {
         { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
         { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
+        { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
       ],
     },
     { label: 'Quem Somos', href: '/quem-somos' },
@@ -34,7 +36,7 @@ export default function ManutencaoPage() {
         strategy="afterInteractive"
       />
 
-      <NavBar menuItems={menuItems} logo="/KSC.svg" />
+      <NavBar menuItems={menuItems} logo="/kws.svg" />
 
       {/* Maintenance Section */}
       <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 pt-32 pb-20">
