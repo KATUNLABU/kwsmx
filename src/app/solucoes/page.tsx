@@ -19,8 +19,8 @@ export default function SolucoesPage() {
         { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
         { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
-        { label: 'MyQ', href: '/solucao-red', image: '/images/services/myq-logo.png' },
-        { label: 'KDFM', href: '/solucao-gray', image: '/images/services/kdfm-logo.png' },
+        { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
+        { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
     { label: 'Quem Somos', href: '/quem-somos' },
@@ -122,7 +122,7 @@ export default function SolucoesPage() {
       href: '/wiki-alphabet'
     },
     {
-      id: 'solucao-red',
+      id: 'myq',
       title: 'MyQ',
       subtitle: 'Gestão de Impressão',
       description: 'Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes.',
@@ -142,10 +142,10 @@ export default function SolucoesPage() {
         'Redução de desperdícios',
         'Mobilidade corporativa'
       ],
-      href: '/solucao-red'
+      href: '/myq'
     },
     {
-      id: 'solucao-gray',
+      id: 'kdfm',
       title: 'KDFM',
       subtitle: 'Monitoramento de Dispositivos',
       description: 'Gestão eficiente e monitoramento de dispositivos de impressão para otimizar recursos e reduzir custos.',
@@ -165,7 +165,7 @@ export default function SolucoesPage() {
         'Manutenção antecipada',
         'Maximização do uptime'
       ],
-      href: '/solucao-gray'
+      href: '/kdfm'
     }
   ];
 

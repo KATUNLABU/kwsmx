@@ -78,7 +78,7 @@ const cardsData: CardData[] = [
     color: 'from-orange-500 to-orange-700'
   },
   {
-    id: 'solucao-red',
+    id: 'myq',
     title: 'MyQ',
     logo: '/images/services/myq-logo.png',
     description: 'Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes.',
@@ -88,12 +88,12 @@ const cardsData: CardData[] = [
       'Impressão segura e móvel',
       'Relatórios de custos detalhados'
     ],
-    website: '/solucao-red',
+    website: '/myq',
     category: 'Gestão de Impressão',
     color: 'from-red-500 to-red-700'
   },
   {
-    id: 'solucao-gray',
+    id: 'kdfm',
     title: 'KDFM',
     logo: '/images/services/kdfm-logo.png',
     description: 'Gestão eficiente e monitoramento de dispositivos de impressão para otimizar recursos e reduzir custos.',
@@ -103,7 +103,7 @@ const cardsData: CardData[] = [
       'Análise detalhada de uso',
       'Otimização de frota'
     ],
-    website: '/solucao-gray',
+    website: '/kdfm',
     category: 'Monitoramento de Dispositivos',
     color: 'from-gray-500 to-gray-700'
   }

@@ -120,6 +120,18 @@ const Footer = ({ className = '' }: FooterProps) => {
                   Plataforma de Ensino
                 </a>
               </li>
+              <li>
+                <a href="/myq" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
+                  MyQ
+                </a>
+              </li>
+              <li>
+                <a href="/kdfm" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
+                  KDFM
+                </a>
+              </li>
             </ul>
           </motion.div>
 
@@ -214,7 +226,7 @@ const Footer = ({ className = '' }: FooterProps) => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Typography variant="small" className="text-gray-300 text-sm">
-              © {currentYear} <strong>KSC</strong>. Todos os direitos reservados.
+              © {currentYear} <strong>KWS</strong>. Todos os direitos reservados.
             </Typography>
           </motion.div>
           
