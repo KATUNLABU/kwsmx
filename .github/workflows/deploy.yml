@@ -1,0 +1,30 @@
+name: Deploy to KWS Latam VPS
+
+# El pipeline se disparará cada vez que hagas un push a la rama 'main'
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ejecutar despliegue vía SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          # Script que se ejecutará dentro de tu VPS
+          script: |
+            cd /opt/kws-latam/apps/componentes
+            
+            # 1. Traer los últimos cambios del código
+            git pull origin main
+            
+            # 2. Reconstruir la imagen y levantar el contenedor sin interrumpir el tráfico (Zero-downtime deployment ideal)
+            docker compose up -d --build
+            
+            # 3. Limpieza crítica: Eliminar imágenes viejas para que el disco de 75GB no se llene con el tiempo
+            docker image prune -f
