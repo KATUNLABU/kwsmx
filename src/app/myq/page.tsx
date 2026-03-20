@@ -77,7 +77,7 @@ const myqDownloads = [
     id: 'v10-2-p21',
     version: 'Versão 10.2 (Patch 21)',
     fileName: 'MyQ Print Server 10.2 (patch 21).exe',
-    href: '/descargable/MyQ%20Print%20Server%2010.2%20(patch%2021).exe',
+    href: '/downloads/instalador.exe"',
   },
 ];
 
