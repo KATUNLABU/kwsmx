@@ -185,7 +185,7 @@ export default function SolutionRedPage() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
                   >
-                    Grátis por 2 Anos!
+                    Grátis por 1 Anos!
                   </motion.span>
                 </h2>
                 
@@ -350,7 +350,7 @@ export default function SolutionRedPage() {
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              MyQ é a escolha preferida de milhares.
             </motion.p>
           </div>
 
