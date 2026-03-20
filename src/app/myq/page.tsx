@@ -77,7 +77,7 @@ const myqDownloads = [
     id: 'v10-2-p21',
     version: 'Versão 10.2 (Patch 21)',
     fileName: 'MyQ Print Server 10.2 (patch 21).exe',
-    href: '/downloads/instalador.exe"',
+    href: '/downloads/instalador.exe',
   },
 ];
 
@@ -225,8 +225,8 @@ export default function SolutionRedPage() {
                 <h3 className="text-white text-2xl md:text-3xl font-bold mb-2">Comece Agora</h3>
                 <p className="text-red-100 mb-8">Download instantâneo e seguro</p>
                 
-                <Button size="lg" className="w-full bg-white text-red-600 hover:bg-red-50 hover:text-red-700 hover:shadow-2xl shadow-xl border-none text-xl py-8 font-bold rounded-xl transition-all group relative overflow-hidden">
-                  <a href="#download" className="text-inherit no-underline flex items-center justify-center gap-4 w-full h-full relative z-10">
+                <Button size="lg" className="w-full bg-white text-red-600 hover:bg-red-50 hover:text-red-700 hover:shadow-2xl shadow-xl border-none text-xl p-0 font-bold rounded-xl transition-all group relative overflow-hidden">
+                  <a href="#download" className="text-inherit no-underline flex items-center justify-center gap-4 w-full h-full py-8 relative z-10">
                     <span className="bg-red-100 p-2 rounded-lg text-red-600 group-hover:bg-red-200 transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
