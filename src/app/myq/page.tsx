@@ -185,7 +185,7 @@ export default function SolutionRedPage() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
                   >
-                    Grátis por 1 Anos!
+                    Grátis por 1 Ano!
                   </motion.span>
                 </h2>
                 
