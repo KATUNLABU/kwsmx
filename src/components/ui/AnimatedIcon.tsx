@@ -96,7 +96,8 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
               // Special case: some icons have problematic first frames, use last frame instead
               const iconsWithEmptyFirstFrame = [
                 'Multi-Locação',
-                'Soluções de Digital & Agile WorkPlace'
+                'Soluções de Digital & Agile WorkPlace',
+                'solucoes-digital'
               ];
               
               if (iconsWithEmptyFirstFrame.includes(iconName)) {

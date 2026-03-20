@@ -185,7 +185,7 @@ export default function KSCHomePage() {
             <FadeIn delay={0.1}>
               <ValuePropCard
                 iconRef={icon1Ref}
-                iconName="Integração de Produtos Serviços"
+                iconName="integracao-produtos"
                 title="Integração de Produtos/Serviços"
                 description="De nada adianta ter um excelente produto. O mais importante é resolver problemas, 
                   entregar soluções integradas e agregadas ao mercado. A KSC nasce com esse objetivo!"
@@ -195,7 +195,7 @@ export default function KSCHomePage() {
             <FadeIn delay={0.2}>
               <ValuePropCard
                 iconRef={icon2Ref}
-                iconName="Serviços, Soluções e Treinamentos"
+                iconName="servicos-treinamentos"
                 title="Serviços, Soluções e Treinamentos"
                 description="Com mais de <strong>70 certificações ativas</strong>, nosso time tem a expertise necessária 
                   para solucionar problemas e capacitar a sua equipe para a nova realidade tecnológica da empresa."
@@ -205,7 +205,7 @@ export default function KSCHomePage() {
             <FadeIn delay={0.3}>
               <ValuePropCard
                 iconRef={icon3Ref}
-                iconName="Soluções de Digital & Agile WorkPlace"
+                iconName="solucoes-digital"
                 title="Soluções de Digital & Agile WorkPlace"
                 description="O conceito de um local de trabalho ágil e digital consiste em permitir diversas otimizações 
                   físicas e tecnológicas ao seu negócio, garantindo flexibilidade e eficiência."
