@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useRef } from 'react';
 import Script from 'next/script';
@@ -125,29 +125,27 @@ export default function KSCHomePage() {
       {/* NavBar */}
       <NavBar 
         menuItems={[
-          { label: 'Home', href: '/ksc' },
+          { label: 'Inicio', href: '/ksc' },
           { 
-            label: 'Soluções', 
-            href: '/solucoes',
+            label: 'Soluciones', 
+            href: '/soluciones',
             dropdown: [
-              { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-              { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-              { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-              { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+              { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+              { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
               { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
               { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
             ]
           },
-          { label: 'Quem Somos', href: '/quem-somos' },
-          { label: 'Fornecedores', href: '/fornecedores' },
-          { label: 'Contato', href: '/contato' },
+          { label: 'Quiénes Somos', href: '/quienes-somos' },
+          { label: 'Proveedores', href: '/proveedores' },
+          { label: 'Contacto', href: '/contacto' },
         ]}
       />
 
       {/* Hero Section - Banner com Olas Animadas */}
       <HeroBannerWaves
-        title="Transformando a Gestão Empresarial com Tecnologia e Inovação"
-        subtitle="Soluções integradas em gestão de impressão, equipamentos e documentos para impulsionar seu negócio."
+        title="Transformando la Gestión Empresarial con Tecnología e Innovación"
+        subtitle="Soluciones integradas en gestión de impresión, equipos y documentos para impulsar tu negocio."
         minHeight="60vh"
         gradientFrom="#1e3052"
         gradientTo="#00529B"
@@ -156,12 +154,12 @@ export default function KSCHomePage() {
         <div className="flex gap-4 justify-center flex-wrap">
           <a href="#solucoes">
             <Button variant="secondary" size="lg">
-              Ver Soluções
+              Ver Soluciones
             </Button>
           </a>
-          <a href="/contato">
+          <a href="/contacto">
             <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-[#00529B]">
-              Fale Conosco
+              Contáctanos
             </Button>
           </a>
         </div>
@@ -173,10 +171,10 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                A Solução Completa para o Seu Ambiente de Impressão e Digitalização
+                La Solución Completa para tu Entorno de Impresión y Digitalización
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Integramos tecnologia, expertise e serviços especializados
+                Integramos tecnología, experiencia y servicios especializados
               </p>
             </div>
           </FadeIn>
@@ -186,9 +184,9 @@ export default function KSCHomePage() {
               <ValuePropCard
                 iconRef={icon1Ref}
                 iconName="integracao-produtos"
-                title="Integração de Produtos/Serviços"
-                description="De nada adianta ter um excelente produto. O mais importante é resolver problemas, 
-                  entregar soluções integradas e agregadas ao mercado. A KSC nasce com esse objetivo!"
+                title="Integración de Productos/Servicios"
+                description="De nada sirve tener un excelente producto. Lo más importante es resolver problemas, 
+                  entregar soluciones integradas y agregar valor al mercado. ¡KSC nace con ese objetivo!"
               />
             </FadeIn>
 
@@ -196,9 +194,9 @@ export default function KSCHomePage() {
               <ValuePropCard
                 iconRef={icon2Ref}
                 iconName="servicos-treinamentos"
-                title="Serviços, Soluções e Treinamentos"
-                description="Com mais de <strong>70 certificações ativas</strong>, nosso time tem a expertise necessária 
-                  para solucionar problemas e capacitar a sua equipe para a nova realidade tecnológica da empresa."
+                title="Servicios, Soluciones y Capacitación"
+                description="Con más de <strong>70 certificaciones activas</strong>, nuestro equipo tiene la experiencia necesaria 
+                  para solucionar problemas y capacitar a tu equipo para la nueva realidad tecnológica de la empresa."
               />
             </FadeIn>
 
@@ -206,9 +204,9 @@ export default function KSCHomePage() {
               <ValuePropCard
                 iconRef={icon3Ref}
                 iconName="solucoes-digital"
-                title="Soluções de Digital & Agile WorkPlace"
-                description="O conceito de um local de trabalho ágil e digital consiste em permitir diversas otimizações 
-                  físicas e tecnológicas ao seu negócio, garantindo flexibilidade e eficiência."
+                title="Soluciones Digitales y Espacio de Trabajo Ágil"
+                description="El concepto de un lugar de trabajo ágil y digital consiste en permitir diversas optimizaciones 
+                  físicas y tecnológicas en tu negocio, garantizando flexibilidad y eficiencia."
               />
             </FadeIn>
           </div>
@@ -221,10 +219,10 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                Nossas Soluções em Gestão Documental e Impressão
+                Nuestras Soluciones en Gestión Documental e Impresión
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Tecnologias líderes de mercado para transformação digital empresarial
+                Tecnologías líderes en el mercado para la transformación digital empresarial
               </p>
             </div>
           </FadeIn>
@@ -256,25 +254,25 @@ export default function KSCHomePage() {
             <FadeIn delay={0.2}>
               <div>
                 <h2 className="text-4xl font-bold text-[#004990] mb-6">
-                  Temos a Solução que Você Precisa
+                  Tenemos la Solución que Necesitas
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  <strong>KWS | Katun Workplace Solutions</strong> é a divisão de serviços da Katun Brasil, 
-                  cujo atende toda a necessidade do mercado de MPS tradicional e as suas novas vertentes. 
-                  A associação com parceiros experientes e consolidados no âmbito tecnológico e digital, 
-                  faz da KWS, uma empresa preparada para lidar com as demandas do futuro.
+                  <strong>KWS | Katun Workplace Solutions</strong> es la división de servicios de Katun Brasil, 
+                  que atiende todas las necesidades del mercado de MPS tradicional y sus nuevas vertientes. 
+                  La asociación con socios experimentados y consolidados en el ámbito tecnológico y digital, 
+                  hace de KWS una empresa preparada para lidiar con las demandas del futuro.
                 </p>
                 
                 {/* Métricas em grid 2x2 */}
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div className="text-center p-6 bg-blue-50 rounded-lg hover:shadow-lg transition-shadow">
                     <div className="text-4xl font-bold text-[#00529B] mb-2">
-                      <Counter end={5000} duration={2} suffix="+" label="Projetos Entregues" />
+                      <Counter end={5000} duration={2} suffix="+" label="Proyectos Entregados" />
                     </div>
                   </div>
                   <div className="text-center p-6 bg-blue-50 rounded-lg hover:shadow-lg transition-shadow">
                     <div className="text-4xl font-bold text-[#00529B] mb-2">
-                      <Counter end={100} duration={2} suffix="+" label="Certifi&shy;cações" />
+                      <Counter end={100} duration={2} suffix="+" label="Certificaciones" />
                     </div>
                   </div>
                   <div className="text-center p-6 bg-blue-50 rounded-lg hover:shadow-lg transition-shadow">
@@ -289,9 +287,9 @@ export default function KSCHomePage() {
                   </div>
                 </div>
 
-                <a href="/quem-somos">
+                <a href="/quienes-somos">
                   <Button variant="primary" size="lg">
-                    Conheça nossa história
+                    Conoce nuestra historia
                   </Button>
                 </a>
               </div>
@@ -306,10 +304,10 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                Entenda os Vetores que Fazem a KWS Impulsionar Todo e Qualquer Projeto Transformador
+                Entiende los Vectores que Hacen que KWS Impulse Cualquier Proyecto Transformador
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Nossa expertise se baseia em 5 vetores estratégicos
+                Nuestra experiencia se basa en 5 vectores estratégicos
               </p>
             </div>
           </FadeIn>
@@ -320,9 +318,9 @@ export default function KSCHomePage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <img src="/icons/notifications/FLEET.svg" alt="Fleet" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
-                <h3 className="text-xl font-bold text-[#004990] mb-3">FLEET</h3>
+                <h3 className="text-xl font-bold text-[#004990] mb-3">FLOTA</h3>
                 <p className="text-gray-600 text-sm">
-                  Coleta de contadores, suprimentos, peças, logística, controle de estoque e faturamento.
+                  Recolección de contadores, suministros, piezas, logística, control de inventario y facturación.
                 </p>
               </Card>
             </FadeIn>
@@ -334,7 +332,7 @@ export default function KSCHomePage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">CONTROL</h3>
                 <p className="text-gray-600 text-sm">
-                  Muito além da bilhetagem. Habilitamos a impressão segura, impressão em nuvem, conceito 3A, LGPD e digitalização avançada.
+                  Mucho más allá del cobro. Habilitamos la impresión segura, impresión en la nube, concepto 3A, LGPD y digitalización avanzada.
                 </p>
               </Card>
             </FadeIn>
@@ -344,9 +342,9 @@ export default function KSCHomePage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <img src="/icons/notifications/KNOWLEDGE.svg" alt="Knowledge" className="w-8 h-8" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                 </div>
-                <h3 className="text-xl font-bold text-[#004990] mb-3">KNOWLEDGE</h3>
+                <h3 className="text-xl font-bold text-[#004990] mb-3">CONOCIMIENTO</h3>
                 <p className="text-gray-600 text-sm">
-                  Treinamentos & Consultorias visando a transformação digital completa da sua empresa.
+                  Capacitación y Consultoría enfocadas en la transformación digital completa de tu empresa.
                 </p>
               </Card>
             </FadeIn>
@@ -358,7 +356,7 @@ export default function KSCHomePage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">HARDWARE</h3>
                 <p className="text-gray-600 text-sm">
-                  Toda a infraestrutura necessária para um projeto de tecnologia, desde totens de automação, leitores de aproximação ou biometria.
+                  Toda la infraestructura necesaria para un proyecto de tecnología, desde tótems de automatización, lectores de aproximación o biometría.
                 </p>
               </Card>
             </FadeIn>
@@ -370,7 +368,7 @@ export default function KSCHomePage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#004990] mb-3">DIGITAL</h3>
                 <p className="text-gray-600 text-sm">
-                  Tudo que você precisa para uma jornada digital: smartwork, smartoffice e a evolução do GED para um trabalho mais conectado.
+                  Todo lo que necesitas para un viaje digital: smartwork, smartoffice y la evolución de GED para un trabajo más conectado.
                 </p>
               </Card>
             </FadeIn>
@@ -384,10 +382,10 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-[#004990] mb-4">
-                A KWS Entrega Soluções
+                KWS Entrega Soluciones
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Processo completo de transformação digital
+                Proceso completo de transformación digital
               </p>
             </div>
           </FadeIn>
@@ -403,7 +401,7 @@ export default function KSCHomePage() {
                   Protagonistas
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Potencialize os departamentos e otimize os processos da sua empresa conosco. Tenha colaboradores protagonistas à frente de cada função.
+                  Potencia los departamentos y optimiza los procesos de tu empresa con nosotros. Ten colaboradores protagonistas al frente de cada función.
                 </p>
               </Card>
             </FadeIn>
@@ -414,10 +412,10 @@ export default function KSCHomePage() {
                   2
                 </div>
                 <h3 className="text-2xl font-bold text-[#004990] mb-4 text-center">
-                  Infra & Softwares
+                  Infra y Software
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Notebooks, servidores, suprimentos, peças, dispositivos etc. A KWS dispõe da expertise necessária para transformar toda a estrutura sua empresa.
+                  Laptops, servidores, suministros, piezas, dispositivos, etc. KWS cuenta con la experiencia necesaria para transformar toda la estructura de tu empresa.
                 </p>
               </Card>
             </FadeIn>
@@ -431,7 +429,7 @@ export default function KSCHomePage() {
                   Cloud
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Com as soluções em nuvem da KWS, otimizamos a sua empresa virtualmente, permitindo acessibilidade com segurança a qualquer hora, lugar ou dispositivo.
+                  Con las soluciones en la nube de KWS, optimizamos tu empresa virtualmente, permitiendo accesibilidad segura en cualquier momento, lugar o dispositivo.
                 </p>
               </Card>
             </FadeIn>
@@ -442,10 +440,10 @@ export default function KSCHomePage() {
                   4
                 </div>
                 <h3 className="text-2xl font-bold text-[#004990] mb-4 text-center">
-                  Serviços
+                  Servicios
                 </h3>
                 <p className="text-gray-600 text-center">
-                  Gatilhos e fluxos inteligentes, soluções open-source, segurança de ambiente, OCR e scanning. Independente do desafio, a KWS tem a solução!
+                  Disparadores y flujos inteligentes, soluciones open-source, seguridad funcional, OCR y escaneo. ¡Independientemente del desafío, KWS tiene la solución!
                 </p>
               </Card>
             </FadeIn>
@@ -460,14 +458,14 @@ export default function KSCHomePage() {
             <FadeIn>
               <div>
                 <div className="inline-block px-4 py-2 bg-blue-100 text-[#00529B] rounded-full text-sm font-semibold mb-4">
-                   CONFIANÇA COMPROVADA
+                   CONFIANZA COMPROBADA
                 </div>
                 <h2 className="text-4xl font-bold text-[#004990] mb-6">
-                  Empresas líderes confiam na KWS
+                  Empresas líderes confían en KWS
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Mais de 13.500 empresas em 138 países já transformaram sua gestão documental com nossas soluções. 
-                  Desde pequenas empresas até grandes corporações, ajudamos organizações a alcançar eficiência operacional e redução de custos.
+                  Más de 13.500 empresas en 138 países ya han transformado su gestión documental con nuestras soluciones. 
+                  Desde pequeñas empresas hasta grandes corporaciones, ayudamos a las organizaciones a alcanzar eficiencia operativa y reducción de costos.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
@@ -475,8 +473,8 @@ export default function KSCHomePage() {
                       <img src="/icons/notifications/check.svg" alt="Check" className="w-6 h-6" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#004990] mb-1">Implementação Garantida</h4>
-                      <p className="text-gray-600">Projetos entregues no prazo com garantia de resultados</p>
+                      <h4 className="font-bold text-[#004990] mb-1">Implementación Garantizada</h4>
+                      <p className="text-gray-600">Proyectos entregados a tiempo con garantía de resultados</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -484,8 +482,8 @@ export default function KSCHomePage() {
                       <img src="/icons/notifications/check.svg" alt="Check" className="w-6 h-6" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#004990] mb-1">Suporte Especializado</h4>
-                      <p className="text-gray-600">Time dedicado com certificações internacionais</p>
+                      <h4 className="font-bold text-[#004990] mb-1">Soporte Especializado</h4>
+                      <p className="text-gray-600">Equipo dedicado con certificaciones internacionales</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -493,8 +491,8 @@ export default function KSCHomePage() {
                       <img src="/icons/notifications/check.svg" alt="Check" className="w-6 h-6" style={{ filter: 'invert(22%) sepia(93%) saturate(1729%) hue-rotate(191deg) brightness(93%) contrast(101%)' }} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#004990] mb-1">ROI Comprovado</h4>
-                      <p className="text-gray-600">Redução média de 30% nos custos operacionais</p>
+                      <h4 className="font-bold text-[#004990] mb-1">ROI Comprobado</h4>
+                      <p className="text-gray-600">Reducción promedio del 30% en los costos operativos</p>
                     </div>
                   </div>
                 </div>
@@ -506,7 +504,7 @@ export default function KSCHomePage() {
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
                     src="/images/Empresas lideres confiam na KSC.JPG" 
-                    alt="Empresas líderes confiam na KSC"
+                    alt="Empresas líderes confían en KWS"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -514,11 +512,11 @@ export default function KSCHomePage() {
                 {/* Stats flotantes */}
                 <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                   <div className="text-3xl font-bold text-[#00529B] mb-1">98%</div>
-                  <p className="text-sm text-gray-600">Taxa de Satisfação</p>
+                  <p className="text-sm text-gray-600">Tasa de Satisfacción</p>
                 </div>
                 <div className="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
                   <div className="text-3xl font-bold text-[#00529B] mb-1">24/7</div>
-                  <p className="text-sm text-gray-600">Suporte Ativo</p>
+                  <p className="text-sm text-gray-600">Soporte Activo</p>
                 </div>
               </div>
             </FadeIn>
@@ -532,20 +530,20 @@ export default function KSCHomePage() {
           <FadeIn>
             <div className="text-center max-w-4xl mx-auto">
               <h2 className="text-4xl font-bold mb-6">
-                Pronto para transformar a gestão documental da sua empresa?
+                ¿Listo para transformar la gestión documental de tu empresa?
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Agende uma consultoria gratuita com nossos especialistas e descubra como podemos ajudar você a reduzir custos, aumentar a segurança e otimizar processos.
+                Agenda una consultoría gratuita con nuestros expertos y descubre cómo podemos ayudarte a reducir costos, aumentar la seguridad y optimizar procesos.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
-                <a href="/contato">
+                <a href="/contacto">
                   <Button variant="secondary" size="lg" className="bg-white text-green-600 hover:bg-gray-100">
-                    Falar com Especialista
+                    Hablar con un Experto
                   </Button>
                 </a>
-                <a href="/contato">
+                <a href="/contacto">
                   <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-green-600">
-                    Entre em Contato
+                    Contáctanos
                   </Button>
                 </a>
               </div>

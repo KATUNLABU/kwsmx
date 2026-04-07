@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Script from 'next/script';
 import NavBar from '@/components/ui/NavBar';
 import Container from '@/components/ui/Container';
@@ -7,29 +7,27 @@ import Footer from '@/components/ui/Footer';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Quem Somos - KWS | Katun Workplace Solutions',
-  description: 'Conheça a história da KWS - Katun Workplace Solutions. Nascemos da experiência global da Katun para liderar a revolução tecnológica no mercado de impressão.',
-  keywords: ['Kyocera FleetServices especialistas', 'Outsourcing de impressão confiável', 'Gestão de impressão profissional', 'História KWS'],
+  title: 'Quiénes Somos - KWS | Katun Workplace Solutions',
+  description: 'Conozca la historia de KWS - Katun Workplace Solutions. Nacimos de la experiencia global de Katun para liderar la revolución tecnológica en el mercado de impresión.',
+  keywords: ['Kyocera FleetServices especialistas', 'Outsourcing de Impresión confiável', 'Gestión de Impresión profissional', 'História KWS'],
 };
 
 export default function QuemSomosPage() {
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
+      label: 'Soluciones',
       href: '#',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-Equipos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -45,13 +43,13 @@ export default function QuemSomosPage() {
 
       {/* Hero Banner */}
       <HeroBannerWaves
-        title="Construímos tudo isso com um olhar sempre atento ao futuro."
-        subtitle="Conheça a história, os valores e o compromisso que nos tornaram referência em transformação digital."
+        title="Construimos todo esto con una mirada siempre atenta al futuro."
+        subtitle="Conozca la historia, los valores y el compromiso que nos han convertido en referencia en la transformación digital."
         gradientFrom="#1e3052"
         gradientTo="#10b981"
         waveColor="rgba(255, 255, 255, 0.1)"
         breadcrumbs={[
-          { label: 'Quem Somos', href: '/quem-somos' }
+          { label: 'Quiénes Somos', href: '/quienes-somos' }
         ]}
       />
 
@@ -60,12 +58,12 @@ export default function QuemSomosPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-[#004990] mb-8">
-              As nossas raízes vêm da história da Katun CORPORATION.
+              Nuestras raíces provienen de la historia de Katun CORpor ATION.
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
-              A Katun, ao longo de mais de <span className="font-bold text-green-600">44 anos</span>, construiu 
-              globalmente uma respeitável posição na fabricação e venda de suprimentos. Com a evolução contínua, 
-              nos renovamos em 2026 como <span className="font-bold text-[#004990]">Katun Workplace Solutions (KWS)</span>, 
+              Katun, a lo largo de más de <span className="font-bold text-green-600">44 años</span>, construyó 
+              globalmente una posición respetable en la fabricación y venta de suministros. Con una evolución continua, 
+              nos renovamos en 2026 como <span className="font-bold text-[#004990]">Katun Workplace Solutions (KWS)</span>, 
               oferecendo para toda a base de clientes da Katun as mais diversas tecnologias as-a-service{' '}
               <span className="font-semibold text-green-600">(SAAS | PAAS | IAAS)</span>.
             </p>
@@ -80,8 +78,8 @@ export default function QuemSomosPage() {
               <div className="md:text-right md:pr-12">
                 <div className="inline-block bg-white p-6 rounded-xl shadow-lg border-2 border-green-500">
                   <div className="text-5xl font-bold text-green-600 mb-2">1981</div>
-                  <h3 className="text-xl font-bold text-[#004990] mb-2">Fundação da Katun</h3>
-                  <p className="text-gray-600">Início da jornada de excelência em suprimentos globais</p>
+                  <h3 className="text-xl font-bold text-[#004990] mb-2">Fundación de Katun</h3>
+                  <p className="text-gray-600">Inicio del viaje de excelencia en suministros globales</p>
                 </div>
               </div>
               <div></div>
@@ -91,8 +89,8 @@ export default function QuemSomosPage() {
               <div className="md:pl-12">
                 <div className="inline-block bg-white p-6 rounded-xl shadow-lg border-2 border-blue-500">
                   <div className="text-5xl font-bold text-blue-600 mb-2">2021</div>
-                  <h3 className="text-xl font-bold text-[#004990] mb-2">Nascimento da KSC</h3>
-                  <p className="text-gray-600">Revolução digital com soluções as-a-service</p>
+                  <h3 className="text-xl font-bold text-[#004990] mb-2">Nacimiento de KSC</h3>
+                  <p className="text-gray-600">Revolución digital con soluciones as-a-service</p>
                 </div>
               </div>
 
@@ -100,8 +98,8 @@ export default function QuemSomosPage() {
               <div className="md:text-right md:pr-12">
                 <div className="inline-block bg-white p-6 rounded-xl shadow-lg border-2 border-purple-500">
                   <div className="text-5xl font-bold text-purple-600 mb-2">2025</div>
-                  <h3 className="text-xl font-bold text-[#004990] mb-2">Líder em MPS</h3>
-                  <p className="text-gray-600">Referência em transformação digital e gestão</p>
+                  <h3 className="text-xl font-bold text-[#004990] mb-2">Líder en MPS</h3>
+                  <p className="text-gray-600">Referencia en transformación digital y gestión</p>
                 </div>
               </div>
               <div></div>
@@ -111,8 +109,8 @@ export default function QuemSomosPage() {
               <div className="md:pl-12">
                 <div className="inline-block bg-white p-6 rounded-xl shadow-lg border-2 border-red-500">
                   <div className="text-5xl font-bold text-red-600 mb-2">2026</div>
-                  <h3 className="text-xl font-bold text-[#004990] mb-2">Renovação da Marca</h3>
-                  <p className="text-gray-600">Evolução para Katun Workplace Solutions (KWS)</p>
+                  <h3 className="text-xl font-bold text-[#004990] mb-2">Renovación de la Marca</h3>
+                  <p className="text-gray-600">Evolución a Katun Workplace Solutions (KWS)</p>
                 </div>
               </div>
             </div>
@@ -125,10 +123,10 @@ export default function QuemSomosPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#004990] mb-6">
-              A excelência que guia nosso trabalho.
+              La excelencia que guía nuestro trabajo.
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Números que refletem nosso compromisso com inovação e qualidade.
+              Números que reflejan nuestro compromiso con la innovación y la calidad.
             </p>
           </div>
 
@@ -137,29 +135,29 @@ export default function QuemSomosPage() {
             {/* Métrica 1 */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#004990] hover:scale-105 transition-all duration-300">
               <div className="text-6xl font-bold text-[#004990] mb-4">+5k</div>
-              <h3 className="text-xl font-bold text-[#004990] mb-2">Projetos Públicos</h3>
-              <p className="text-gray-600">Implementações bem-sucedidas</p>
+              <h3 className="text-xl font-bold text-[#004990] mb-2">Proyectos Públicos</h3>
+              <p className="text-gray-600">Implementaciones exitosas</p>
             </div>
 
             {/* Métrica 2 */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#0066cc] hover:scale-105 transition-all duration-300">
               <div className="text-6xl font-bold text-[#0066cc] mb-4">+100</div>
-              <h3 className="text-xl font-bold text-[#004990] mb-2">Certificações</h3>
-              <p className="text-gray-600">Expertise reconhecida</p>
+              <h3 className="text-xl font-bold text-[#004990] mb-2">Certificaciones</h3>
+              <p className="text-gray-600">Experiencia reconocida</p>
             </div>
 
             {/* Métrica 3 */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#00a0d6] hover:scale-105 transition-all duration-300">
               <div className="text-6xl font-bold text-[#00a0d6] mb-4">+13.5k</div>
-              <h3 className="text-xl font-bold text-[#004990] mb-2">Clientes pelo Mundo</h3>
-              <p className="text-gray-600">Confiança global</p>
+              <h3 className="text-xl font-bold text-[#004990] mb-2">Clientes por  el Mundo</h3>
+              <p className="text-gray-600">Confianza global</p>
             </div>
 
             {/* Métrica 4 */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#10b981] hover:scale-105 transition-all duration-300">
               <div className="text-6xl font-bold text-[#10b981] mb-4">138</div>
               <h3 className="text-xl font-bold text-[#004990] mb-2">Países</h3>
-              <p className="text-gray-600">Presença internacional</p>
+              <p className="text-gray-600">Presencia internacional</p>
             </div>
           </div>
 
@@ -179,9 +177,9 @@ export default function QuemSomosPage() {
                   Great Place to Work
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  A KSC herda a tradição do ambiente de trabalho colaborativo da Katun, 
-                  reconhecido com o selo <span className="font-bold text-green-600">Great Place to Work</span> por{' '}
-                  <span className="font-bold text-blue-600">5 anos consecutivos</span>!
+                  KWS hereda la tradición del entorno de trabajo colaborativo de Katun, 
+                  reconocida con el sello <span className="font-bold text-green-600">Great Place to Work</span> por {' '}
+                  <span className="font-bold text-blue-600">5 años consecutivos</span>!
                 </p>
               </div>
             </div>
@@ -194,15 +192,15 @@ export default function QuemSomosPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#004990] mb-6">
-              Os nossos valores importam, e por isso temos grandes resultados.
+              Os nossos valores importam, e por  isso temos grandes resultados.
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossa cultura é construída sobre princípios sólidos que guiam cada decisão.
+              Nuestra cultura se construye sobre principios sólidos que guían cada decisión.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Missão Card */}
+            {/* Misión Card */}
             <div className="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-[#004990] hover:shadow-2xl transition-shadow duration-300">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#004990] to-[#0066cc] rounded-xl flex items-center justify-center shadow-lg">
@@ -211,17 +209,17 @@ export default function QuemSomosPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#004990] mb-2">Missão</h3>
+                  <h3 className="text-3xl font-bold text-[#004990] mb-2">Misión</h3>
                   <div className="w-20 h-1 bg-gradient-to-r from-[#004990] to-[#0066cc]"></div>
                 </div>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Oferecer <span className="font-semibold text-[#004990]">soluções tecnológicas inovadoras e eficientes</span>, 
-                com foco no mercado de impressão, para atender às necessidades dos clientes.
+                Ofrecer <span className="font-semibold text-[#004990]">soluciones tecnológicas innovadoras y eficientes</span>, 
+                con enfoque en el mercado de impresión, para atender las necesidades de los clientes.
               </p>
             </div>
 
-            {/* Visão Card */}
+            {/* Visión Card */}
             <div className="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-[#10b981] hover:shadow-2xl transition-shadow duration-300">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#10b981] to-[#22c55e] rounded-xl flex items-center justify-center shadow-lg">
@@ -231,13 +229,13 @@ export default function QuemSomosPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#004990] mb-2">Visão</h3>
+                  <h3 className="text-3xl font-bold text-[#004990] mb-2">Visión</h3>
                   <div className="w-20 h-1 bg-gradient-to-r from-[#10b981] to-[#22c55e]"></div>
                 </div>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Ser reconhecida como <span className="font-semibold text-[#10b981]">referência no mercado de tecnologia</span>, 
-                fazendo parte da revolução do MPS e agregando valor aos negócios dos clientes.
+                Ser reconocida como <span className="font-semibold text-[#10b981]">referencia en el mercado de tecnología</span>, 
+                siendo parte de la revolución de MPS y agregando valor al negocio de los clientes.
               </p>
             </div>
           </div>
@@ -245,12 +243,12 @@ export default function QuemSomosPage() {
           {/* Core Values Pills - Gradient Flow */}
           <div className="mt-16 flex flex-wrap justify-center gap-6">
             {[
-              { name: 'Inovação', gradient: 'from-[#004990] to-[#0066cc]' },
-              { name: 'Excelência', gradient: 'from-[#0066cc] to-[#0080ff]' },
-              { name: 'Colaboração', gradient: 'from-[#0080ff] to-[#00a0d6]' },
-              { name: 'Compromisso', gradient: 'from-[#00a0d6] to-[#00c0a0]' },
-              { name: 'Integridade', gradient: 'from-[#00c0a0] to-[#10b981]' },
-              { name: 'Sustentabilidade', gradient: 'from-[#10b981] to-[#22c55e]' }
+              { name: 'Innovación', gradient: 'from-[#004990] to-[#0066cc]' },
+              { name: 'Excelencia', gradient: 'from-[#0066cc] to-[#0080ff]' },
+              { name: 'Colaboración', gradient: 'from-[#0080ff] to-[#00a0d6]' },
+              { name: 'Compromiso', gradient: 'from-[#00a0d6] to-[#00c0a0]' },
+              { name: 'Integridad', gradient: 'from-[#00c0a0] to-[#10b981]' },
+              { name: 'Sostenibilidad', gradient: 'from-[#10b981] to-[#22c55e]' }
             ].map((value) => (
               <div
                 key={value.name}
@@ -268,10 +266,10 @@ export default function QuemSomosPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Pronto para fazer parte desta história?
+              ¿Listo para ser parte de esta historia?
             </h2>
             <p className="text-xl mb-10 opacity-90">
-              Junte-se aos milhares de clientes que confiam na KSC para transformar seus negócios.
+              Únase a los miles de clientes que confían en KSC para transformar sus negocios.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -279,14 +277,14 @@ export default function QuemSomosPage() {
                 size="lg"
                 className="bg-white text-green-600 hover:bg-gray-100"
               >
-                <a href="/contato">Entre em Contato</a>
+                <a href="/contacto">Póngase en Contacto</a>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="border-2 border-white text-white hover:bg-white hover:text-green-600"
               >
-                <a href="/ksc">Conheça Nossas Soluções</a>
+                <a href="/ksc">Conozca Nuestras Soluciones</a>
               </Button>
             </div>
           </div>

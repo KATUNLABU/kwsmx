@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -27,7 +27,7 @@ const reasons = [
   },
   {
     number: "03",
-    title: "Gestão de Dispositivos e Sistemas",
+    title: "Gestión de Dispositivos e Sistemas",
     description: "O MyQ oferece controle total sobre seu ambiente de impressão. Sua equipe de TI obtém uma visão completa da frota, incluindo status, alertas, contadores e níveis de suprimentos, tudo em uma interface web amigável."
   },
   {
@@ -37,13 +37,13 @@ const reasons = [
   },
   {
     number: "05",
-    title: "Impressão Conveniente e Segura",
+    title: "Impresión Conveniente e Segura",
     description: "Envie trabalhos para uma fila segura e libere-os em qualquer impressora da rede (Find-Me Printing) via crachá, PIN ou celular. Segurança e conveniência andando juntas para o usuário final."
   },
   {
     number: "06",
     title: "Flexibilidade e Mobilidade",
-    description: "Suporte total para BYOD e impressão móvel. Seja de um notebook, tablet ou smartphone, o MyQ garante que seus usuários possam imprimir o que precisarem, de onde estiverem, com total segurança."
+    description: "Soporte total para BYOD e impressão móvel. Seja de um notebook, tablet ou smartphone, o MyQ garante que seus usuários possam imprimir o que precisarem, de onde estiverem, com total segurança."
   },
   {
     number: "07",
@@ -57,7 +57,7 @@ const reasons = [
   },
   {
     number: "09",
-    title: "Gestão de Mudanças",
+    title: "Gestión de Mudanças",
     description: "Use dados reais para tomar decisões inteligentes. Otimize processos, planeje custos e alinhe o ambiente de impressão às necessidades da organização, minimizando a resistência a mudanças."
   },
   {
@@ -86,7 +86,7 @@ interface Feature {
   title: string;
   description: string;
   icon: string;
-  solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' | 'home';
+  solution: 'kpax' | 'papercut' | 'myq' | 'kdfm' | 'Inicio';
 }
 
 function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
@@ -120,22 +120,20 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
 export default function SolutionRedPage() {
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
-      href: '/solucoes',
+      label: 'Soluciones',
+      href: '/soluciones',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -145,12 +143,12 @@ export default function SolutionRedPage() {
       {/* Hero Banner */}
       <HeroBannerWaves
         title="MyQ"
-        subtitle="Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes."
+        subtitle="Solución completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes."
         gradientFrom="#ca1616" // red-600
         gradientTo="#6a2f2f"   // red-500
         waveColor="rgba(255, 255, 255, 0.25)"
         breadcrumbs={[
-          { label: 'Soluções', href: '/solucoes' },
+          { label: 'Soluciones', href: '/soluciones' },
           { label: 'MyQ', href: '/myq' }
         ]}
       />
@@ -197,7 +195,7 @@ export default function SolutionRedPage() {
                 <div className="flex flex-wrap gap-6 text-sm font-semibold text-gray-500">
                   <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Versão 10.2</span>
                   <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Windows Server</span>
-                  <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Suporte Dedicado</span>
+                  <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500"></div> Soporte Dedicado</span>
                 </div>
               </div>
             </motion.div>
@@ -270,7 +268,7 @@ export default function SolutionRedPage() {
               </div>
               
               <h2 className="text-4xl font-bold text-red-600 mb-6">
-                Gestão Inteligente MyQ
+                Gestión Inteligente MyQ
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -287,10 +285,10 @@ export default function SolutionRedPage() {
 
               <div className="flex gap-4">
                 <Button variant="primary" size="lg" className="bg-gradient-to-r from-red-600 to-red-700">
-                  <a href="/contato" className="text-inherit no-underline">Solicitar Demo</a>
+                  <a href="/contacto" className="text-inherit no-underline">Solicitar Demo</a>
                 </Button>
                 <Button variant="outline" size="lg">
-                  <a href="#recursos" className="text-inherit no-underline">Ver Recursos</a>
+                  <a href="#Recursos" className="text-inherit no-underline">Ver Recursos</a>
                 </Button>
               </div>
             </motion.div>
@@ -332,7 +330,7 @@ export default function SolutionRedPage() {
       </section>
 
       {/* Features Section */}
-      <section id="recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="Recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16">
             <motion.h2 
@@ -366,12 +364,11 @@ export default function SolutionRedPage() {
                 title: 'Digitalização OCR',
                 description: 'Digitalize documentos diretamente com OCR integrado e fluxos automatizados para seus destinos favoritos.',
                 icon: 'Digitalização Inteligente',
-                solution: 'megaged'
               },
               {
-                title: 'Impressão Segura',
+                title: 'Impresión Segura',
                 description: 'Garanta a confidencialidade com liberação de impressão segura via crachá, PIN ou dispositivo móvel.',
-                icon: 'Impressão Segura',
+                icon: 'Impresión Segura',
                 solution: 'papercut'
               },
               {
@@ -383,7 +380,7 @@ export default function SolutionRedPage() {
               {
                 title: 'Mobilidade Total',
                 description: 'Imprima de qualquer lugar e dispositivo móvel com total segurança e facilidade (BYOD).',
-                icon: 'Impressão Mobile',
+                icon: 'Impresión Mobile',
                 solution: 'papercut'
               },
               {
@@ -467,7 +464,7 @@ export default function SolutionRedPage() {
                   "Recuperação de custos e cotas de impressão",
                   "Múltiplas filas para diferentes processos",
                   "Regras de impressão robustas e flexíveis",
-                  "Suporte a terminais de hardware para legados",
+                  "Soporte a terminais de hardware para legados",
                   "Relatórios flexíveis com parâmetros personalizáveis",
                   "App móvel poderoso para Android e iOS",
                   "Cliente desktop para Windows, Mac e Linux"

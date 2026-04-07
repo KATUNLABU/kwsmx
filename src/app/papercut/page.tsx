@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -15,7 +15,7 @@ import PrintDashboardIllustration from '@/components/illustrations/PrintDashboar
 import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
 
 // Feature Card Component
-function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' }) {
+function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'myq' | 'kdfm' }) {
   const iconRef = useRef<AnimatedIconRef>(null);
 
   return (
@@ -45,22 +45,20 @@ function FeatureCard({ feature, index, solution }: { feature: { title: string; d
 
 export default function PaperCutPage() {
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
-      href: '/solucoes',
+      label: 'Soluciones',
+      href: '/soluciones',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -76,13 +74,13 @@ export default function PaperCutPage() {
 
       {/* Hero Banner */}
       <HeroBannerWaves
-        title="PaperCut MF - Gestão de Impressão Inteligente"
-        subtitle="Solução líder mundial em gestão de impressão que otimiza custos, aumenta a segurança e promove sustentabilidade."
+        title="PaperCut MF - Gestión de Impresión Inteligente"
+        subtitle="Solución líder mundial em gestão de impressão que otimiza custos, aumenta a segurança e promove sustentabilidade."
         gradientFrom="#047857"
         gradientTo="#10b981"
         waveColor="rgba(255, 255, 255, 0.25)"
         breadcrumbs={[
-          { label: 'Soluções', href: '/solucoes' },
+          { label: 'Soluciones', href: '/soluciones' },
           { label: 'PaperCut MF', href: '/papercut' }
         ]}
       />
@@ -110,7 +108,7 @@ export default function PaperCutPage() {
               </div>
               
               <h2 className="text-4xl font-bold text-[#004990] mb-6">
-                Controle Total do Seu Ambiente de Impressão
+                Controle Total do Seu Ambiente de Impresión
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -121,16 +119,16 @@ export default function PaperCutPage() {
 
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
                 Com mais de 100 milhões de usuários em 138 países, o PaperCut MF transforma a 
-                maneira como as empresas gerenciam seus recursos de impressão, trazendo economia, 
+                maneira como as empresas gerenciam seus Recursos de impressão, trazendo economia, 
                 eficiência e responsabilidade ambiental.
               </p>
 
               <div className="flex gap-4">
                 <Button variant="primary" size="lg" className="bg-gradient-to-r from-green-600 to-green-700">
-                  <a href="/contato" className="text-inherit no-underline">Solicitar Demo</a>
+                  <a href="/contacto" className="text-inherit no-underline">Solicitar Demo</a>
                 </Button>
                 <Button variant="outline" size="lg">
-                  <a href="#recursos" className="text-inherit no-underline">Ver Recursos</a>
+                  <a href="#Recursos" className="text-inherit no-underline">Ver Recursos</a>
                 </Button>
               </div>
             </motion.div>
@@ -172,7 +170,7 @@ export default function PaperCutPage() {
       </section>
 
       {/* Features Section */}
-      <section id="recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="Recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16">
             <motion.h2 
@@ -201,7 +199,7 @@ export default function PaperCutPage() {
                 description: 'Monitore e controle todos os gastos com impressão em tempo real. Defina cotas, políticas e regras personalizadas por usuário ou departamento.'
               },
               {
-                title: 'Impressão Segura',
+                title: 'Impresión Segura',
                 description: 'Libere documentos somente com autenticação (cartão, PIN ou biometria). Evite impressões esquecidas e garanta a confidencialidade.'
               },
               {
@@ -218,11 +216,11 @@ export default function PaperCutPage() {
               },
               {
                 title: 'Multi-Marca',
-                description: 'Suporte a todas as principais marcas de impressoras e multifuncionais. Gestão unificada de ambientes heterogêneos.'
+                description: 'Soporte a todas as principais marcas de impressoras e multifuncionais. Gestión unificada de ambientes heterogêneos.'
               },
               {
-                title: 'Impressão Mobile',
-                description: 'Imprima de qualquer lugar usando smartphones e tablets. Suporte a Google Cloud Print, AirPrint e aplicativo móvel próprio.'
+                title: 'Impresión Mobile',
+                description: 'Imprima de qualquer lugar usando smartphones e tablets. Soporte a Google Cloud Print, AirPrint e aplicativo móvel próprio.'
               },
               {
                 title: 'Auditoria Completa',
@@ -359,7 +357,7 @@ export default function PaperCutPage() {
               transition={{ delay: 0.2 }}
               className="text-xl opacity-90 max-w-3xl mx-auto"
             >
-              Benefícios que fazem a diferença no seu negócio
+              Beneficios que fazem a diferença no seu negócio
             </motion.p>
           </div>
 
@@ -378,7 +376,7 @@ export default function PaperCutPage() {
                 description: 'Reduza o impacto ambiental com métricas de CO₂, árvores salvas e consumo consciente. Contribua para os objetivos ESG da empresa.'
               },
               {
-                title: 'Gestão Simplificada',
+                title: 'Gestión Simplificada',
                 description: 'Interface intuitiva e centralizada. Administre todo o ambiente de impressão de qualquer lugar através do console web.'
               },
               {
@@ -386,7 +384,7 @@ export default function PaperCutPage() {
                 description: 'De 5 a 50.000+ usuários. A solução cresce com seu negócio sem perda de performance ou necessidade de reestruturação.'
               },
               {
-                title: 'Suporte Global',
+                title: 'Soporte Global',
                 description: 'Documentação completa em português, treinamentos especializados e suporte técnico da KSC disponível 24/7.'
               }
             ].map((benefit, index) => (
@@ -416,7 +414,7 @@ export default function PaperCutPage() {
             className="bg-gradient-to-br from-gray-50 to-green-50 p-12 rounded-2xl text-center border border-green-200"
           >
             <h2 className="text-4xl font-bold text-[#004990] mb-6">
-              Pronto para Otimizar Sua Gestão de Impressão?
+              Pronto para Otimizar Sua Gestión de Impresión?
             </h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Solicite uma demonstração gratuita e descubra como o PaperCut MF pode 
@@ -424,7 +422,7 @@ export default function PaperCutPage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button variant="primary" size="lg" className="bg-gradient-to-r from-green-600 to-green-700">
-                <a href="/contato" className="text-inherit no-underline">Solicitar Demonstração</a>
+                <a href="/contacto" className="text-inherit no-underline">Solicitar Demonstração</a>
               </Button>
             </div>
           </motion.div>

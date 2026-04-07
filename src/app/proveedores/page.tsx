@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Script from 'next/script';
 import Image from 'next/image';
 import NavBar from '@/components/ui/NavBar';
@@ -7,9 +7,8 @@ import HeroBannerWaves from '@/components/ui/HeroBannerWaves';
 import Footer from '@/components/ui/Footer';
 
 export const metadata: Metadata = {
-  title: 'Fornecedores - KWS | Katun Workplace Solutions',
-  description: 'Conheça os parceiros estratégicos que formam o ecossistema da KWS, incluindo Katun, Megaged, ACDI, Benq e mais.',
-  keywords: ['Parceiros KWS', 'Kyocera FleetServices', 'Papercut KWS', 'KPAX gestão de parque'],
+  title: 'Proveedores - KWS | Katun Workplace Solutions',
+  keywords: ['Socios KWS', 'Kyocera FleetServices', 'Papercut KWS', 'KPAX gestión de parque'],
 };
 
 interface Partner {
@@ -24,56 +23,36 @@ interface Partner {
 
 export default function FornecedoresPage() {
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
+      label: 'Soluciones',
       href: '#',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   const partners: Partner[] = [
     {
       name: 'KATUN CORP',
-      description: 'Fornecedor mundial de peças e suprimentos de impressão desde 1979.',
-      logo: '/logos/fornecedores/katun-corp.png',
+      description: 'Proveedor mundial de piezas y suministros de impresión desde 1979.',
+      logo: '/logos/proveedores/katun-corp.png',
       color: 'from-blue-500 to-blue-700',
       instagram: 'https://www.instagram.com/katunbrasil',
       website: 'https://katun.com/pt/latam',
       linkedin: 'https://www.linkedin.com/company/katun-brasil',
     },
     {
-      name: 'MEGAGED',
-      description: 'Gestão Eletrônica de Dados e Equipamentos.',
-      logo: '/logos/fornecedores/megaged.png',
-      color: 'from-purple-500 to-purple-700',
-      instagram: 'https://www.instagram.com/megagedbrasil',
-      website: 'https://otimogestor.com.br/',
-      linkedin: 'https://www.linkedin.com/company/megagedbrasil/',
-    },
-    {
-      name: 'Wiki Alphabet',
-      description: 'Plataforma completa para o setor Educacional.',
-      logo: '/logos/fornecedores/wiki-alphabet.png',
-      color: 'from-orange-500 to-orange-700',
-      instagram: 'https://www.instagram.com/wikialphabet/',
-      website: 'https://wikialphabet.com/',
-      linkedin: 'https://www.linkedin.com/company/wikialphabet/',
-    },
-    {
       name: 'ACDI',
-      description: 'Multi-soluções para o universo de MPS 4.0.',
-      logo: '/logos/fornecedores/acdi.png',
+      description: 'Multisoluciones para el universo de MPS 4.0.',
+      logo: '/logos/proveedores/acdi.png',
       color: 'from-green-500 to-green-700',
       instagram: 'https://www.instagram.com/acd_inc/',
       website: 'https://www.acd-inc.com.br/',
@@ -81,8 +60,8 @@ export default function FornecedoresPage() {
     },
     {
       name: 'DMZ',
-      description: 'Leitores Biométricos e RFID para Liberação de Impressão!',
-      logo: '/logos/fornecedores/dmz.png',
+      description: '¡Lectores Biométricos y RFID para Liberación de Impresión!',
+      logo: '/logos/proveedores/dmz.png',
       color: 'from-gray-500 to-gray-700',
       instagram: 'https://www.instagram.com/dmzconnection/',
       website: 'https://dmzconnection.com/',
@@ -90,8 +69,8 @@ export default function FornecedoresPage() {
     },
     {
       name: 'YouSync',
-      description: 'Integrações e Tecnologia.',
-      logo: '/logos/fornecedores/yousync.png',
+      description: 'Integraciones y Tecnología.',
+      logo: '/logos/proveedores/yousync.png',
       color: 'from-red-500 to-red-700',
       instagram: 'https://www.instagram.com/yousyncbr/',
       website: 'https://www.yousync.com.br/',
@@ -99,8 +78,8 @@ export default function FornecedoresPage() {
     },
     {
       name: 'Tectoy Transire',
-      description: 'Totens de Autoatendimento, Hardwares e Equipamentos diversos para PDV.',
-      logo: '/logos/fornecedores/tectoy-transire.png',
+      description: 'Tótems de Autoservicio, Hardwares y Equipos diversos para POS.',
+      logo: '/logos/proveedores/tectoy-transire.png',
       color: 'from-yellow-500 to-yellow-700',
       instagram: 'https://www.instagram.com/tectoy_automacao/',
       website: 'https://tectoyautomacao.com.br/',
@@ -108,8 +87,8 @@ export default function FornecedoresPage() {
     },
     {
       name: 'Benq',
-      description: 'Projetores, Monitores LCD e Displays interativos para diversos usos.',
-      logo: '/logos/fornecedores/benq.png',
+      description: 'Proyectores, Monitores LCD y Pantallas interactivas para diversos usos.',
+      logo: '/logos/proveedores/benq.png',
       color: 'from-indigo-500 to-indigo-700',
       instagram: 'https://www.instagram.com/benqbrasil/',
       website: 'https://www.benq.com/pt-br/index.html',
@@ -130,13 +109,13 @@ export default function FornecedoresPage() {
 
       {/* Hero Banner */}
       <HeroBannerWaves
-        title="Nossos Parceiros Estratégicos e Fornecedores"
-        subtitle="Juntos, formamos um ecossistema completo de tecnologia e inovação para transformar seu negócio."
+        title="Nuestros Socios Estratégicos y Proveedores"
+        subtitle="Juntos, formamos un ecosistema completo de tecnología e innovación para transformar su negocio."
         gradientFrom="#1e3052"
         gradientTo="#3b82f6"
         waveColor="rgba(255, 255, 255, 0.1)"
         breadcrumbs={[
-          { label: 'Fornecedores', href: '/fornecedores' }
+          { label: 'Proveedores', href: '/proveedores' }
         ]}
       />
 
@@ -145,10 +124,10 @@ export default function FornecedoresPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004990] mb-4">
-              Ecossistema de Parceiros
+              Ecosistema de Socios
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Trabalhamos com os melhores do mercado para oferecer soluções completas e integradas.
+              Trabajamos con los mejores del mercado para ofrecer soluciones completas e integradas.
             </p>
           </div>
 
@@ -251,10 +230,10 @@ export default function FornecedoresPage() {
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004990] mb-4">
-              Por que somos o parceiro ideal?
+              ¿Por qué somos el socio ideal?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossa rede de parceiros garante soluções completas e suporte excepcional.
+              Nuestra red de socios garantiza soluciones completas y soporte excepcional.
             </p>
           </div>
 
@@ -265,8 +244,8 @@ export default function FornecedoresPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#004990] mb-2">Confiança</h3>
-              <p className="text-gray-600">Parceiros verificados e certificados</p>
+              <h3 className="text-xl font-bold text-[#004990] mb-2">Confianza</h3>
+              <p className="text-gray-600">Socios verificados y certificados</p>
             </div>
 
             <div className="text-center p-6">
@@ -275,8 +254,8 @@ export default function FornecedoresPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#004990] mb-2">Inovação</h3>
-              <p className="text-gray-600">Tecnologias de ponta do mercado</p>
+              <h3 className="text-xl font-bold text-[#004990] mb-2">Innovación</h3>
+              <p className="text-gray-600">Tecnologías de punta del mercado</p>
             </div>
 
             <div className="text-center p-6">
@@ -285,8 +264,8 @@ export default function FornecedoresPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#004990] mb-2">Colaboração</h3>
-              <p className="text-gray-600">Trabalho em equipe integrado</p>
+              <h3 className="text-xl font-bold text-[#004990] mb-2">Colaboración</h3>
+              <p className="text-gray-600">Trabajo en equipo integrado</p>
             </div>
 
             <div className="text-center p-6">
@@ -296,7 +275,7 @@ export default function FornecedoresPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-[#004990] mb-2">Global</h3>
-              <p className="text-gray-600">Alcance em 138 países</p>
+              <p className="text-gray-600">Alcance en 138 países</p>
             </div>
           </div>
         </Container>
@@ -307,16 +286,16 @@ export default function FornecedoresPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Quer se tornar nosso parceiro?
+              ¿Quiere convertirse en nuestro socio?
             </h2>
             <p className="text-xl mb-10 opacity-90">
-              Junte-se ao nosso ecossistema de inovação e tecnologia.
+              Únase a nuestro ecosistema de innovación y tecnología.
             </p>
             <a
-              href="/contato"
+              href="/contacto"
               className="inline-block px-10 py-4 bg-white text-green-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
             >
-              Entre em Contato
+              Contáctenos
             </a>
           </div>
         </Container>

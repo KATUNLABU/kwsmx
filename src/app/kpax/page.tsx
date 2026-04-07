@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -15,7 +15,7 @@ import FleetMonitoringIllustration from '@/components/illustrations/FleetMonitor
 import AnimatedIcon, { AnimatedIconRef } from '@/components/ui/AnimatedIcon';
 
 // Feature Card Component
-function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' }) {
+function FeatureCard({ feature, index, solution }: { feature: { title: string; description: string }; index: number; solution: 'kpax' | 'papercut' | 'myq' | 'kdfm' }) {
   const iconRef = useRef<AnimatedIconRef>(null);
 
   return (
@@ -45,22 +45,20 @@ function FeatureCard({ feature, index, solution }: { feature: { title: string; d
 
 export default function KPAXPage() {
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
-      href: '/solucoes',
+      label: 'Soluciones',
+      href: '/soluciones',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -76,13 +74,13 @@ export default function KPAXPage() {
 
       {/* Hero Banner */}
       <HeroBannerWaves
-        title="KPAX Fleet - Gestão Inteligente de Equipamentos"
-        subtitle="Monitoramento remoto, manutenção preditiva e otimização de frota em tempo real para máxima eficiência operacional."
+        title="KPAX Fleet - Gestión Inteligente de Equipos"
+        subtitle="Monitoreo remoto, manutenção preditiva e otimização de frota em tempo real para máxima eficiência operacional."
         gradientFrom="#1d4ed8"
         gradientTo="#3b82f6"
         waveColor="rgba(255, 255, 255, 0.25)"
         breadcrumbs={[
-          { label: 'Soluções', href: '/solucoes' },
+          { label: 'Soluciones', href: '/soluciones' },
           { label: 'KPAX Fleet', href: '/kpax' }
         ]}
       />
@@ -109,7 +107,7 @@ export default function KPAXPage() {
               </div>
               
               <h2 className="text-4xl font-bold text-[#004990] mb-6">
-                Transforme a Gestão da Sua Frota de Equipamentos
+                Transforme a Gestión da Sua Frota de Equipos
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -125,10 +123,10 @@ export default function KPAXPage() {
 
               <div className="flex gap-4">
                 <Button variant="primary" size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700">
-                  <a href="/contato" className="text-inherit no-underline">Solicitar Demo</a>
+                  <a href="/contacto" className="text-inherit no-underline">Solicitar Demo</a>
                 </Button>
                 <Button variant="outline" size="lg">
-                  <a href="#recursos" className="text-inherit no-underline">Ver Recursos</a>
+                  <a href="#Recursos" className="text-inherit no-underline">Ver Recursos</a>
                 </Button>
               </div>
             </motion.div>
@@ -151,7 +149,7 @@ export default function KPAXPage() {
 
                 <div className="border-b border-white/20 pb-6">
                   <div className="text-5xl font-bold mb-2">24/7</div>
-                  <p className="text-lg opacity-90">Monitoramento contínuo</p>
+                  <p className="text-lg opacity-90">Monitoreo contínuo</p>
                 </div>
 
                 <div className="border-b border-white/20 pb-6">
@@ -170,7 +168,7 @@ export default function KPAXPage() {
       </section>
 
       {/* Features Section */}
-      <section id="recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="Recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16">
             <motion.h2 
@@ -195,7 +193,7 @@ export default function KPAXPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Monitoramento Remoto',
+                title: 'Monitoreo Remoto',
                 description: 'Acompanhe em tempo real o status de todos os equipamentos. Níveis de toner, contador de páginas, erros e alertas centralizados.'
               },
               {
@@ -207,7 +205,7 @@ export default function KPAXPage() {
                 description: 'KPIs e métricas estratégicas em dashboards customizáveis. Visão completa da performance da frota em tempo real.'
               },
               {
-                title: 'Gestão de Suprimentos',
+                title: 'Gestión de Suprimentos',
                 description: 'Controle automático de estoque de toner e peças. Pedidos automáticos quando níveis atingem limite mínimo configurado.'
               },
               {
@@ -215,7 +213,7 @@ export default function KPAXPage() {
                 description: 'Notificações proativas por email, SMS ou WhatsApp. Configure regras personalizadas para cada tipo de evento.'
               },
               {
-                title: 'Gestão de SLA',
+                title: 'Gestión de SLA',
                 description: 'Acompanhe e garanta o cumprimento de SLAs contratuais. Relatórios automáticos de desempenho e disponibilidade.'
               },
               {
@@ -239,7 +237,7 @@ export default function KPAXPage() {
 
       {/* Fleet Monitoring Showcase */}
       <FeatureShowcase
-        title="Monitoramento em Tempo Real"
+        title="Monitoreo em Tempo Real"
         description="Visualize o status completo da sua frota em um único painel. Acompanhe níveis de toner, status de equipamentos, alertas automáticos e muito mais. Receba notificações proativas antes que problemas afetem a produtividade da sua equipe."
         imagePosition="left"
         gradient="from-blue-50 to-white"
@@ -278,7 +276,7 @@ export default function KPAXPage() {
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
                     src="https://www.youtube.com/embed/1l0HHgri0Gw"
-                    title="KPAX - Gestão de Equipamentos de Impressão | KSC | PT-BR"
+                    title="KPAX - Gestión de Equipos de Impresión | KSC | PT-BR"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
@@ -308,7 +306,7 @@ export default function KPAXPage() {
             >
               <Image
                 src="/images/imagenes solcuiones/Eficiência Operacional Comprovada.jpeg"
-                alt="Gestão de equipamentos em ação"
+                alt="Gestión de equipamentos em ação"
                 width={800}
                 height={600}
                 className="w-full h-auto object-cover"
@@ -358,7 +356,7 @@ export default function KPAXPage() {
               transition={{ delay: 0.2 }}
               className="text-xl opacity-90 max-w-3xl mx-auto"
             >
-              Benefícios tangíveis para seu negócio
+              Beneficios tangíveis para seu negócio
             </motion.p>
           </div>
 
@@ -382,10 +380,10 @@ export default function KPAXPage() {
               },
               {
                 title: 'Escalabilidade',
-                description: 'Solução que cresce com seu negócio. De 10 a 10.000+ equipamentos gerenciados com a mesma eficiência.'
+                description: 'Solución que cresce com seu negócio. De 10 a 10.000+ equipamentos gerenciados com a mesma eficiência.'
               },
               {
-                title: 'Suporte Especializado',
+                title: 'Soporte Especializado',
                 description: 'Equipe técnica da KSC altamente qualificada. Treinamento completo e suporte 24/7 em português.'
               }
             ].map((benefit, index) => (
@@ -415,7 +413,7 @@ export default function KPAXPage() {
             className="bg-gradient-to-br from-gray-50 to-blue-50 p-12 rounded-2xl text-center border border-blue-200"
           >
             <h2 className="text-4xl font-bold text-[#004990] mb-6">
-              Pronto para Otimizar Sua Gestão de Equipamentos?
+              Pronto para Otimizar Sua Gestión de Equipos?
             </h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Solicite uma demonstração gratuita e descubra como o KPAX Fleet pode 
@@ -423,7 +421,7 @@ export default function KPAXPage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button variant="primary" size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700">
-                <a href="/contato" className="text-inherit no-underline">Solicitar Demonstração</a>
+                <a href="/contacto" className="text-inherit no-underline">Solicitar Demonstração</a>
               </Button>
             </div>
           </motion.div>

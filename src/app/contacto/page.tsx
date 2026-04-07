@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Script from 'next/script';
 import { useState } from 'react';
@@ -12,22 +12,20 @@ export default function ContatoPage() {
   const [activeTab, setActiveTab] = useState<'whatsapp' | 'hubspot'>('whatsapp');
 
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
+      label: 'Soluciones',
       href: '#',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -51,13 +49,13 @@ export default function ContatoPage() {
 
       {/* Hero Banner */}
       <HeroBannerWaves
-        title="Estamos Aqui para Ajudar Você"
-        subtitle="Nossa equipe de especialistas está pronta para atender suas necessidades e transformar a gestão tecnológica da sua empresa."
+        title="Estamos aquí para ayudarte"
+        subtitle="Nuestro equipo de expertos está listo para atender tus necesidades y transformar la gestión tecnológica de tu empresa."
         gradientFrom="#1e3052"
         gradientTo="#00529B"
         waveColor="rgba(255, 255, 255, 0.1)"
         breadcrumbs={[
-          { label: 'Contato', href: '/contato' }
+          { label: 'Contacto', href: '/contacto' }
         ]}
       />
 
@@ -68,16 +66,16 @@ export default function ContatoPage() {
             {/* Left Column - Contact Information */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004990] mb-6">
-                Múltiplos Canais de Atendimento
+                Múltiples Canales de Atención
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Nossa equipe está preparada para atender você através de diversos canais de comunicação. 
-                Seja para solicitar uma demonstração, tirar dúvidas sobre nossas soluções ou contratar 
-                nossos serviços, estamos prontos para ajudar.
+                Nuestro equipo está preparado para atenderte a través de diversos canales de comunicación. 
+                Ya sea para solicitar una demostración, aclarar dudas sobre nuestras soluciones o contratar 
+                nuestros servicios, estamos listos para ayudarte.
               </p>
               <div className="bg-gradient-to-r from-blue-50 to-green-50 p-4 rounded-lg border-l-4 border-blue-500 mb-10">
                 <p className="text-sm text-gray-700 font-medium">
-                  ⏱️ <strong>Tempo de resposta:</strong> Retornamos todos os contatos em até 24 horas úteis
+                  ⏱️ <strong>Tiempo de respuesta:</strong> Respondemos todos los contactos en hasta 24 horas hábiles.
                 </p>
               </div>
 
@@ -93,22 +91,19 @@ export default function ContatoPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#004990] mb-2">Nossa Sede</h3>
+                      <h3 className="text-lg font-bold text-[#004990] mb-2">Nuestra Sede</h3>
                       <p className="text-gray-700 mb-1">
-                        <strong>Av. Ermano Marchetti, 1435</strong><br />
-                        Água Branca - São Paulo, SP<br />
-                        CEP: 05038-001
+                        <strong>Pna Holding México, Calle Cto Aguascalientes Nte 137</strong><br />
+                        Parque industrial de Valle de Aguascalientes, Fraccionamiento Industrial<br />
+                        20358 Aguascalientes, Ags.
                       </p>
-                      <p className="text-sm text-gray-600 mt-2">
-                        📍 Próximo ao Shopping Villa-Lobos
-                      </p>
-                      <a
-                        href="https://www.google.com/maps/search/?api=1&query=Av.+Ermano+Marchetti+1435+São+Paulo+SP"
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=Pna+Holding+México+Calle+Cto+Aguascalientes+Nte+137+Ags"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 mt-3 text-green-600 hover:text-green-700 font-semibold"
                       >
-                        Ver no mapa
+                        Ver en el mapa
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -126,7 +121,7 @@ export default function ContatoPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#004990] mb-2">Email Corporativo</h3>
+                      <h3 className="text-lg font-bold text-[#004990] mb-2">Correo Corporativo</h3>
                       <a
                         href="mailto:ksc@katun.com"
                         className="text-blue-600 hover:text-blue-700 font-semibold text-lg block mb-2"
@@ -149,7 +144,7 @@ export default function ContatoPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#004990] mb-2">Central de Atendimento</h3>
+                      <h3 className="text-lg font-bold text-[#004990] mb-2">Centro de Atención</h3>
                       
                       <a
                         href="tel:+5511970476396"
@@ -158,7 +153,7 @@ export default function ContatoPage() {
                         +55 (11) 97047-6396
                       </a>
                       <p className="text-sm text-gray-600">
-                        📞 Segunda a Sexta: 08h às 18h
+                        📞 Lunes a Viernes: 08:00 a 18:00
                       </p>
                     </div>
                   </div>
@@ -166,8 +161,8 @@ export default function ContatoPage() {
               </div>
 
               <div className="mt-10 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
-                <h3 className="text-lg font-bold text-[#004990] mb-2">Fale Conosco pelo WhatsApp</h3>
-                <p className="text-sm text-gray-600 mb-4">Atendimento rápido e direto através do WhatsApp</p>
+                <h3 className="text-lg font-bold text-[#004990] mb-2">Contáctanos por WhatsApp</h3>
+                <p className="text-sm text-gray-600 mb-4">Atención rápida y directa a través de WhatsApp</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   
                   
@@ -193,10 +188,10 @@ export default function ContatoPage() {
             <div>
               <div className="bg-gradient-to-br from-blue-600 to-green-600 text-white p-6 rounded-t-xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-3">
-                  Solicite um Contato
+                  Solicita que te contactemos
                 </h2>
                 <p className="text-lg opacity-90">
-                  Escolha a melhor forma de contato e receba atendimento personalizado.
+                  Elige la mejor forma de contacto y recibe atención personalizada.
                 </p>
               </div>
 
@@ -229,7 +224,7 @@ export default function ContatoPage() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span>E-mail</span>
+                    <span>Correo</span>
                   </div>
                 </button>
               </div>
@@ -242,8 +237,8 @@ export default function ContatoPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                       <div className="text-sm text-gray-700">
-                        <strong>Atendimento Rápido via WhatsApp:</strong>
-                        <p className="mt-1">Preencha o formulário abaixo e seja redirecionado ao nosso WhatsApp com sua mensagem pronta. Resposta instantânea!</p>
+                        <strong>Atención Rápida vía WhatsApp:</strong>
+                        <p className="mt-1">Completa el formulario a continuación y serás redirigido a nuestro WhatsApp con tu mensaje listo. ¡Respuesta instantánea!</p>
                       </div>
                     </div>
                     <WhatsAppContactForm phoneNumber="5511970476396" />
@@ -255,12 +250,12 @@ export default function ContatoPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                       <div className="text-sm text-gray-700">
-                        <strong>Formulário Protegido:</strong>
+                        <strong>Formulario Protegido:</strong>
                         <ul className="mt-2 space-y-1">
-                          <li>• Demonstração gratuita das soluções</li>
-                          <li>• Cotação personalizada</li>
-                          <li>• Consultoria especializada</li>
-                          <li>• Informações sobre produtos</li>
+                          <li>• Demostración gratuita de las soluciones</li>
+                          <li>• Cotización personalizada</li>
+                          <li>• Consultoría especializada</li>
+                          <li>• Información sobre productos</li>
                         </ul>
                       </div>
                     </div>
@@ -285,43 +280,43 @@ export default function ContatoPage() {
         <Container>
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004990] mb-4">
-              Visite Nossa Sede em São Paulo
+              Visita Nuestra Sede en Aguascalientes
             </h2>
             <p className="text-lg text-gray-600 mb-4">
-              Estamos estrategicamente localizados na zona oeste de São Paulo, com fácil acesso.
+              Estamos ubicados estratégicamente en el Parque industrial de Valle de Aguascalientes, con fácil acceso.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-700">
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Estacionamento no local</span>
+                <span>Estacionamiento en el lugar</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Próximo ao metrô</span>
+                  <span>Cerca de parada de camión</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Acessibilidade completa</span>
+                <span>Accesibilidad completa</span>
               </div>
             </div>
           </div>
           
           <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.0174738986683!2d-46.69353892373495!3d-23.527523578804873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8e8d7e4e6b3%3A0x1c8e8c9a8e8e8e8e!2sAv.%20Ermano%20Marchetti%2C%201435%20-%20%C3%81gua%20Branca%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005038-001!5e0!3m2!1spt-BR!2sbr!4v1729188000000!5m2!1spt-BR!2sbr"
+              src="https://maps.google.com/maps?q=Pna+Holding+M%C3%A9xico+Aguascalientes&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
               width="100%"
               height="500"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localização da KSC - Av. Ermano Marchetti, 1435, São Paulo"
+              title="Localización de Pna Holding - Aguascalientes"
             ></iframe>
           </div>
           
@@ -333,37 +328,38 @@ export default function ContatoPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-[#004990] mb-2">Metrô</h3>
-              <p className="text-gray-700 text-sm">
-                Estação Água Branca (Linha 7 - Rubi)<br />
-                10 minutos a pé
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
+                <h3 className="text-lg font-bold text-[#004990] mb-2">Transporte Público (YoVoy)</h3>
+                <p className="text-gray-700 text-sm">
+                  Rutas 01, 05, 11 y 34<br />
+                  Parada sobre 45 Norte (Cto. Aguascalientes)
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-[#004990] mb-2">Carro</h3>
-              <p className="text-gray-700 text-sm">
-                Acesso pela Marginal Tietê<br />
-                Estacionamento gratuito
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#004990] mb-2">Automóvil</h3>
+                <p className="text-gray-700 text-sm">
+                  Acceso principal por Carr. 45 Norte<br />
+                  Estacionamiento gratuito interno
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-[#004990] mb-2">Horário</h3>
-              <p className="text-gray-700 text-sm">
-                Segunda a Sexta: 08h às 18h<br />
-                Agende sua visita com antecedência
-              </p>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#004990] mb-2">Horario</h3>
+                <p className="text-gray-700 text-sm">
+                  Lunes a Viernes: 08:00 a 18:00<br />
+                  Programa tu visita con anticipación
+                </p>
+              </div>
             </div>
           </div>
         </Container>
@@ -374,10 +370,10 @@ export default function ContatoPage() {
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004990] mb-4">
-              Perguntas Frequentes sobre Atendimento
+              Preguntas Frecuentes sobre Atención
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Tire suas principais dúvidas sobre como entrar em contato e solicitar nossos serviços.
+              Resuelve tus principales dudas sobre cómo contactarnos y solicitar nuestros servicios.
             </p>
           </div>
 
@@ -385,79 +381,79 @@ export default function ContatoPage() {
             <details className="group bg-gray-50 p-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
               <summary className="flex justify-between items-center cursor-pointer list-none">
                 <h3 className="text-lg font-bold text-[#004990]">
-                  Qual o prazo de resposta após o envio do formulário?
+                  ¿Cuál es el tiempo de respuesta después de enviar el formulario?
                 </h3>
                 <svg className="w-5 h-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Nossa equipe retorna todos os contatos em até 24 horas úteis. Para urgências, entre em contato 
-                através dos telefones +55 (11) 98173-9425 ou +55 (11) 97047-6396, ou pelo WhatsApp.
+                Nuestro equipo responde a todos los contactos en un máximo de 24 horas hábiles. Para urgencias, 
+                comunícate a través de los teléfonos +55 (11) 98173-9425 o +55 (11) 97047-6396, o vía WhatsApp.
               </p>
             </details>
 
             <details className="group bg-gray-50 p-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
               <summary className="flex justify-between items-center cursor-pointer list-none">
                 <h3 className="text-lg font-bold text-[#004990]">
-                  Como solicito uma demonstração gratuita?
+                  ¿Cómo solicito una demostración gratuita?
                 </h3>
                 <svg className="w-5 h-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Sim! Oferecemos demonstrações gratuitas e personalizadas de todas as nossas soluções. 
-                Preencha o formulário acima ou ligue para agendar um horário com nossos especialistas.
-                A demonstração pode ser presencial ou online, conforme sua preferência.
+                ¡Sí! Ofrecemos demostraciones gratuitas y personalizadas de todas nuestras soluciones. 
+                Completa el formulario anterior o llámanos para programar un horario con nuestros expertos. 
+                La demostración puede ser presencial o en línea, según tu preferencia.
               </p>
             </details>
 
             <details className="group bg-gray-50 p-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
               <summary className="flex justify-between items-center cursor-pointer list-none">
                 <h3 className="text-lg font-bold text-[#004990]">
-                  Quais regiões e países vocês atendem?
+                  ¿Qué regiones y países atienden?
                 </h3>
                 <svg className="w-5 h-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Atendemos todo o território brasileiro com suporte local. Além disso, fazemos parte da rede 
-                global Katun, presente em 138 países. Temos capacidade de atender clientes multinacionais 
-                com operações em diversos países.
+                Atendemos todo el territorio brasileño con soporte local. Además, formamos parte de la red 
+                global de Katun, presente en 138 países. Tenemos la capacidad de atender clientes 
+                multinacionales con operaciones en diversos países.
               </p>
             </details>
 
             <details className="group bg-gray-50 p-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
               <summary className="flex justify-between items-center cursor-pointer list-none">
                 <h3 className="text-lg font-bold text-[#004990]">
-                  Quanto tempo leva para implementar uma solução?
+                  ¿Cuánto tiempo toma implementar una solución?
                 </h3>
                 <svg className="w-5 h-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                O prazo varia conforme a complexidade e tamanho do projeto. Em média, implementações básicas 
-                levam de 2 a 4 semanas, enquanto projetos complexos podem levar de 1 a 3 meses. Nossa equipe 
-                fornece um cronograma detalhado durante a fase de planejamento.
+                El plazo varía según la complejidad y el tamaño del proyecto. En promedio, las implementaciones 
+                básicas toman de 2 a 4 semanas, mientras que proyectos complejos pueden tardar de 1 a 3 meses. 
+                Nuestro equipo proporciona un cronograma detallado durante la fase de planificación.
               </p>
             </details>
 
             <details className="group bg-gray-50 p-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
               <summary className="flex justify-between items-center cursor-pointer list-none">
                 <h3 className="text-lg font-bold text-[#004990]">
-                  Vocês oferecem suporte técnico 24/7?
+                  ¿Ofrecen soporte técnico 24/7?
                 </h3>
                 <svg className="w-5 h-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Nosso horário de atendimento é de Segunda a Sexta-feira, das 08h às 18h. Para clientes com 
-                contratos de manutenção, oferecemos suporte estendido e atendimento prioritário. Entre em 
-                contato para conhecer nossos planos de suporte.
+                Nuestro horario de atención es de Lunes a Viernes, de 08:00 a 18:00. Para clientes con 
+                contratos de mantenimiento, ofrecemos soporte extendido y atención prioritaria. Comunícate 
+                con nosotros para conocer nuestros planes de soporte.
               </p>
             </details>
           </div>

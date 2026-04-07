@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -21,90 +21,60 @@ const cardsData: CardData[] = [
     id: 'kpax',
     title: 'KPAX Fleet',
     logo: '/images/services/gestao-equipamentos.png',
-    description: 'Plataforma inteligente de gestão de equipamentos de impressão com monitoramento em tempo real e manutenção preditiva.',
+    description: 'Plataforma inteligente de gestión de equipos de impresión con monitoreo en tiempo real y mantenimiento predictivo.',
     features: [
-      'Monitoramento 24/7 da frota',
-      'Alertas inteligentes automáticos',
-      'Análise preditiva de falhas',
-      'Gestão completa de suprimentos'
+      'Monitoreo 24/7 de la flota',
+      'Alertas inteligentes automáticas',
+      'Análisis predictivo de fallas',
+      'Gestión completa de suministros'
     ],
     website: '/kpax',
-    category: 'Gestão de Equipamentos',
+    category: 'Gestión de Equipos',
     color: 'from-blue-500 to-blue-700'
   },
   {
     id: 'papercut',
     title: 'PaperCut MF',
     logo: '/images/services/gestao-impressao.png',
-    description: 'Solução líder mundial em gestão de impressão que reduz custos em até 30% e garante impressão segura e sustentável.',
+    description: 'Solución líder mundial en gestión de impresión que reduce costos en hasta un 30% y garantiza una impresión segura y sustentable.',
     features: [
-      'Redução de custos até 30%',
-      'Impressão segura com autenticação',
-      'Relatórios detalhados em tempo real',
-      'Sustentabilidade e conformidade'
+      'Reducción de costos de hasta un 30%',
+      'Impresión segura con autenticación',
+      'Reportes detallados en tiempo real',
+      'Sustentabilidad y cumplimiento'
     ],
     website: '/papercut',
-    category: 'Gestão de Impressão',
+    category: 'Gestión de Impresión',
     color: 'from-green-500 to-green-700'
-  },
-  {
-    id: 'megaged',
-    title: 'MegaGED',
-    logo: '/images/services/gestao-documentos.png',
-    description: 'Sistema de gestão eletrônica de documentos com digitalização inteligente, workflow automatizado e conformidade LGPD.',
-    features: [
-      'Digitalização automática com OCR',
-      'Busca inteligente instantânea',
-      'Workflow documental automatizado',
-      'Conformidade total com LGPD'
-    ],
-    website: '/megaged',
-    category: 'Gestão Eletrônica de Documentos',
-    color: 'from-purple-500 to-purple-700'
-  },
-  {
-    id: 'wiki-alphabet',
-    title: 'Wiki Alphabet',
-    logo: '/images/services/plataforma-ensino.png',
-    description: 'Plataforma de ensino digital e base de conhecimento colaborativa que centraliza informações e potencializa o aprendizado.',
-    features: [
-      'Base de conhecimento centralizada',
-      'Colaboração em tempo real',
-      'Busca semântica avançada',
-      'LMS integrado para treinamentos'
-    ],
-    website: '/wiki-alphabet',
-    category: 'Plataforma de Ensino Digital',
-    color: 'from-orange-500 to-orange-700'
   },
   {
     id: 'myq',
     title: 'MyQ',
     logo: '/images/services/myq-logo.png',
-    description: 'Solução completa de gestão de impressão com interface personalizada e fluxos de digitalização inteligentes.',
+    description: 'Solución completa de gestión de impresión con interfaz personalizada y flujos de digitalización inteligentes.',
     features: [
-      'Interface personalizada por usuário',
-      'Workflows de digitalização OCR',
-      'Impressão segura e móvel',
-      'Relatórios de custos detalhados'
+      'Interfaz personalizada por usuario',
+      'Workflows de digitalización OCR',
+      'Impresión segura y móvil',
+      'Reportes de costos detallados'
     ],
     website: '/myq',
-    category: 'Gestão de Impressão',
+    category: 'Gestión de Impresión',
     color: 'from-red-500 to-red-700'
   },
   {
     id: 'kdfm',
     title: 'KDFM',
     logo: '/images/services/kdfm-logo.png',
-    description: 'Gestão eficiente e monitoramento de dispositivos de impressão para otimizar recursos e reduzir custos.',
+    description: 'Gestión eficiente y monitoreo de dispositivos de impresión para optimizar recursos y reducir costos.',
     features: [
-      'Monitoramento proativo',
-      'Gestão de suprimentos automatizada',
-      'Análise detalhada de uso',
-      'Otimização de frota'
+      'Monitoreo proactivo',
+      'Gestión de suministros automatizada',
+      'Análisis detallado de uso',
+      'Optimización de flota'
     ],
     website: '/kdfm',
-    category: 'Monitoramento de Dispositivos',
+    category: 'Monitoreo de Dispositivos',
     color: 'from-gray-500 to-gray-700'
   }
 ];
@@ -145,20 +115,20 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-[#004990] mb-4">
-            Nossas <span className="text-blue-600">Soluções</span>
+            Nuestras <span className="text-blue-600">Soluciones</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Conheça nossa gama completa de soluções empresariais desenvolvidas 
-            para otimizar e modernizar sua organização com tecnologia de ponta.
+            Conozca nuestra gama completa de soluciones empresariales desarrolladas 
+            para optimizar y modernizar su organización con tecnología de punta.
           </p>
         </motion.div>
 
-        {/* Cards Grid - Adaptável para 5 cards */}
-        <div className="flex flex-wrap justify-center gap-8">
+        {/* Cards Grid - Adaptado para 4 cards de forma simétrica */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 justify-items-center max-w-6xl mx-auto">
           {cardsData.map((card, index) => (
             <motion.div
               key={card.id}
-              className="relative h-80 w-full sm:w-[320px] perspective-1000"
+              className="relative h-80 w-full max-w-[320px] perspective-1000"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -264,7 +234,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
 
                     {/* Features */}
                     <div className="mb-2 flex-1 overflow-hidden">
-                      <h5 className="font-semibold text-[#004990] text-[11px] mb-1">Recursos Principais:</h5>
+                      <h5 className="font-semibold text-[#004990] text-[11px] mb-1">Características Principales:</h5>
                       <ul className="space-y-0.5">
                         {card.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-[10px] text-gray-600 leading-tight">
@@ -286,7 +256,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Explorar Solução →
+                      Explorar Solución →
                     </motion.a>
                   </div>
                 </div>
@@ -305,7 +275,7 @@ export const FlipCards: React.FC<FlipCardsProps> = ({ className }) => {
           <p className="text-gray-600 mb-6">
             ¿Necesitas más información sobre nuestras soluciones?
           </p>
-          <a href="/contato">
+          <a href="/contacto">
             <motion.button
               className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, y: -2 }}

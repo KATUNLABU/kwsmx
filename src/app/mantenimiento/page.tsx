@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Script from 'next/script';
 import NavBar from '@/components/ui/NavBar';
@@ -11,20 +11,18 @@ export default function ManutencaoPage() {
   const menuItems = [
     { label: 'Home', href: '/ksc' },
     {
-      label: 'Soluções',
+      label: 'Soluciones',
       href: '#',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -85,7 +83,7 @@ export default function ManutencaoPage() {
                 transition={{ delay: 0.3 }}
                 className="text-5xl md:text-6xl font-bold text-[#004990] mb-6"
               >
-                Página em Manutenção
+                Página en Mantenimiento
               </motion.h1>
 
               {/* Subtitle */}
@@ -95,9 +93,9 @@ export default function ManutencaoPage() {
                 transition={{ delay: 0.4 }}
                 className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed"
               >
-                Estamos trabalhando para trazer o melhor conteúdo sobre esta solução.
+                Estamos trabajando para traer el mejor contenido sobre esta solución.
                 <br />
-                Em breve teremos todas as informações disponíveis para você.
+                Pronto tendremos toda la información disponible para ti.
               </motion.p>
 
               {/* Info Box */}
@@ -125,11 +123,11 @@ export default function ManutencaoPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-[#004990] mb-3">
-                      Precisa de Mais Informações?
+                      ¿Necesita Más Información?
                     </h3>
                     <p className="text-lg text-gray-700 mb-4">
-                      Entre em contato com nosso especialista para conhecer todos os detalhes 
-                      e benefícios desta solução para sua empresa.
+                      Entre em Contacto com nosso especialista para conhecer todos os detalhes 
+                      y beneficios de esta solución para su empresa.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-6">
                       <a
@@ -144,13 +142,13 @@ export default function ManutencaoPage() {
                         WhatsApp
                       </a>
                       <Link
-                        href="/contato"
+                        href="/contacto"
                         className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        Enviar E-mail
+                        Enviar Correo
                       </Link>
                     </div>
                   </div>
@@ -170,7 +168,7 @@ export default function ManutencaoPage() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
-                  Voltar para Página Inicial
+                  Volver a la Página Inicial
                 </Link>
               </motion.div>
             </motion.div>

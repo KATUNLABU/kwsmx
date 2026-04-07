@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
@@ -108,7 +108,7 @@ export default function Home() {
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Componentes reutilizables diseñados para crear experiencias digitales excepcionales 
-                para Katun Workplace Solutions. Cada componente está optimizado para conversión y engagement.
+                para Katun Workplace Solutions. Cada componente está optimizado para conversión y rendimiento.
               </p>
             </div>
           </FadeIn>
@@ -168,7 +168,7 @@ export default function Home() {
                     "iOS y Android",
                     "UX intuitiva",
                     "Integración API",
-                    "Push notifications"
+                    "Notificaciones push"
                   ]}
                 />
                 <ServiceCardAnimated
@@ -178,7 +178,7 @@ export default function Home() {
                   features={[
                     "Análisis de mercado",
                     "Estrategia digital",
-                    "Optimización conversión",
+                    "Optimización de conversión",
                     "ROI garantizado"
                   ]}
                 />
@@ -193,19 +193,19 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
-                  <div className="text-gray-600">Performance Score</div>
+                  <div className="text-gray-600">Rendimiento</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-                  <div className="text-gray-600">Accessibility</div>
+                  <div className="text-gray-600">Accesibilidad</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-purple-600 mb-2">95%</div>
-                  <div className="text-gray-600">Best Practices</div>
+                  <div className="text-gray-600">Mejores Prácticas</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-orange-600 mb-2">100%</div>
-                  <div className="text-gray-600">SEO Score</div>
+                  <div className="text-gray-600">SEO</div>
                 </div>
               </div>
             </Card>

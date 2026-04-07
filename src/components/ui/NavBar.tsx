@@ -136,8 +136,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                       'px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-300 relative block',
                       isScrolled 
                         ? 'text-[#004990] hover:text-blue-600' 
-                        : 'text-white hover:text-blue-200',
-                      item.label === 'Inicio' && (isScrolled ? 'text-orange-600' : 'text-orange-400')
+                        : 'text-white hover:text-blue-200'
                     )}
                     whileHover={{ 
                       scale: 1.02,
@@ -312,8 +311,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                           'block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 relative',
                           isScrolled 
                             ? 'text-[#004990] hover:text-blue-600'
-                            : 'text-white hover:text-blue-200',
-                          item.label === 'Inicio' && (isScrolled ? 'text-orange-600' : 'text-orange-400')
+                            : 'text-white hover:text-blue-200'
                         )}
                         onClick={() => setIsMobileMenuOpen(false)}
                         whileHover={{ x: 3 }}

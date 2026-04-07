@@ -5,7 +5,7 @@ import lottie, { AnimationItem } from 'lottie-web';
 
 interface AnimatedIconProps {
   iconName: string;
-  solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' | 'home';
+  solution: 'kpax' | 'papercut' | 'myq' | 'kdfm' | 'home' | string;
   className?: string;
   colorTheme?: 'blue' | 'red' | 'gray' | 'green' | 'orange';
 }
@@ -26,8 +26,8 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
   const folderMap: Record<string, string> = {
     kpax: 'Iconos KPAX',
     papercut: 'iconos papercut',
-    megaged: 'iconos megaged',
-    wikialphabet: 'iconos wikialphabet',
+    myq: 'Iconos KPAX', // Fallback to KPAX icons
+    kdfm: 'Iconos KPAX', // Fallback to KPAX icons 
     home: 'iconos home'
   };
 

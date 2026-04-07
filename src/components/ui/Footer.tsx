@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -42,8 +42,8 @@ const Footer = ({ className = '' }: FooterProps) => {
                 />
               </div>
               <Typography variant="p" className="text-gray-300 mb-6 text-sm leading-relaxed">
-                Transformamos a gestão empresarial através de soluções tecnológicas inovadoras e 
-                serviços especializados em impressão, documentos e equipamentos.
+                Transformamos la gestión empresarial a través de soluciones tecnológicas innovadoras y 
+                servicios especializados en impresión, documentos y equipos.
               </Typography>
               
               {/* Redes Sociales */}
@@ -93,31 +93,19 @@ const Footer = ({ className = '' }: FooterProps) => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <Typography variant="h4" className="text-white mb-4 font-bold text-lg">
-              Nossas Soluções
+              Nuestras Soluciones
             </Typography>
             <ul className="space-y-3">
               <li>
                 <a href="/papercut" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Gestão de Impressão
+                  Gestión de Impresión
                 </a>
               </li>
               <li>
                 <a href="/kpax" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Gestão de Equipamentos
-                </a>
-              </li>
-              <li>
-                <a href="/megaged" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Gestão de Documentos
-                </a>
-              </li>
-              <li>
-                <a href="/wiki-alphabet" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Plataforma de Ensino
+                  Gestión de Equipos
                 </a>
               </li>
               <li>
@@ -149,25 +137,25 @@ const Footer = ({ className = '' }: FooterProps) => {
               <li>
                 <a href="/ksc" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Início
+                  Inicio
                 </a>
               </li>
               <li>
-                <a href="/quem-somos" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="/quienes-somos" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Quem Somos
+                  Quiénes Somos
                 </a>
               </li>
               <li>
-                <a href="/fornecedores" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="/proveedores" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Fornecedores
+                  Proveedores
                 </a>
               </li>
               <li>
-                <a href="/contato" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="/contacto" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:scale-125 transition-transform"></span>
-                  Contato
+                  Contacto
                 </a>
               </li>
             </ul>
@@ -181,7 +169,7 @@ const Footer = ({ className = '' }: FooterProps) => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Typography variant="h4" className="text-white mb-4 font-bold text-lg">
-              Contato
+              Contacto
             </Typography>
             <ul className="space-y-3">
               <li className="flex items-start text-gray-300 text-sm">
@@ -226,7 +214,7 @@ const Footer = ({ className = '' }: FooterProps) => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Typography variant="small" className="text-gray-300 text-sm">
-              © {currentYear} <strong>KWS</strong>. Todos os direitos reservados.
+              © {currentYear} <strong>KWS</strong>. Todos los derechos reservados.
             </Typography>
           </motion.div>
           

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'KDFM MPS Monitor - Gestão Inteligente de Impressão | KSC',
-  description: 'Plataforma completa de monitoramento e gestão de serviços de impressão gerenciados (MPS) com inteligência artificial e análise preditiva.',
-  keywords: ['KDFM', 'MPS Monitor', 'Gestão de Impressão', 'Managed Print Services', 'Monitoramento de Impressoras', 'Análise Preditiva'],
+  title: 'KDFM MPS Monitor - Gestión Inteligente de Impresión | KSC',
+  description: 'Plataforma completa de monitoreo y gestión de servicios de impresión gestionados (MPS) con inteligencia artificial y análisis predictivo.',
+  keywords: ['KDFM', 'MPS Monitor', 'Gestión de Impresión', 'Managed Print Services', 'Monitoreo de Impresoras', 'Análisis Predictivo'],
 };
 
 export default function KDFMLayout({

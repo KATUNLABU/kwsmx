@@ -12,7 +12,7 @@ const sourceSans = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: "KWS - Katun Workplace Solutions",
-  description: "Soluções Integradas em Gestão de Impressão e Transformação Digital",
+  description: "Soluciones Integradas en Gestión de Impresión y Transformación Digital",
 };
 
 export default function RootLayout({

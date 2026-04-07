@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -18,7 +18,7 @@ interface Feature {
   title: string;
   description: string;
   icon: string;
-  solution: 'kpax' | 'papercut' | 'megaged' | 'wikialphabet' | 'home';
+  solution: 'kpax' | 'papercut' | 'myq' | 'kdfm' | 'Inicio';
 }
 
 function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
@@ -52,22 +52,20 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
 export default function SolutionGrayPage() {
   const menuItems = [
-    { label: 'Home', href: '/ksc' },
+    { label: 'Inicio', href: '/ksc' },
     {
-      label: 'Soluções',
-      href: '/solucoes',
+      label: 'Soluciones',
+      href: '/soluciones',
       dropdown: [
-        { label: 'Gestão de Impressão', href: '/papercut', image: '/images/services/gestao-impressao.png' },
-        { label: 'Gestão de Equipamentos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
-        { label: 'Gestão Eletrônica de Documentos', href: '/megaged', image: '/images/services/gestao-documentos.png' },
-        { label: 'Plataforma de Ensino Digital', href: '/wiki-alphabet', image: '/images/services/plataforma-ensino.png' },
+        { label: 'Gestión de Impresión', href: '/papercut', image: '/images/services/gestao-impressao.png' },
+        { label: 'Gestión de Equipos', href: '/kpax', image: '/images/services/gestao-equipamentos.png' },
         { label: 'MyQ', href: '/myq', image: '/images/services/myq-logo.png' },
         { label: 'KDFM', href: '/kdfm', image: '/images/services/kdfm-logo.png' },
       ],
     },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Fornecedores', href: '/fornecedores' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Proveedores', href: '/proveedores' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -77,12 +75,12 @@ export default function SolutionGrayPage() {
       {/* Hero Banner */}
       <HeroBannerWaves
         title="KDFM"
-        subtitle="Gestão eficiente e monitoramento de dispositivos de impressão para otimizar recursos e reduzir custos."
+        subtitle="Gestión eficiente y monitoreo de dispositivos de impresión para optimizar Recursos y reducir costos."
         gradientFrom="#4b5563" // gray-600
         gradientTo="#6b7280"   // gray-500
         waveColor="rgba(255, 255, 255, 0.25)"
         breadcrumbs={[
-          { label: 'Soluções', href: '/solucoes' },
+          { label: 'Soluciones', href: '/soluciones' },
           { label: 'KDFM', href: '/kdfm' }
         ]}
       />
@@ -109,26 +107,26 @@ export default function SolutionGrayPage() {
               </div>
               
               <h2 className="text-4xl font-bold text-gray-600 mb-6">
-                Monitoramento Inteligente KDFM
+                Monitoreo Inteligente KDFM
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                O KDFM fornece visibilidade total sobre sua frota de impressão. Com monitoramento
-                transparente e automatizado, você pode gerenciar suprimentos, antecipar manutenções
-                e tomar decisões baseadas em dados reais.
+                KDFM proporciona visibilidad total sobre su flota de impresión. Con monitoreo
+                transparente y automatizado, usted puede gestionar suministros, anticipar mantenimientos
+                y tomar decisiones basadas en datos reales.
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Experimente uma redução significativa de custos operacionais e desperdícios,
-                garantindo que seus dispositivos estejam sempre funcionando com eficiência máxima.
+                Experimente una reducción significativa de los costos operativos y desperdicios,
+                garantizando que sus dispositivos estén siempre funcionando con la máxima eficiencia.
               </p>
 
               <div className="flex gap-4">
                 <Button variant="primary" size="lg" className="bg-gradient-to-r from-gray-600 to-gray-700">
-                  <a href="/contato" className="text-inherit no-underline">Solicitar Demo</a>
+                  <a href="/contacto" className="text-inherit no-underline">Solicitar Demo</a>
                 </Button>
                 <Button variant="outline" size="lg">
-                  <a href="#recursos" className="text-inherit no-underline">Ver Recursos</a>
+                  <a href="#Recursos" className="text-inherit no-underline">Ver Recursos</a>
                 </Button>
               </div>
             </motion.div>
@@ -170,7 +168,7 @@ export default function SolutionGrayPage() {
       </section>
 
       {/* Features Section */}
-      <section id="recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="Recursos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16">
             <motion.h2 
@@ -195,15 +193,15 @@ export default function SolutionGrayPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Monitoramento Remoto',
+                title: 'Monitoreo Remoto',
                 description: 'Acompanhe o status e a saúde de todos os seus dispositivos de impressão em tempo real, de qualquer lugar.',
-                icon: 'Monitoramento Remoto',
+                icon: 'Monitoreo Remoto',
                 solution: 'kpax'
               },
               {
-                title: 'Gestão de Suprimentos',
+                title: 'Gestión de Suprimentos',
                 description: 'Receba alertas automáticos de níveis de toner e facilite a reposição just-in-time, evitando paradas.',
-                icon: 'Gestão de Suprimentos',
+                icon: 'Gestión de Suprimentos',
                 solution: 'kpax'
               },
               {
@@ -213,7 +211,7 @@ export default function SolutionGrayPage() {
                 solution: 'kpax'
               },
               {
-                title: 'Suporte Multi-Marca',
+                title: 'Soporte Multi-Marca',
                 description: 'Gerencie dispositivos de diferentes fabricantes em uma única interface centralizada e padronizada.',
                 icon: 'Multi-Marca',
                 solution: 'papercut'
