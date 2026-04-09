@@ -328,38 +328,42 @@ export default function ContatoPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
               </div>
-                <h3 className="text-lg font-bold text-[#004990] mb-2">Transporte Público (YoVoy)</h3>
-                <p className="text-gray-700 text-sm">
-                  Rutas 01, 05, 11 y 34<br />
-                  Parada sobre 45 Norte (Cto. Aguascalientes)
-                </p>
-              </div>
+              <h3 className="text-lg font-bold text-[#004990] mb-2">Transporte Público (YoVoy)</h3>
+              <p className="text-gray-700 text-sm">
+                Rutas 01, 05, 11 y 34<br />
+                Parada sobre 45 Norte (Cto. Aguascalientes)
+              </p>
+            </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-[#004990] mb-2">Automóvil</h3>
-                <p className="text-gray-700 text-sm">
-                  Acceso principal por Carr. 45 Norte<br />
-                  Estacionamiento gratuito interno
-                </p>
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
               </div>
+              <h3 className="text-lg font-bold text-[#004990] mb-2">Automóvil</h3>
+              <p className="text-gray-700 text-sm">
+                Acceso principal por Carr. 45 Norte<br />
+                Estacionamiento gratuito interno
+              </p>
+            </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-[#004990] mb-2">Horario</h3>
-                <p className="text-gray-700 text-sm">
-                  Lunes a Viernes: 08:00 a 18:00<br />
-                  Programa tu visita con anticipación
-                </p>
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
+              <h3 className="text-lg font-bold text-[#004990] mb-2">Horario</h3>
+              <p className="text-gray-700 text-sm">
+                Lunes a Viernes: 08:00 a 18:00<br />
+                Programa tu visita con anticipación
+              </p>
+            </div>
             </div>
           </div>
         </Container>
