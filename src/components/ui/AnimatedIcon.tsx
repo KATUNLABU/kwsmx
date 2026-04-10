@@ -28,7 +28,10 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
     papercut: 'iconos papercut',
     myq: 'Iconos KPAX', // Fallback to KPAX icons
     kdfm: 'Iconos KPAX', // Fallback to KPAX icons 
-    home: 'iconos home'
+    home: 'iconos home',
+    megaged: 'iconos megaged',
+    'wiki-alphabet': 'iconos wikialphabet',
+    wikialphabet: 'iconos wikialphabet'
   };
 
   // Expose methods to parent component
@@ -52,7 +55,7 @@ const AnimatedIcon = forwardRef<AnimatedIconRef, AnimatedIconProps>(
 
     const loadAnimation = async () => {
       try {
-        const folderName = folderMap[solution];
+        const folderName = folderMap[solution] || 'iconos home';
         const iconPath = `/icons/${folderName}/${iconName}.json`;
         
         // Fetch the JSON data
